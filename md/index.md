@@ -1,6 +1,6 @@
 # 梅本 和希 (Kazuki UMEMOTO) 研究者情報
 
-**更新日：2020/6/1**
+**更新日：2020/6/2**
 
 本サイトでは，研究者情報・研究内容の紹介を行います．
 
@@ -19,15 +19,6 @@
 ## 研究業績 Research Works
 
 * [研究業績リスト List of research works](./?id=researchworks)
-
-### 外部サイトで見る場合
-
-* [Google Scholar](https://scholar.google.com/citations?user=oc6Y-GEAAAAJ&hl=ja)
-* [ResearchGate](https://www.researchgate.net/profile/Kazuki_Umemoto2)
-* [researchmap](https://researchmap.jp/7000022302)
-* [Scopus](https://www.scopus.com/authid/detail.uri?authorId=24538065500)
-* [ORCiD](https://orcid.org/0000-0002-1148-4114)
-* [長岡技術科学大学研究者総覧](https://souran.nagaokaut.ac.jp/view?l=ja&u=100000683)
 
 ## 競争的資金
 
