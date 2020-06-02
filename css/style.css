@@ -1,0 +1,265 @@
+/* 全体 */
+body, div, p, span, h1, h2, h3, h4, h5 {
+    /* t r b l, clockwise*/
+    /* t, [rl], b */
+    /* [tb], [rl] */
+	margin: 0;
+	padding: 0;
+}
+body {
+    font-family:'メイリオ', 'Meiryo','ＭＳ ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+    font-size: large;
+    background-color: gainsboro;
+    padding: 10px 0;
+}
+div#bodywrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    padding: 3em 30px 15px;
+}
+/* フッタ */
+div#bodywrap > p {
+    font-size: medium;
+}
+
+/* コードブロック */
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+code,
+tt {
+    font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    border: 1px solid #d7dadd;
+    background-color: #e8e8e8;
+    border-radius: 3px;
+    padding: 0 2px 0 2px;
+}
+pre {
+    background-color: #3f4f4f;
+    border: 1px solid #e7eaed;
+    border-radius: 6px;
+    padding: 0.8em 2em;
+	max-width: 90%;
+    overflow: auto;
+}
+pre code {
+    color: whitesmoke;
+    background-color: unset;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* mdコンテンツ */
+div#article p {
+    margin: 0.5em 0;
+}
+div#article li {
+    margin: 0.2em 0;
+}
+/* 更新日表示用 */
+div#article > h1 + p {
+    margin: 0;
+    float: right;
+    color: rgb(124, 124, 124);
+}
+/* 章節 */
+div#article > h1 {
+    padding: .5em 0 .5em 1em;
+    font-size: 1.5em;
+    line-height: 1.2;
+    color: whitesmoke;
+    background-color: mediumseagreen;
+    position: fixed; top: 0px; left: 0;
+    width: 100%;
+    z-index: 2;
+    counter-reset: chapter;
+}
+div#article > h2 {
+    margin: 0.5em 0 0.5em;
+    font-size: 1.5em;
+    border-bottom: 1px solid #ccc;
+    counter-reset: sub-chapter;
+}
+div#article > h3 {
+    margin: 0.5em 0.5em 0;
+    font-size: 1.3em;
+    counter-reset: section;
+}
+div#article > h4 {
+    margin: 0.5em 0.5em 0;
+    font-size: 1.25em;
+}
+div#article > h2::before {
+    counter-increment: chapter;
+    content: counter(chapter, upper-roman) ". ";
+    font-family: 'Times New Roman', Times, serif;
+}
+div#article > h3::before {
+    counter-increment: sub-chapter;
+    content: counter(chapter, upper-roman) "."counter(sub-chapter, decimal)". ";
+    font-family: 'Times New Roman', Times, serif;
+}
+div#article > h4::before {
+    counter-increment: section;
+    content: counter(chapter, upper-roman) "."counter(sub-chapter, decimal)"."counter(section, decimal)" ";
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* テーブル */
+div#article table {
+    margin: 0.8em 0;
+    padding: 0;
+    /* word-break: initial; */
+    border-collapse: collapse;
+    border-spacing: 0;  
+}
+div#article table tr {
+    border-top: 1px solid #8e9093;
+    margin: 0;
+    padding: 0;
+}
+div#article table tr:nth-child(2n),
+div#article thead {
+    background-color: #e8e8e8;
+}
+div#article table tr th {
+    font-weight: bold;
+    border: 1px solid #8e9093;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+div#article table tr td {
+    border: 1px solid #8e9093;
+    margin: 0;
+    padding: 6px 13px;
+}
+div#article table tr th:first-child,
+div#article table tr td:first-child {
+    margin-top: 0;
+}
+div#article table tr th:last-child,
+div#article table tr td:last-child {
+    margin-bottom: 0;
+}
+/* リスト */
+div#article ul,
+div#article ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* margin-left: 1em; */
+}
+div#article > ul,
+div#article > ol {
+    margin-left: 1em;
+}
+div#article ul > li {
+    margin-left: 2em;
+    text-indent: -1em;
+}
+div#article ul > li::before {
+    display: inline-block;
+    width: 1em;
+    overflow: visible;
+    content: "\025cf";
+    color: rgb(44, 133, 84);
+}
+div#article ol {
+    counter-reset: olist;
+}
+div#article ol > li {
+    margin-left: 2em;
+    text-indent: -1em;
+}
+div#article ol > li::before {
+    display: inline-block;
+    width: 1em;
+    overflow: visible;
+    counter-increment: olist;
+    content: counter(olist)".";
+    color: rgb(19, 92, 52);
+    font-weight: bold;
+}
+
+/* メニュー */
+div#TopMenu {
+	float: right;
+    background-color: unset;
+}
+div#TopMenu > ul {
+	margin: 0;
+    padding: 0;
+	list-style-type: none;
+    position: fixed; top: 6px; right: 10px;
+    z-index: 3;
+    display: flex;
+}
+div#TopMenu li {
+    margin: 0;
+	padding: .5em 1em;
+    height: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #bec0c2;
+    border-radius: 1.5em;
+    background-color: #f8f8f8;
+    overflow: visible;
+	float: left;
+}
+div#TopMenu a {
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+}
+/* サブメニュー */
+div#TopMenu > ul > li > ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    visibility: hidden;
+    opacity: 0;
+}
+div#TopMenu > ul > li > ul > li {
+    font-size: medium;
+    /* position: relative; */
+    float: none;
+}
+div#TopMenu > ul > li:hover ul {
+    animation-duration: .2s;
+    animation-name: fade-in;
+    visibility: visible;
+    opacity: 1;
+}
+@keyframes fade-in {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
