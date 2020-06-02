@@ -5,33 +5,45 @@ window.MathJax = {
 	}
 };
 
-$(document).ready(function(){
-	// メニューの読み込み
-	$.ajax({
-		url: "./md/topMenu.md",
-		success: function($data) {
-			$("#TopMenu").html( mdp($data) );
-		}
-	});
-	// URLから判別しコンテンツファイルの読み込み
-	if (location.search=="") {
+function translateInnerAnchor (argText) {
+	argText = argText.replace(/\[(.+?)\]\((\.\/)(?!\?id\=)\)/g, "<a href='javascript:loadMd(\"$2\",true);'>$1</a>");	// Inner Anchor Link
+	argText = argText.replace(/\[(.+?)\]\((\.\/\?id\=.*?)\)/g, "<a href='javascript:loadMd(\"$2\",true);'>$1</a>");		// Inner Anchor Link
+	return argText;
+}
+function loadMd ( argText, gaSend ) {
+	// Load markdown file
+	let $file = "./md/" + argText.replace("./?id=","").replace(/:/g, "/") + ".md";
+	if (argText=="./") {
 		$file="./md/index.md";
-	} else {
-		$strs = location.search.split("?id=")[1].split(":");
-		$file = "./md";
-		for (let i = 0; i < $strs.length; i++) {
-			$file = $file + "/" + $strs[i];
-		}
-		$file = $file + ".md";
 	}
 	$.ajax({
 		url: $file,
 		success: function($data) {
-			$("#article").html( mdp($data) );
-			try {// MathJaxのロードが早かった場合
+			// $("#article").html( mdp($data) );
+			$("#article").html( mdp(translateInnerAnchor($data)) );
+			// For Google Analytics SPA ---
+			if ( gaSend ) {
+				window.history.pushState(null, null, argText);
+				ga('set', 'page', "/"+location.search);
+				ga('send', 'pageview');
+			}
+			// --- For Google Analytics SPA
+			try {	// If MathJax is early loaded.
 				MathJax.typeset($("#article"));
 			} catch (e) {
 			}
 		}
 	});
+}
+
+$(document).ready(function(){
+	// Load top menu
+	$.ajax({
+		url: "./md/topMenu.md",
+		success: function($data) {
+			// $("#TopMenu").html( mdp($data) );
+			$("#TopMenu").html( mdp(translateInnerAnchor($data)) );
+		}
+	});
+	loadMd( "./"+location.search, false);
 });
