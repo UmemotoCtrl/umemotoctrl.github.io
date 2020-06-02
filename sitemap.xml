@@ -3,47 +3,42 @@
 
 <!--  created with free sitemap generation system www.sitemapxml.jp  --> 
 <url>
-  <loc>https://umemotoctrl.github.io/KUmemoto/</loc>
+  <loc>https://umemotoctrl.github.io/</loc>
   <priority>1.0</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://umemotoctrl.github.io/KUmemoto/?id=researchworks</loc>
+  <loc>https://umemotoctrl.github.io/?id=researchworks</loc>
   <priority>0.8</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://umemotoctrl.github.io/KUmemoto/onlineTest.html</loc>
+  <loc>https://umemotoctrl.github.io/onlineTest.html</loc>
   <priority>0.8</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://umemotoctrl.github.io/KUmemoto/onlineTest.html</loc>
+  <loc>https://umemotoctrl.github.io/?id=tips</loc>
   <priority>0.8</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://umemotoctrl.github.io/KUmemoto/?id=tips</loc>
-  <priority>0.8</priority>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>https://umemotoctrl.github.io/KUmemoto/?id=tips:markdown</loc>
+  <loc>https://umemotoctrl.github.io/?id=tips:markdown</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://umemotoctrl.github.io/KUmemoto/?id=tips:latexMath</loc>
+  <loc>https://umemotoctrl.github.io/?id=tips:latexMath</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://umemotoctrl.github.io/KUmemoto/?id=tips:chocolatey</loc>
+  <loc>https://umemotoctrl.github.io/?id=tips:chocolatey</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://umemotoctrl.github.io/KUmemoto/?id=tips:mathNotation</loc>
+  <loc>https://umemotoctrl.github.io/?id=tips:mathNotation</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
