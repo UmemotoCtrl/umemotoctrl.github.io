@@ -8,7 +8,7 @@
 
 連絡先：umemoto (アット) mech.nagaokaut.ac.jp
 
-<div style="float:right; width:fit-content;"><img src="./img/photo_ume.jpg" alt="顔写真" style="border-radius: 1em; width:12em;"></div>
+<div style="float:right; width:fit-content;"><img src="./img/photo_ume.jpg" alt="顔写真" style="border-radius: 1em; width:10em;"></div>
 
 ## 研究紹介 (in preparation)
 
