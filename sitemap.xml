@@ -1,46 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
-<!--  created with free sitemap generation system www.sitemapxml.jp  --> 
 <url>
-  <loc>https://umemotoctrl.github.io/</loc>
-  <priority>1.0</priority>
-  <changefreq>monthly</changefreq>
+<loc>https://umemotoctrl.github.io/</loc>
+<priority>1.0</priority>
+<changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://umemotoctrl.github.io/?id=researchworks</loc>
-  <priority>0.8</priority>
-  <changefreq>monthly</changefreq>
+<loc>https://umemotoctrl.github.io/?id=researchworks</loc>
+<priority>0.8</priority>
+<changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://umemotoctrl.github.io/onlineTest.html</loc>
-  <priority>0.8</priority>
-  <changefreq>monthly</changefreq>
+<loc>https://umemotoctrl.github.io/onlineTest.html</loc>
+<priority>0.8</priority>
+<changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://umemotoctrl.github.io/?id=tips</loc>
-  <priority>0.8</priority>
-  <changefreq>monthly</changefreq>
+<loc>https://umemotoctrl.github.io/?id=tips</loc>
+<priority>0.8</priority>
+<changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://umemotoctrl.github.io/?id=tips:markdown</loc>
-  <priority>0.6</priority>
-  <changefreq>monthly</changefreq>
+<loc>https://umemotoctrl.github.io/?id=tips:markdown</loc>
+<priority>0.8</priority>
+<changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://umemotoctrl.github.io/?id=tips:latexMath</loc>
-  <priority>0.6</priority>
-  <changefreq>monthly</changefreq>
+<loc>https://umemotoctrl.github.io/?id=tips:latexMath</loc>
+<priority>0.8</priority>
+<changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://umemotoctrl.github.io/?id=tips:chocolatey</loc>
-  <priority>0.6</priority>
-  <changefreq>monthly</changefreq>
+<loc>https://umemotoctrl.github.io/?id=tips:mathNotation</loc>
+<priority>0.8</priority>
+<changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://umemotoctrl.github.io/?id=tips:mathNotation</loc>
-  <priority>0.6</priority>
-  <changefreq>monthly</changefreq>
+<loc>https://umemotoctrl.github.io/?id=tips:chocolatey</loc>
+<priority>0.8</priority>
+<changefreq>monthly</changefreq>
 </url>
-
 </urlset>
