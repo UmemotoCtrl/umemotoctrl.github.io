@@ -14,6 +14,7 @@ var loadMd = function ( argText, gaSend ) {
 	}).then(function($data) {
 		// $("#article").html( mdp($data) );
 		$("#article").html( mdp(translateInnerAnchor($data)) );
+		document.title = ($("div#article>h1:first-child").text()||"");
 		// For Google Analytics SPA ---
 		if ( gaSend ) {
 			window.history.pushState(null, null, argText);
