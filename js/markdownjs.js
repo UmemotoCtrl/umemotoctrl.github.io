@@ -17,6 +17,7 @@ var loadMd = function ( argText, gaSend ) {
 		// For Google Analytics SPA ---
 		if ( gaSend ) {
 			window.history.pushState(null, null, argText);
+			scrollTo(0, 0);  // absolute (hr, ver)
 			ga('set', 'page', "/"+location.search);
 			ga('send', 'pageview');
 		}

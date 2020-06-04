@@ -1,6 +1,6 @@
 # Tips集
 
-**更新日：2020/5/20**
+**更新日：2020/6/4**
 
 主に指導学生向けとして，役立ちそうな情報について記載したく思います．
 
@@ -12,9 +12,10 @@
 * 研究報告のテンプレート：[Markdown](./data/reportTemplate.md)，[Word](./data/reportTemplate.docx)，Latex (in preparation)．ちゃんと活動内容を書類に残しましょう
 * インストーラのnextボタンに疲れたら**[Chocolatey](./?id=tips:chocolatey)**！(Windows)
 
-## 役に立つリンク集
+## 役に立つ外部リンク集
 
 - [配属を希望する学生の皆さんへ](https://sites.google.com/view/rariizumi/%E3%83%9B%E3%83%BC%E3%83%A0/tostudents?authuser=0)：ためになる心構え
+- [使ってはいけない LaTeX のコマンド・パッケージ・作法](https://ichiro-maruta.blogspot.com/2013/03/latex.html)：Latex文書作成時に目を通すべき
 - [TeXclip](https://texclip.marutank.net/)：LaTeX数式を画像に変換
 - [Interactive LaTeX Editor](https://arachnoid.com/latex/)：Latex to MathMLコード．動作テストに
 - 正規表現テストツール：[Debuggex](https://www.debuggex.com/)，[regular expressions101](https://regex101.com/)．一行一行コンマやスペースを付けたり消したりするのを終わりにしたい（実際は終わりませんが）人のために

@@ -1,5 +1,4 @@
 var writeHtml = function ( argText ) {
-	$("textarea#mdinput").val( argText );
 	$("#article").html( mdp(argText) );
 	$("#raw").html( mdp(argText).replace(/</g,'&lt;').replace(/>/g,'&gt;') );
 	if ( MathJax.typesetPromise )
@@ -32,15 +31,15 @@ $(function() {
 		$("#TopMenu").html( mdp($data) );
 	});
 	// Load main md
-	if (location.search=="") {
-		$file="./md/sample.md";
-	} else {
-		$file = $file = "./md/" + location.search.replace("?id=","").replace(/:/g, "/") + ".md";
-	}
+	if (location.search=="")
+		$file = "./md/sample.md";
+	else
+		$file = "./md/" + location.search.replace("?id=","").replace(/:/g, "/") + ".md";
 	fetch($file).then(function(response) {
 		return response.text();
 	}).then(function($data) {
-		writeHtml ( $data );
+		$("textarea#mdinput").val( $data );
+		writeHtml( $data );
 	});
 	$("textarea#mdinput").on('input', function() {
 		writeHtml ( $("textarea#mdinput").val() );

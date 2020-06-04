@@ -11,28 +11,22 @@
 }
 /* .MathJax { font-size: 1.5em !important; } */
 body {
-    max-width: 1200px;
-    font-family:'メイリオ', 'Meiryo','ＭＳ ゴシック','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
-    font-size: var(--default-font-size);
     padding-top: 3em;
     background-color: var(--main-bg-color);
 }
-/* div#bodywrap {
-    margin: 0 auto;
-} */
-/* フッタ */
-div#bodywrap > p {
+/* footer */
+body > p {
     font-size: .8em;
 }
 
-/* 更新日表示用 */
+/* update date */
 div#article > h1 + p {
     margin: 0;
 	padding: 0;
     float: right;
     color: var(--dark-gray-color);
 }
-/* 章節 */
+/* Sections */
 div#article > h2 {
     counter-reset: sub-chapter;
 }
@@ -55,7 +49,7 @@ div#article > h4::before {
     font-family: var(--times-font);
 }
 
-/* メニュー */
+/* Top menu */
 div#article > h1 {
     margin: 0;
     padding: .5em 1em;
@@ -75,13 +69,12 @@ div#TopMenu a {
     padding: 0;
 }
 div#TopMenu {
-	float: right;
+    position: fixed; top: 0.5em; right: .5em;
+    z-index: 3;
     background-color: unset;
 }
 div#TopMenu > ul {
     list-style-type: none;
-    position: fixed; top: 0.5em; right: .5em;
-    z-index: 3;
     display: flex;
 }
 div#TopMenu li {
@@ -99,7 +92,7 @@ div#TopMenu a {
     text-decoration: none;
     color: rgb(51, 51, 51);
 }
-/* サブメニュー */
+/* Top sub-menu */
 div#TopMenu > ul > li > ul {
     list-style-type: none;
     visibility: hidden;
