@@ -12,8 +12,8 @@ var loadMd = function ( argText, gaSend ) {
 	fetch($file).then(function(response) {
 		return response.text();
 	}).then(function($data) {
-		// $("#article").html( mdp($data) );
-		$("#article").html( mdp(translateInnerAnchor($data)) );
+		// $("#article").html( mdp.render($data) );
+		$("#article").html( mdp.render(translateInnerAnchor($data)) );
 		document.title = ($("div#article>h1:first-child").text()||"");
 		// For Google Analytics SPA ---
 		if ( gaSend ) {
@@ -27,6 +27,8 @@ var loadMd = function ( argText, gaSend ) {
 			MathJax.typesetPromise($("#article"));
 	});
 }
+
+var mdp = makeMDP();
 
 $(document).ready(function(){
 	// For MathJax
@@ -53,7 +55,7 @@ $(document).ready(function(){
 	fetch('./md/topMenu.md').then(function(response) {
 	  return response.text();
 	}).then(function($data) {
-		$("#TopMenu").html( mdp(translateInnerAnchor($data)) );
+		$("#TopMenu").html( mdp.render(translateInnerAnchor($data)) );
 	});
 	// Load Main md file
 	loadMd( "./"+location.search, false);

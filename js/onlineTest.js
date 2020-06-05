@@ -1,9 +1,11 @@
 var writeHtml = function ( argText ) {
-	$("#article").html( mdp(argText) );
-	$("#raw").html( mdp(argText).replace(/</g,'&lt;').replace(/>/g,'&gt;') );
+	$("#article").html( mdp.render(argText) );
+	$("#raw").html( mdp.render(argText).replace(/</g,'&lt;').replace(/>/g,'&gt;') );
 	if ( MathJax.typesetPromise )
 		MathJax.typesetPromise($("#article"));
 }
+
+var mdp = makeMDP();
 
 $(function() {
 	// For MathJax
@@ -28,7 +30,7 @@ $(function() {
 	fetch('./md/topMenu.md').then(function(response) {
 		return response.text();
 	}).then(function($data) {
-		$("#TopMenu").html( mdp($data) );
+		$("#TopMenu").html( mdp.render($data) );
 	});
 	// Load main md
 	if (location.search=="")
