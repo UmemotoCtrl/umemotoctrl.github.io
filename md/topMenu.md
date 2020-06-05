@@ -14,6 +14,7 @@
   - [Latex数式](./?id=tips:latexMath)
   - [数学記法](./?id=tips:mathNotation)
   - [Chocolatey](./?id=tips:chocolatey)
+  - [Trivials](./?id=tips:trivials)
 
 <!--
 

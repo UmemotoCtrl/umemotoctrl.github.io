@@ -1,36 +1,51 @@
-var writeHtml = function ( argText ) {
-	$("#article").html( mdp.render(argText) );
-	$("#raw").html( mdp.render(argText).replace(/</g,'&lt;').replace(/>/g,'&gt;') );
+// for MathJax
+(function () {
+	window.MathJax = {
+		tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']]
+		},
+		svg: {
+		fontCache: 'global'
+		}
+	};
+	var scriptIE = document.createElement("script");
+	scriptIE.src  = "https://polyfill.io/v3/polyfill.min.js?features=es6";
+	document.getElementsByTagName("head")[0].appendChild(scriptIE);
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	script.src  = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js";
+	document.getElementsByTagName("head")[0].appendChild(script);
+	script.onload = (function () {
+		// console.log(MathJax);
+	})();
+})();
+
+let writeHTML = function () {
+	var htmlTxt = mdp.render(mdInput.value);
+	article.innerHTML = htmlTxt;
+	raw.innerHTML = htmlTxt.replace(/</g,'&lt;').replace(/>/g,'&gt;');
 	if ( MathJax.typesetPromise )
-		MathJax.typesetPromise($("#article"));
+		MathJax.typesetPromise();
 }
 
-var mdp = makeMDP();
+var mdp;
+var mdInput;
+var article;
+var raw;
+var topMenu;
 
-$(function() {
-	// For MathJax
-	(function () {
-		window.MathJax = {
-			tex: {
-			inlineMath: [['$', '$'], ['\\(', '\\)']]
-			},
-			svg: {
-			fontCache: 'global'
-			}
-		};
-		var script = $('<script>').attr({
-			src: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js',
-			async: true
-		}).appendTo('head');
-		script.onload = (function () {
-			// console.log(MathJax);
-		})();
-	})();
+window.onload = function() {
+	mdp = makeMDP();
+	mdInput = document.getElementById("mdInput");
+	article = document.getElementById("article");
+	raw     = document.getElementById("raw");
+	topMenu = document.getElementById("TopMenu");
+
 	// Load topMenu
 	fetch('./md/topMenu.md').then(function(response) {
 		return response.text();
 	}).then(function($data) {
-		$("#TopMenu").html( mdp.render($data) );
+		topMenu.innerHTML = mdp.render($data);
 	});
 	// Load main md
 	if (location.search=="")
@@ -39,11 +54,9 @@ $(function() {
 		$file = "./md/" + location.search.replace("?id=","").replace(/:/g, "/") + ".md";
 	fetch($file).then(function(response) {
 		return response.text();
-	}).then(function($data) {
-		$("textarea#mdinput").val( $data );
-		writeHtml( $data );
+	}).then(function(data) {
+		mdInput.innerHTML = data;
+		writeHTML( data );
 	});
-	$("textarea#mdinput").on('input', function() {
-		writeHtml ( $("textarea#mdinput").val() );
-	});
-});
+	mdInput.oninput = writeHTML;
+}

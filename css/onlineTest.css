@@ -9,7 +9,7 @@ div#article {
     min-height: 900px;
 	float: right;
 }
-textarea#mdinput {
+textarea#mdInput {
     font-size: 15px;
     margin: 0;
     padding: 15px;
