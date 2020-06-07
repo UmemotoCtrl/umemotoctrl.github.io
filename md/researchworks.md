@@ -1,6 +1,6 @@
 # 研究業績リスト Research Works
 
-**更新日：2020/5/13**
+**更新日：2020/6/7**
 
 ## 外部サイトで見る場合
 
@@ -13,7 +13,7 @@
 
 ## 学術論文 (査読あり) Journal Paper
 
-1. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Dynamic cooperative transportation control using friction forces of n multi-rotor unmanned aerial vehicles", Journal of Intelligent and Robotic Systems, 2020.5, accepted.
+1. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Dynamic cooperative transportation control using friction forces of n multi-rotor unmanned aerial vehicles", Journal of Intelligent and Robotic Systems, 2020.5, [DOI: 10.1007/s10846-020-01212-1](https://doi.org/10.1007/s10846-020-01212-1)
 1. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, Tadashi Egami, "Stability Analysis of a Control System with Nonlinear Input Uncertainty based on Disturbance Observer", International Journal of Robust and Nonlinear Control, 2020.4, [DOI: 10.1002/rnc.4999](https://doi.org/10.1002/rnc.4999)
 1. Songtam Laosuwan, Shigeru Nagasawa, Kazuki Umemoto, "Development of Tensile Fixture with Corrugated Structure Sheet and Estimation of Tensile Strength of Glass Fibre Fabrics Based Single Face Corrugated Structure Sheet", AIMS Materials Science, 2020.2, [DOI: 10.3934/matersci.2020.1.75](https://doi.org/10.3934/matersci.2020.1.75)
 1. Shigeru Nagasawa, Akihiro Yamamoto, Thepwarchara Ruchirabha, Kazuki Umemoto, "Effects of Blade Tip Profile on In-Plane Tensile Properties of Wedge-Notched Polypropylene Sheet", International Journal of Automation Technology, 2019.11, [DOI: 10.20965/ijat.2019.p0780](https://doi.org/10.20965/ijat.2019.p0780)
