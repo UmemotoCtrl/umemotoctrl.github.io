@@ -10,6 +10,11 @@
     --default-font-size: large;
 }
 /* .MathJax { font-size: 1.5em !important; } */
+html {
+    font-size: 16px;
+    text-size-adjust: 150%;
+    -webkit-text-size-adjust: 150%;
+}
 body {
     padding-top: 3em;
     background-color: var(--main-bg-color);
@@ -64,6 +69,7 @@ div#article > h1 {
 div#TopMenu ul,
 div#TopMenu ol,
 div#TopMenu li,
+div#TopMenu p,
 div#TopMenu a {
     margin: 0;
     padding: 0;
