@@ -17,7 +17,6 @@ html {
     -webkit-text-size-adjust: 200%;
 }
 body {
-    padding-top: var(--nav-heigh);
     background-color: var(--main-bg-color);
 }
 /* footer */
@@ -61,108 +60,5 @@ div#article > h4::before {
     counter-increment: section;
     content: counter(chapter, upper-roman) "."counter(sub-chapter, decimal)"."counter(section, decimal)" ";
     font-family: var(--times-font);
-}
-
-/* Top menu */
-nav#NavBar {
-    position: fixed; top: 0px; left: 0;
-    width: 100%;
-    background-color: var(--bar-color);
-    margin: 0;
-    padding: 0;
-    max-height: 2.83rem;
-    overflow: visible;
-}
-div#Hamburger {
-    float: right;
-    background-color: unset;
-}
-div#HBIcon {
-    width: 3rem;
-    height: 3rem;
-    margin: 1rem;
-    padding: 0;
-    background-image:url(/img/hamburger.svg);
-}
-div#HBMenu {
-    background: var(--main-bg-color);
-    margin: 0;
-    padding: .5rem 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 0.3rem;
-    display: none;
-}
-div#HBMenu li {
-    margin: 1rem 0;
-}
-nav#NavBar > h1 {
-    margin: 0;
-    padding: .5rem 1rem;
-    font-size: 1.33rem;
-    color: var(--main-bg-color);
-    /* position: fixed; top: 0px; left: 0; */
-    width: 100%;
-}
-div#TopMenu ul,
-div#TopMenu ol,
-div#TopMenu li,
-div#TopMenu p,
-div#TopMenu a {
-    margin: 0;
-    padding: 0;
-}
-div#TopMenu {
-    float: right;
-    background-color: unset;
-}
-div#TopMenu > ul {
-    margin: .33rem 1rem;
-    list-style-type: none;
-    display: flex;
-}
-div#TopMenu li {
-	padding: .33rem 1rem;
-    max-height: 1.5rem;
-    text-align: center;
-    vertical-align: middle;
-    font-weight: bold;
-    border: 1px solid var(--border-color);
-    border-radius: 1.5rem;
-    background-color: var(--main-bg-color);
-    overflow: visible;
-    float: left;
-}
-div#TopMenu a {
-    text-decoration: none;
-    color: rgb(51, 51, 51);
-}
-div#TopMenu li:hover {
-    background-color: var(--dark-bg-color);
-}
-/* Top sub-menu */
-div#TopMenu > ul > li > ul {
-    margin-top: 0.2rem;
-    list-style-type: none;
-    visibility: hidden;
-    opacity: 0;
-}
-div#TopMenu > ul > li > ul > li {
-    float: none;
-}
-div#TopMenu > ul > li:hover ul {
-    animation-duration: .2s;
-    animation-name: fade-in;
-    visibility: visible;
-    opacity: 1;
-}
-@keyframes fade-in {
-    0% {
-        visibility: hidden;
-        opacity: 0;
-    }
-    100% {
-        visibility: visible;
-        opacity: 1;
-    }
 }
 

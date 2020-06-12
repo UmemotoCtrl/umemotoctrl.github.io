@@ -32,20 +32,23 @@ var mdp;
 var mdInput;
 var article;
 var raw;
-var topMenu;
 
 window.onload = function() {
 	mdp = makeMDP();
 	mdInput = document.getElementById("mdInput");
 	article = document.getElementById("article");
 	raw     = document.getElementById("raw");
-	topMenu = document.getElementById("TopMenu");
 
 	// Load topMenu
 	fetch('./md/topMenu.md').then(function(response) {
 		return response.text();
 	}).then(function($data) {
-		topMenu.innerHTML = mdp.render($data);
+		window.navbarWoFw.config.colors = ['whitesmoke', 'mediumseagreen', 'rgb(75, 191, 127)'];
+		window.navbarWoFw.config.srcHamb = 'https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@master/img/hamburger.svg';
+		window.navbarWoFw.config.srcCross = 'https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@master/img/cross.svg';
+		window.navbarWoFw.create('NavBar', mdp.render($data));
+		window.navbarWoFw.addH1('md-MathJaxオンライン動作テスト');
+		window.navbarWoFw.render();
 	});
 	// Load main md
 	if (location.search=="")

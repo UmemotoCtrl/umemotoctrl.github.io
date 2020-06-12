@@ -39,11 +39,10 @@ var loadMd = function ( argText, gaSend ) {
 		// var h1 = document.querySelector("div#article>h1:first-child")|[];
 		if (/^# (.+?)$/m.test(data))
 			document.title = data.match(/^# (.+?)$/m)[1];
-		titleH1.innerHTML = document.title;
+		window.navbarWoFw.elements.NavWoFwH1.innerHTML = document.title;
 		// For Google Analytics SPA ---
 		if ( gaSend ) {
-			HBIconState = true;
-			HBIcon.onclick();
+			window.navbarWoFw.setHambMenu(false);
 			window.history.pushState(null, null, argText);
 			scrollTo(0, 0);  // absolute (hr, ver)
 			ga('set', 'page', "/"+location.search);
@@ -57,53 +56,24 @@ var loadMd = function ( argText, gaSend ) {
 
 var mdp;
 var article;
-var topMenu;
-var Hamburger;
-var HBMenu;
-var HBIcon;
-var HBIconState = false;
-var titleH1;
-var NavBar;
 
 window.onload = function() {
 	mdp = makeMDP();
 	article = document.getElementById("article");
-	topMenu = document.getElementById("TopMenu");
-	titleH1 = document.getElementById("Title");
-	Hamburger = document.getElementById("Hamburger");
-	HBMenu = document.getElementById("HBMenu");
-	HBIcon = document.getElementById("HBIcon");
-	NavBar = document.getElementById("NavBar");
 
-	if ( navigator.userAgent.match(/iPhone|Android.+Mobile/) ) {
-	// if (true) {
-		topMenu.style.display = 'none';
-		NavBar.style.maxHeight = '5rem';
-		titleH1.style.fontSize = '3rem';
-		const root = document.documentElement;
-		root.style.setProperty('--nav-heigh', '5rem');
-	} else {
-		Hamburger.style.display = 'none';
-	}
-		
 	// Load top menu
 	fetch('./md/topMenu.md').then(function(response) {
 		return response.text();
 	}).then(function(data) {
-		topMenu.innerHTML = mdp.render(translateInnerAnchor(data));
-		HBMenu.innerHTML = mdp.render(translateInnerAnchor(data));
+		// window.navbarWoFw.mobile = true;
+		// window.navbarWoFw.config.colors = ['whitesmoke', 'mediumseagreen', 'rgb(75, 191, 127)'];
+		window.navbarWoFw.config.srcHamb = 'https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@master/img/hamburger.svg';
+		window.navbarWoFw.config.srcCross = 'https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@master/img/cross.svg';
+		window.navbarWoFw.create('NavBar', mdp.render(translateInnerAnchor(data)));
+		window.navbarWoFw.addH1('梅本 和希 (Kazuki UMEMOTO) 研究者情報');
+		window.navbarWoFw.elements.NavWoFwH1.style.fontSize = '1.5rem'
+		window.navbarWoFw.render();
 	});
-	this.HBIcon.onclick = function(){
-		if (HBIconState) {
-			HBIconState = false;
-			HBIcon.style.backgroundImage = 'url(/img/hamburger.svg)';
-			HBMenu.style.display = 'none';
-		} else {
-			HBIconState = true;
-			HBIcon.style.backgroundImage = 'url(/img/cross.svg)';
-			HBMenu.style.display = 'block';
-		}
-	};
 
 	// Load Main md file
 	loadMd( "./"+location.search, false);

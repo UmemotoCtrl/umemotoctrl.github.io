@@ -20,9 +20,6 @@ textarea#mdInput {
 body > h2 {
     clear:both;
 }
-div#Hamburger {
-    display: none;
-}
 div#article h1 {
     visibility: visible;
     margin: .5em;
