@@ -5,10 +5,8 @@
 //
 window.navbarWoFw = {
 	config: {
-		srcHamb: '/img/hamburger.svg',
-		srcCross: '/img/cross.svg',
-		// colors: ['whitesmoke', 'mediumseagreen', 'rgb(123, 211, 163)']
-		// colors: ['whitesmoke', '#8B008C', '#CC00CD']
+		srcHamb: 'https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@master/img/hamburger.svg',
+		srcCross: 'https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@master/img/cross.svg',
 		colors: ['whitesmoke', '#10606D', '#008082']
 	},
 	mobile: null,
@@ -81,9 +79,7 @@ window.navbarWoFw = {
 		this.list = argList;
 		var NavWoFwMenu = document.createElement("div");
 		NavWoFwMenu.innerHTML = this.list;
-		// console.log(NavWoFwMenu.children);
-		// NavWoFwMenu = NavWoFwMenu.firstChild;
-		NavWoFwMenu = NavWoFwMenu.children[0];
+		NavWoFwMenu = NavWoFwMenu.firstElementChild;
 		NavWoFwMenu.id = 'NavWoFwMenu';
 		NavWoFwHamburger.appendChild(NavWoFwMenu);
 
