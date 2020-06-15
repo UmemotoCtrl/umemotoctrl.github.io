@@ -42,11 +42,12 @@ window.onload = function() {
 		return response.text();
 	}).then(function(data) {
 		// window.navbarWoFw.mobile = true;
-		// window.navbarWoFw.config.colors = ['whitesmoke', 'mediumseagreen', 'rgb(75, 191, 127)'];
+		// window.navbarWoFw.config.cssRootProperties['--NavWoFwFontSize'] = '1rem';
 		window.navbarWoFw.addH1('梅本 和希 (Kazuki UMEMOTO) 研究者情報');
-		window.navbarWoFw.elements.NavWoFwH1.style.fontSize = '1.5rem'
+		window.navbarWoFw.elements.NavWoFwH1.style.fontSize = '1.33rem';
 		window.navbarWoFw.create('NavBar', mdp.render(translateInnerAnchor(data)));
 		window.navbarWoFw.render();
+		// document.getElementById('NavBar').innerHTML = mdp.render(translateInnerAnchor(data));
 	});
 
 	// Load Main md file

@@ -1,7 +1,7 @@
 body {
     max-width: 100%;
 }
-div#article {
+main#article {
     margin: 0;
     padding: 0;
     width: 54%;
@@ -20,14 +20,14 @@ textarea#mdInput {
 body > h2 {
     clear:both;
 }
-div#article h1 {
+main#article h1 {
     visibility: visible;
     margin: .5em;
     padding: 0;
     width: fit-content;
     height: fit-content;
 }
-div#article > h1 + p {
+main#article > h1 + p {
     color: initial;
     float: none;
 }

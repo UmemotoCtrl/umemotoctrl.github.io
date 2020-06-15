@@ -11,19 +11,20 @@ html {
 body {
     background-color: var(--main-bg-color);
 }
+
 /* footer */
-body > p {
-    font-size: .8rem;
+footer p {
+    font-size: .9rem;
 }
 
 /* update date */
-div#article > h1 + p {
+main#article > h1 + p {
     margin: 0;
 	padding: 0;
     float: right;
 }
 /* Sections */
-div#article > h1 {
+main#article > h1 {
     margin: 0;
 	padding: 0;
     width: 0;
@@ -31,23 +32,23 @@ div#article > h1 {
     counter-reset: chapter;
     visibility: hidden;
 }
-div#article > h2 {
+main#article > h2 {
     counter-reset: sub-chapter;
 }
-div#article > h3 {
+main#article > h3 {
     counter-reset: section;
 }
-div#article > h2::before {
+main#article > h2::before {
     counter-increment: chapter;
     content: counter(chapter, upper-roman) ". ";
     font-family: var(--times-font);
 }
-div#article > h3::before {
+main#article > h3::before {
     counter-increment: sub-chapter;
     content: counter(chapter, upper-roman) "."counter(sub-chapter, decimal)". ";
     font-family: var(--times-font);
 }
-div#article > h4::before {
+main#article > h4::before {
     counter-increment: section;
     content: counter(chapter, upper-roman) "."counter(sub-chapter, decimal)"."counter(section, decimal)" ";
     font-family: var(--times-font);
