@@ -1,14 +1,6 @@
 :root {
     --main-bg-color: whitesmoke;
-    --bar-color: mediumseagreen;
-    --dark-bar-color: rgb(19, 92, 52);
-    --border-color: #bec0c2;    /* #8e9093 */
-    --dark-bg-color: gainsboro;
-    --code-bg-color: #3f4f4f;
-    --dark-gray-color: rgb(124, 124, 124);
     --times-font: 'Times New Roman', Times, serif;
-    --default-font-size: large;
-    --nav-heigh: 3rem;
 }
 /* .MathJax { font-size: 1.5em !important; } */
 html {
@@ -21,7 +13,7 @@ body {
 }
 /* footer */
 body > p {
-    font-size: .8em;
+    font-size: .8rem;
 }
 
 /* update date */
@@ -29,7 +21,6 @@ div#article > h1 + p {
     margin: 0;
 	padding: 0;
     float: right;
-    color: var(--dark-gray-color);
 }
 /* Sections */
 div#article > h1 {

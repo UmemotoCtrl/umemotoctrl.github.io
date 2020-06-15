@@ -40,15 +40,15 @@ var loadMd = function ( argText, gaSend ) {
 		if (/^# (.+?)$/m.test(data))
 			document.title = data.match(/^# (.+?)$/m)[1];
 		window.navbarWoFw.elements.NavWoFwH1.innerHTML = document.title;
-		// For Google Analytics SPA ---
 		if ( gaSend ) {
-			window.navbarWoFw.setHambMenu(false);
+			window.navbarWoFw.setHamburgerMenu(false);
 			window.history.pushState(null, null, argText);
 			scrollTo(0, 0);  // absolute (hr, ver)
+			// For Google Analytics SPA ---
 			ga('set', 'page', "/"+location.search);
 			ga('send', 'pageview');
+			// --- For Google Analytics SPA
 		}
-		// --- For Google Analytics SPA
 		if ( MathJax.typesetPromise )
 			MathJax.typesetPromise();
 	});
@@ -67,11 +67,9 @@ window.onload = function() {
 	}).then(function(data) {
 		// window.navbarWoFw.mobile = true;
 		// window.navbarWoFw.config.colors = ['whitesmoke', 'mediumseagreen', 'rgb(75, 191, 127)'];
-		window.navbarWoFw.config.srcHamb = 'https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@master/img/hamburger.svg';
-		window.navbarWoFw.config.srcCross = 'https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@master/img/cross.svg';
-		window.navbarWoFw.create('NavBar', mdp.render(translateInnerAnchor(data)));
 		window.navbarWoFw.addH1('梅本 和希 (Kazuki UMEMOTO) 研究者情報');
 		window.navbarWoFw.elements.NavWoFwH1.style.fontSize = '1.5rem'
+		window.navbarWoFw.create('NavBar', mdp.render(translateInnerAnchor(data)));
 		window.navbarWoFw.render();
 	});
 
