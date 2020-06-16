@@ -9,10 +9,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
   <style>
     :root { --main-bg-color: whitesmoke;}
-    html {
-        font-size: 16px;
-        text-size-adjust: 200%;
-        -webkit-text-size-adjust: 200%;}
     body {
         background-color: var(--main-bg-color);
         max-width: 100%;}
@@ -29,7 +25,7 @@
   </style>
   <!-- Original -->
   <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/MarkdownParser@0.1/js/mdp.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@0.02/js/navwofw.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@0.03/js/navwofw.js" integrity="sha256-oo5U2L/wfYHlzwRSlMoJpttDAFZWM82BEtyDxtXLMOM=" crossorigin="anonymous" defer></script>
   <!-- <script src="js/onlineTest.js" defer></script> -->
   <script defer>
     let writeHTML = function () {
@@ -55,30 +51,10 @@
       fetch('./md/topMenu.md').then(function(response) {
         return response.text();
       }).then(function($data) {
-        window.navbarWoFw.config.colors = ['whitesmoke', 'rgb(65, 147, 102)', 'mediumseagreen'];
-        window.navbarWoFw.config.srcHamb = 'https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@master/img/hamburger.svg';
-        window.navbarWoFw.config.srcCross = 'https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@master/img/cross.svg';
-        window.navbarWoFw.config.navCSSForMobile = `
-          position: absolute; top: 0; left: 0;
-          width: 100%;
-          margin: 0;
-          padding auto;
-          background: var(--NavWoFwBackgroundColor);
-          display: flex;
-          color: var(--NavWoFwTextColor);
-          align-items: center; // vertical
-        `;
-        window.navbarWoFw.config.contentsCSSForDesktop += `
-        #NavWoFwH1 {
-          font-size: 1.33rem;
-        }
-        ul#NavWoFwMenu {
-          font-size: 1.1rem;
-        }
-        ul#NavWoFwMenu ul{
-          font-size: 1.1rem;
-        }`;
-        window.navbarWoFw.create('NavBar', mdp.render($data));
+        window.navbarWoFw.config.cssRootProperties['--NavWoFwBackgroundColor'] = 'rgb(65, 147, 102)';
+        window.navbarWoFw.config.cssRootProperties['--NavWoFwFocusedColor'] = 'mediumseagreen';
+        window.navbarWoFw.config.cssRootProperties['--NavWoFwLiPaddingDesktop'] = '0.7rem 0.7rem';
+        window.navbarWoFw.create(mdp.render($data));
         window.navbarWoFw.addH1('md-MathJaxオンライン動作テスト');
         window.navbarWoFw.render();
       });
@@ -130,9 +106,7 @@
 </head>
 
 <body>
-  <header>
-    <nav id="NavBar"></nav>
-  </header>
+  <header></header>
   <main>
     <textarea id="mdInput">記入欄</textarea>
     <div id="article"></div>

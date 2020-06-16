@@ -11,10 +11,6 @@
     :root {
         --main-bg-color: rgb(250, 250, 250);
         --times-font: 'Times New Roman', Times, serif;}
-    html {
-      font-size: 16px;
-      text-size-adjust: 200%;
-      -webkit-text-size-adjust: 200%;}
     body { background-color: var(--main-bg-color);}
     /* footer */
     footer p { font-size: .9rem;}
@@ -48,7 +44,7 @@
   </style>
   <!-- JS -->
   <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/MarkdownParser@0.1/js/mdp.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@0.02/js/navwofw.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@0.03/js/navwofw.js" integrity="sha256-oo5U2L/wfYHlzwRSlMoJpttDAFZWM82BEtyDxtXLMOM=" crossorigin="anonymous" defer></script>
   <!-- <script src="js/script.js" defer></script> -->
   <script defer>
     var translateInnerAnchor = function (argText) {
@@ -68,7 +64,8 @@
         // var h1 = document.querySelector("div#article>h1:first-child")|[];
         if (/^# (.+?)$/m.test(data))
           document.title = data.match(/^# (.+?)$/m)[1];
-        window.navbarWoFw.elements.NavWoFwH1.innerHTML = document.title;
+        if (window.navbarWoFw.elements.NavWoFwH1)
+          window.navbarWoFw.elements.NavWoFwH1.innerHTML = document.title;
         if ( gaSend ) {
           window.navbarWoFw.setHamburgerMenu(false);
           window.history.pushState(null, null, argText);
@@ -96,28 +93,9 @@
       }).then(function(data) {
         // window.navbarWoFw.mobile = true;
         // window.navbarWoFw.config.cssRootProperties['--NavWoFwFontSize'] = '1rem';
-        window.navbarWoFw.config.navCSSForMobile = `
-          position: absolute; top: 0; left: 0;
-          width: 100%;
-          margin: 0;
-          padding auto;
-          background: var(--NavWoFwBackgroundColor);
-          display: flex;
-          color: var(--NavWoFwTextColor);
-          align-items: center; // vertical
-        `;
-        window.navbarWoFw.config.contentsCSSForDesktop += `
-        #NavWoFwH1 {
-          font-size: 1.33rem;
-        }
-        ul#NavWoFwMenu {
-          font-size: 1.1rem;
-        }
-        ul#NavWoFwMenu ul{
-          font-size: 1.1rem;
-        }`;
-        window.navbarWoFw.addH1('梅本 和希 (Kazuki UMEMOTO) 研究者情報');
-        window.navbarWoFw.create('NavBar', mdp.render(translateInnerAnchor(data)));
+        window.navbarWoFw.config.cssRootProperties['--NavWoFwLiPaddingDesktop'] = '0.7rem 0.7rem';
+        window.navbarWoFw.addH1(document.title);
+        window.navbarWoFw.create(mdp.render(translateInnerAnchor(data)));
         window.navbarWoFw.render();
         // document.getElementById('NavBar').innerHTML = mdp.render(translateInnerAnchor(data));
       });
@@ -163,9 +141,7 @@
 </head>
 
 <body>
-  <header>
-    <nav id="NavBar"></nav>
-  </header>
+  <header></header>
   <main id="article"></main>
   <hr>
   <footer>
