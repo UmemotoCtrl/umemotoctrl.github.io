@@ -22,11 +22,19 @@ window.onload = function() {
 	fetch('./md/topMenu.md').then(function(response) {
 		return response.text();
 	}).then(function($data) {
-		window.navbarWoFw.config.colors = ['whitesmoke', 'mediumseagreen', 'rgb(75, 191, 127)'];
+		window.navbarWoFw.config.colors = ['whitesmoke', 'rgb(65, 147, 102)', 'mediumseagreen'];
 		window.navbarWoFw.config.srcHamb = 'https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@master/img/hamburger.svg';
 		window.navbarWoFw.config.srcCross = 'https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@master/img/cross.svg';
+		window.navbarWoFw.config.contentsCSSForDesktop += `
+		ul#NavWoFwMenu {
+			font-size: 1.1rem;
+		}
+		ul#NavWoFwMenu ul{
+			font-size: 1.1rem;
+		}`;
 		window.navbarWoFw.create('NavBar', mdp.render($data));
 		window.navbarWoFw.addH1('md-MathJaxオンライン動作テスト');
+		window.navbarWoFw.elements.NavWoFwH1.style.fontSize = '1.33rem';
 		window.navbarWoFw.render();
 	});
 	// Load main md

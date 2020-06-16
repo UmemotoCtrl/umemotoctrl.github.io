@@ -43,6 +43,13 @@ window.onload = function() {
 	}).then(function(data) {
 		// window.navbarWoFw.mobile = true;
 		// window.navbarWoFw.config.cssRootProperties['--NavWoFwFontSize'] = '1rem';
+		window.navbarWoFw.config.contentsCSSForDesktop += `
+		ul#NavWoFwMenu {
+			font-size: 1.1rem;
+		}
+		ul#NavWoFwMenu ul{
+			font-size: 1.1rem;
+		}`;
 		window.navbarWoFw.addH1('梅本 和希 (Kazuki UMEMOTO) 研究者情報');
 		window.navbarWoFw.elements.NavWoFwH1.style.fontSize = '1.33rem';
 		window.navbarWoFw.create('NavBar', mdp.render(translateInnerAnchor(data)));
