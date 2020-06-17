@@ -26,7 +26,6 @@
   <!-- Original -->
   <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/MarkdownParser@0.1/js/mdp.js" defer></script>
   <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@0.04/js/navwofw.js" defer></script>
-  <!-- <script src="js/onlineTest.js" defer></script> -->
   <script defer>
     let writeHTML = function () {
       var htmlTxt = mdp.render(mdInput.value);
@@ -54,6 +53,7 @@
         window.navbarWoFw.config.cssRootProperties['--NavWoFwBackgroundColor'] = 'rgb(65, 147, 102)';
         window.navbarWoFw.config.cssRootProperties['--NavWoFwFocusedColor'] = 'mediumseagreen';
         window.navbarWoFw.config.cssRootProperties['--NavWoFwLiPaddingDesktop'] = '0.7rem 0.7rem';
+        window.navbarWoFw.config.contentsCSSForDesktop += 'ul#NavWoFwMenu li {white-space: nowrap;}';
         window.navbarWoFw.create(mdp.render($data));
         window.navbarWoFw.addH1('md-MathJaxオンライン動作テスト');
         window.navbarWoFw.render();

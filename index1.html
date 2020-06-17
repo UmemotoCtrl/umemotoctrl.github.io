@@ -6,14 +6,15 @@
   <title>梅本研究者情報 (個人用)</title>
   <link rel="shortcut icon" type="image/x-icon" href="https://umemotoctrl.github.io/img/favicon.ico" />
   <!-- CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@1.4.0/dist/light.min.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@1.4.0/dist/light.min.css"> -->
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
   <style>
     :root {
         --main-bg-color: rgb(250, 250, 250);
         --times-font: 'Times New Roman', Times, serif;}
-    body { background-color: var(--main-bg-color);}
+    /* body { background-color: var(--main-bg-color);} */
     /* footer */
-    footer p { font-size: .9rem;}
+    /* footer p { font-size: .9rem;} */
     /* update date */
     main#article > h1 + p {
       margin: 0;
@@ -44,7 +45,9 @@
     </style>
   <!-- JS -->
   <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/MarkdownParser@0.1.1/js/mdp.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@0.04/js/navwofw.js" defer></script>
+  <!-- <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@0.04/js/navwofw.js" defer></script> -->
+  <!-- <script src="js/navwofw.js" defer></script> -->
+  <!-- <script src="js/script.js" defer></script> -->
   <script defer>
     var translateInnerAnchor = function (argText) {
       argText = argText.replace(/\[(.+?)\]\((\.\/)(?!\?id\=)\)/g, "<a href='javascript:loadMd(\"$2\",true);'>$1</a>");	// Inner Anchor Link
@@ -63,10 +66,9 @@
         // var h1 = document.querySelector("div#article>h1:first-child")|[];
         if (/^# (.+?)$/m.test(data))
           document.title = data.match(/^# (.+?)$/m)[1];
-        if (window.navbarWoFw.elements.NavWoFwH1)
-          window.navbarWoFw.elements.NavWoFwH1.innerHTML = document.title;
+        document.querySelector('header > h1').innerHTML = document.title;
         if ( gaSend ) {
-          window.navbarWoFw.setHamburgerMenu(false);
+          // window.navbarWoFw.setHamburgerMenu(false);
           window.history.pushState(null, null, argText);
           scrollTo(0, 0);  // absolute (hr, ver)
           // For Google Analytics SPA ---
@@ -92,12 +94,11 @@
       }).then(function(data) {
         // window.navbarWoFw.mobile = true;
         // window.navbarWoFw.config.cssRootProperties['--NavWoFwFontSize'] = '1rem';
-        window.navbarWoFw.config.contentsCSSForDesktop += 'ul#NavWoFwMenu li {white-space: nowrap;}';
-        window.navbarWoFw.config.cssRootProperties['--NavWoFwLiPaddingDesktop'] = '0.7rem 0.7rem';
-        window.navbarWoFw.addH1(document.title);
-        window.navbarWoFw.create(mdp.render(translateInnerAnchor(data)));
-        window.navbarWoFw.render();
-        // document.getElementById('NavBar').innerHTML = mdp.render(translateInnerAnchor(data));
+        // window.navbarWoFw.config.cssRootProperties['--NavWoFwLiPaddingDesktop'] = '0.7rem 0.7rem';
+        // window.navbarWoFw.addH1(document.title);
+        // window.navbarWoFw.create(mdp.render(translateInnerAnchor(data)));
+        // window.navbarWoFw.render();
+        document.getElementById('NavBar').innerHTML = mdp.render(translateInnerAnchor(data));
       });
 
       // Load Main md file
@@ -141,7 +142,7 @@
 </head>
 
 <body>
-  <header></header>
+  <header><h1></h1><nav id="NavBar"></nav></header>
   <main id="article"></main>
   <hr>
   <footer>
