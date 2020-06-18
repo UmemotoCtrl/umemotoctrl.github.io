@@ -141,7 +141,7 @@ print("hoge")
 
 ### リンクと画像
 
-`[markdown](./?id=tips:markdown)`と書けば[markdown](./?id=tips:markdown)と表示されます．`[表示文字](url)`です．
+`[markdown](https://umemotoctrl.github.io/?id=tips:markdown)`と書けば[markdown](https://umemotoctrl.github.io/?id=tips:markdown)と表示されます．`[表示文字](url)`です．
 
 画像も似たような書き方で表示できます．`![画像が表示されない時の文字](url)`大きさ調整をしたい場合はhtmlのimgタグを使えば良いようです．その他にも記法はあると思いますが，他は解説サイトを見てください．
 
