@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>梅本研究者情報 (個人用)</title>
-  <link rel="shortcut icon" type="image/x-icon" href="https://umemotoctrl.github.io/img/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://umemotoctrl.github.io/img/favicon.ico">
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@1.4.0/dist/light.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/styles/monokai.min.css">  
   <style>
     :root {
         --main-bg-color: rgb(250, 250, 250);
@@ -74,8 +75,6 @@
           ga('send', 'pageview');
           // --- For Google Analytics SPA
         }
-        if ( MathJax.typesetPromise )
-          MathJax.typesetPromise();
       });
     }
 
@@ -97,38 +96,66 @@
         window.navbarWoFw.addH1(document.title);
         window.navbarWoFw.create(mdp.render(translateInnerAnchor(data)));
         window.navbarWoFw.render();
-        // document.getElementById('NavBar').innerHTML = mdp.render(translateInnerAnchor(data));
       });
 
       // Load Main md file
       loadMd( "./"+location.search, false);
 
-      // For MathJax
-      // if ( !navigator.userAgent.match(/iPhone|Android.+Mobile/) )
-      // 	$('.MathJax').css('font-size','1em !important');
-      (function () {
-        window.MathJax = {
-          tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-          },
-          svg: {
-          fontCache: 'global'
+    // For MathJax
+    (function () {
+      window.MathJax = {
+        tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+        fontCache: 'global'
+        }
+      };
+      // var scriptIE = document.createElement("script");
+      // scriptIE.src  = "https://polyfill.io/v3/polyfill.min.js?features=es6";
+      // scriptIE.async = true;
+      // document.getElementsByTagName("head")[0].appendChild(scriptIE);
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js";
+      script.async = true;
+      document.getElementsByTagName("head")[0].appendChild(script);
+      script.onload = (function () {
+        let observer = new MutationObserver( function () {
+          if ( typeof MathJax.typesetPromise != "undefined" ) {
+            MathJax.typesetPromise(article.childNodes);
           }
-        };
-        var scriptIE = document.createElement("script");
-        scriptIE.src  = "https://polyfill.io/v3/polyfill.min.js?features=es6";
-        scriptIE.async = true;
-        document.getElementsByTagName("head")[0].appendChild(scriptIE);
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src  = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js";
-        script.async = true;
-        document.getElementsByTagName("head")[0].appendChild(script);
-        script.onload = (function () {
-          // console.log(MathJax);
-        })();
+        });
+        observer.observe(article, {childList: true});
       })();
-    }
+    })();
+    // highlight.js
+    (function () {
+      // var link = document.createElement("link");
+      // link.rel  = 'stylesheet'; // atom-one-dark, railscasts, monokai-sublime, zenburn, agate, lightfair, a11y-dark
+      // link.href = '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/styles/monokai.min.css';
+      // document.getElementsByTagName("head")[0].appendChild(link);
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/highlight.min.js";
+      script.async = false;
+      document.getElementsByTagName("head")[0].appendChild(script);
+      var script1 = document.createElement("script");
+      script1.type = "text/javascript";
+      script1.src  = "//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/languages/latex.min.js";
+      script1.async = false;
+      document.getElementsByTagName("head")[0].appendChild(script1);
+      script1.onload = (function () {
+        let elements = document.querySelectorAll('#article pre code');
+        for (let ii = 0; ii < (elements||[]).length; ii++) hljs.highlightBlock(elements[ii]);
+        let observer = new MutationObserver( function () {
+          var elements = document.querySelectorAll('#article pre code');
+          for (let ii = 0; ii < (elements||[]).length; ii++) hljs.highlightBlock(elements[ii]);
+        });
+        observer.observe(article, {childList: true});
+      });
+    })();
+  };
     </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166116914-1"></script>
@@ -145,8 +172,8 @@
   <main id="article"></main>
   <hr>
   <footer>
-    <p>JavaScript, MathJaxを使用し表示されます．対応ブラウザでご覧ください．Internet Explorerでは表示できません．</p>
+    <p>JavaScript, MathJax, highlight.jsを使用し表示されます．Internet Explorerでは表示できません．</p>
     <p>Copyright (c) 2020 Kazuki Umemoto</p>
     </footer>
-</body>
+  </body>
 </html>
