@@ -44,7 +44,7 @@
         font-family: var(--times-font);}
     </style>
   <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/MarkdownParser@0.1.1/js/mdp.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/MarkdownParser@0.1.2/js/mdp.js" defer></script>
   <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@0.05/js/navwofw.js" defer></script>
   <script defer>
     var translateInnerAnchor = function (argText) {
@@ -81,7 +81,7 @@
     var mdp;
     var article;
 
-    window.onload = function() {
+    document.addEventListener('DOMContentLoaded', function() {
       mdp = makeMDP();
       article = document.getElementById("article");
 
@@ -114,7 +114,6 @@
         };
         // var scriptIE = document.createElement("script");
         // scriptIE.src  = "https://polyfill.io/v3/polyfill.min.js?features=es6";
-        // scriptIE.async = true;
         // document.getElementsByTagName("head")[0].appendChild(scriptIE);
         var script = document.createElement("script");
         script.type = "text/javascript";
@@ -156,7 +155,7 @@
           observer.observe(article, {childList: true});
         });
       })();
-    };
+    });
     </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166116914-1"></script>

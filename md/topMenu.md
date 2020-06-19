@@ -17,4 +17,5 @@
   * [Markdown練習](./onlineTest.html)
   * [Comparing<br>JS md Parsers](./MarkdownParser/)
   * [Usage for<br>JS md Parsers](./?id=others:usageForParsers)
+  * [MathJaxの使い方](./?id=others:MathjaxUsage)
 
