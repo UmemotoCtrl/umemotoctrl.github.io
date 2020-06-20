@@ -105,5 +105,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 onloadでロード時に処理してくれるはずなのですが，typsetPromiseがundefinedになってしまったので，ifで判定しています．おそらくロードはできたが実行はまだなのかと思っています．Mathjaxオブジェクトは設定の時に作っているので存在しているはずです．他の部分にtypsetPromiseを書く場合はMathjaxオブジェクト自体の存在チェックもした方が良いかもしれません．
 
-サイトの表示が早くなったような気がしませんか？もししていたら嬉しいです．
-
