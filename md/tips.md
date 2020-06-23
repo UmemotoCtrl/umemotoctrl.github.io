@@ -21,7 +21,8 @@
 - 正規表現テストツール：[Debuggex](https://www.debuggex.com/)，[regular expressions101](https://regex101.com/)．一行一行コンマやスペースを付けたり消したりするのを終わりにしたい（実際は終わりませんが）人のために
 - [Matlabドキュメンテーション](https://jp.mathworks.com/help/)：とっても詳しい
 - [DeepL翻訳ツール](https://www.deepl.com/translator)：Google翻訳より良いとも．例文検索Linguee
-- [Google Jamboard](https://jamboard.google.com/)：手書きメモのリアルタイム共有．実物じゃなくサービスのもの．Web会議で便利．Zoomなら同様の機能搭載．
+- [Google Jamboard](https://jamboard.google.com/)：手書きメモのリアルタイム共有．実物じゃなくサービスのもの．Web会議で便利．Zoomなら同様の機能搭載
+- [Detexify](http://detexify.kirelabs.org/classify.html)：記号のLatex入力方法を探せます
 
 ## 記載予定のもの
 

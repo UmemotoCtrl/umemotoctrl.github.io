@@ -6,6 +6,7 @@
   <title>md-MathJaxオンライン動作テスト</title>
   <link rel="shortcut icon" type="image/x-icon" href="https://umemotoctrl.github.io/img/favicon.ico" />
   <!-- CSS -->
+  <!-- The MIT License (MIT), Copyright © 2019 Kognise -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
   <style>
     :root { --main-bg-color: whitesmoke;}
@@ -15,24 +16,27 @@
     main {
       margin: 0 auto;
       display: flex;}
-      textarea#mdInput {
-        margin-right: 1%;
-        max-width: 45%;}
-      div#article {
-        max-width: 53%;}
+    #mdInput {
+      /* height: 600px; */
+      min-height: 600px;
+      padding: 1rem;
+      margin-right: 1%;
+      width: 45%;}
+    div#article {
+      max-width: 53%;}
     /* footer */
     footer p { font-size: .9rem;}
   </style>
-  <!-- Original -->
-  <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/MarkdownParser@0.1.2/js/mdp.js" defer></script>
+  <!-- JS -->
+  <!-- ace.js BSD License. Copyright (c) 2010, Ajax.org B.V. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/MarkdownParser@0.1.3/js/mdp.js" defer></script>
   <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@0.05/js/navwofw.js" defer></script>
   <script defer>
     let writeHTML = function () {
-      var htmlTxt = mdp.render(mdInput.value);
+      var htmlTxt = mdp.render(mdInput.getValue());
       article.innerHTML = htmlTxt;
       raw.innerHTML = htmlTxt.replace(/</g,'&lt;').replace(/>/g,'&gt;');
-      if ( MathJax.typesetPromise )
-        MathJax.typesetPromise();
     }
 
     var mdp;
@@ -40,9 +44,13 @@
     var article;
     var raw;
 
-    window.onload = function() {
+    document.addEventListener('DOMContentLoaded', function() {
       mdp = makeMDP();
-      mdInput = document.getElementById("mdInput");
+      mdInput = ace.edit("mdInput");
+      mdInput.setTheme("ace/theme/monokai");
+      mdInput.setFontSize(16);
+      mdInput.session.setMode("ace/mode/markdown");
+      mdInput.session.setUseWrapMode(true);
       article = document.getElementById("article");
       raw     = document.getElementById("raw");
 
@@ -65,34 +73,59 @@
       fetch($file).then(function(response) {
         return response.text();
       }).then(function(data) {
-        mdInput.innerHTML = data;
+        mdInput.setValue(data);
+        mdInput.clearSelection();
+        mdInput.session.on("change", writeHTML);
         writeHTML( data );
       });
-      mdInput.oninput = writeHTML;
-      // for MathJax
+
+      // MathJax Apache License Version 2.0, January 2004 http://www.apache.org/licenses/
       (function () {
         window.MathJax = {
-          tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          startup: {
+            // elements: null,
+            // typeset: true,
+            // ready: Startup.defaultReady.bind(Startup),          // Called when components are loaded
+            pageReady: function () {
+              let observer = new MutationObserver( function () {
+                  MathJax.texReset();
+                  MathJax.typesetPromise(article.childNodes);
+              });
+              observer.observe(article, {childList: true});
+              return MathJax.startup.defaultPageReady();
+            },
           },
-          svg: {
-          fontCache: 'global'
-          }
+          tex: {
+            tags: 'ams',
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            // macros: {
+            //   RR: '{\\bf R}',
+            //   bold: ['{\\bf #1}',1]
+            // },
+          },
+          svg: {
+            fontCache: 'global',
+          },
+          options: {
+            // skipHtmlTags: [            //  HTML tags that won't be searched for math
+            //   'script', 'noscript', 'style', 'textarea', 'pre',
+            //   'code', 'annotation', 'annotation-xml'
+            // ],
+            // processHtmlClass: 'tex2jax_process',  //  class that marks tags that should be searched
+            ignoreHtmlClass: 'tex2jax_ignore',
+          },
         };
         var scriptIE = document.createElement("script");
         scriptIE.src  = "https://polyfill.io/v3/polyfill.min.js?features=es6";
-        scriptIE.async = true;
+        scriptIE.async = false;
         document.getElementsByTagName("head")[0].appendChild(scriptIE);
         var script = document.createElement("script");
         script.type = "text/javascript";
         script.src  = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js";
         script.async = true;
         document.getElementsByTagName("head")[0].appendChild(script);
-        script.onload = (function () {
-          // console.log(MathJax);
-        })();
       })();
-    }
+    });
   </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166116914-1"></script>
@@ -107,14 +140,14 @@
 <body>
   <header></header>
   <main>
-    <textarea id="mdInput">記入欄</textarea>
+    <div id="mdInput" class='tex2jax_ignore'></div>
     <div id="article"></div>
   </main>
   <h2>markdown to HTML結果</h2>
   <pre><code id="raw"></code></pre>
   <hr />
   <footer>
-    <p>JavaScript, MathJaxを使用し表示されます．対応ブラウザでご覧ください．Internet Explorerでは表示できません．</p>
+    <p>Internet Explorerでは表示できません．</p>
     <p>Copyright (c) 2020 Kazuki Umemoto</p>
   </footer>
 </body>

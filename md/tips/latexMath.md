@@ -1,6 +1,6 @@
 # Latex数式コマンド集
 
-**更新日：2020/6/2**
+**更新日：2020/6/23**
 
 ## 基本編
 
@@ -46,7 +46,7 @@ $$
 - 根ルート$\sqrt{2}$，3乗根$\sqrt[3]{2}$
 - $\max$，$\min$．$\sup$，$\inf$．添字も有効で$\displaystyle \max_{x \in D}\|f(x)\|$
 - 極限$f'(x)=\lim_{h\to \pm 0}\frac{f(x+h)-f(x)}{h}$
-- ベクトルなどを太字にする`$\boldsymbol{x}$`
+- ベクトルなどを太字にする`$\boldsymbol{x}$`=$\boldsymbol{x}$
 - 実数空間$\mathbb{R}$，複素空間$\mathbb{C}$，自然数空間$\mathbb{N}$
 - 等号不等号$=$，$\neq$，$\leq$，$\geq$，近似等号$\approx$．2重線や点をつけた近似にもできるがおすすめしない．
 - 集合の要素・元$\in$，部分集合$\subset$，等号含む$\subseteq$
@@ -59,7 +59,7 @@ $$
 - 広めのスペース空け$x\quad y$，$x\qquad y$
 - 式内で文字を書く$xはy$．Markdownでは直接書いてしまってよい．LaTeXでは`\mbox{}`や`\text{}`
 
-`\displaystyle`とか`\partial`とか長すぎと思ったら，LaTeXでは自作コマンドで短縮コマンドを作ることができる．既存コマンド名との衝突に注意．
+`\displaystyle`とか`\partial`とか長すぎと思ったら，LaTeXでは自作コマンド，MathJaxならmacrosで短縮コマンドを作ることができる．既存コマンド名との衝突に注意．
 
 ## 環境：数式で使うものは少ない
 
@@ -72,14 +72,13 @@ $$
 イコールが揃う複数行数式１：Latexでは全体に式番号が一つ付く
 
 $$
-\tag{A1} \begin{split}
+\begin{equation}\tag{A1}\begin{split}
 \dot{x} =& f(x,~u) \\
 y =& g(x)
-\end{split}
+\end{split}\end{equation}
 $$
 
 =が揃う複数行数式２：Latexではそれぞれに式番号が一つ付く
-
 $$
 \begin{align}
 \tag{A2} \dot{x} =& f(x,~u) \\
@@ -97,6 +96,6 @@ $$
 \end{cases}
 $$
 
-別行立て数式には`\tag{数字など}`で名前を付けられます．Latexで便利な相互参照は無い様子．Latexにコピペすることを想定すると，式番号を使う場合はLatexで使用される(1)などを避け，上のようにしておけば番号が混ざらないので後で処理しやすい．Typoraは`split`へのtagは処理してくれない様子．
+別行立て数式には`\tag{数字など}`で名前を付けられます．TyporaはLatexで便利な参照に対応していない様子．MathJaxなら`\label{...}, \ref{...}, \eqref{...}`の参照使えます．Typoraは挙動からすると内部の数式処理はMathJaxを使っているようなのでそのうちに使えるようになるのでは．Latexにコピペすることを想定すると，式番号を使う場合はLatexで使用される(1)などを避け，(A1) のようにしておけば番号が混ざらないので後で処理しやすい．Typoraは`split`へのtagはうまく処理してくれない様子．
 
 **注記**：本来のLatexとほんのちょっと記法が違うものがあります．LaTeXでは，`$$`は無しで`align`環境を書く．`split`環境は`$$`に対応していない場合があるので，`$$`ではなくequation環境内で使う．`equation`や`align`は自動番号付けされ，`align*`環境を使えば式番号を付けない．
