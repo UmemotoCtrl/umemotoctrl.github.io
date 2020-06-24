@@ -1,4 +1,4 @@
-# おすすめなMathJaxの使い方
+# おすすめなMathJax3の使い方
 
 **更新日：2020/6/23**
 
@@ -10,7 +10,7 @@ MathJaxはWeb上で数式を表示するためのデファクトスタンダー�
 
 ### 最もシンプルな使い方
 
-本家Webの[getting started](https://www.mathjax.org/#gettingstarted)にある，方法は
+本家Webの[getting started](https://www.mathjax.org/#gettingstarted)にある方法は
 
 ```html
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 `pageReady`はMathJaxオブジェクトが生成された時に呼び出されます．`script.onload`で関数を呼び出すこともできますが，`pageReady`はオブジェクト生成後に呼び出されるので扱いやすい．`MathJax.startup.defaultPageReady()`は標準の処理で，`typeset()`を呼び出します．他の部分に`typsetPromise`を書く場合はMathjaxオブジェクト自体の存在チェックやメソッドの存在チェックをする必要が出てきます．
 
-[公式ドキュメント](http://docs.mathjax.org/en/latest/options/index.html)に詳しくありますが，便利そうな設定について記載します．
+[公式ドキュメント](http://docs.mathjax.org/en/latest/options/index.html)に詳しくありますが，便利そうな設定を紹介します．
 
 ```javascript
         window.MathJax = {
