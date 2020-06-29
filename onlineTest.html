@@ -38,11 +38,18 @@
       article.innerHTML = htmlTxt;
       raw.innerHTML = htmlTxt.replace(/</g,'&lt;').replace(/>/g,'&gt;');
     }
+    let writeHtmlLater = function () {
+      if (typeof timer != "undefined") {
+      }
+      clearTimeout(timer);
+      timer = setTimeout(writeHTML, 500);
+    }
 
     var mdp;
     var mdInput;
     var article;
     var raw;
+    var timer;
 
     document.addEventListener('DOMContentLoaded', function() {
       mdp = makeMDP();
@@ -75,7 +82,7 @@
       }).then(function(data) {
         mdInput.setValue(data);
         mdInput.clearSelection();
-        mdInput.session.on("change", writeHTML);
+        mdInput.session.on("change", writeHtmlLater);
         writeHTML( data );
         mdInput.resize(true);
       });
@@ -148,8 +155,7 @@
   <pre><code id="raw"></code></pre>
   <hr />
   <footer>
-    <p>Internet Explorerでは表示できません．</p>
-    <p>Copyright (c) 2020 Kazuki Umemoto</p>
+    <p>Internet Explorerでは表示できません．&copy; 2020 Kazuki Umemoto</p>
   </footer>
 </body>
 </html>

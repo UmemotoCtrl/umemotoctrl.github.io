@@ -1,6 +1,6 @@
 # Latex数式コマンド集
 
-**更新日：2020/6/23**
+**更新日：2020/6/25**
 
 ## 基本編
 
@@ -16,12 +16,13 @@ $$
 y = f(x)
 $$
 
-と書きます．
+と書きます．MathJaxはオプション指定で`\[ ... \]`も使えるが，Typora未対応．
 
 書き方には**特殊文字** (一般名称かは不明，制御文字とも)，**コマンド**と**環境environment**があります．特殊文字はアンダーバー`a_1`=$a_1$などです．コマンドは`\コマンド名{引数}{引数-2，あれば}`，環境は`\begin{環境名}中身\end{環境名}`と書きます．コマンドは引数のないものもあり，例えばギリシャ文字`\alpha`=$\alpha$や`\LaTeX`=$\LaTeX$などがあります．複数引数コマンドは`$\frac{n}{d}$`=$\frac{n}{d}$などです．コマンドと環境には四角括弧`[]`でオプションを指定できるものもあります（`$\sqrt[3]{2}$`=$\sqrt[3]{2}$など）．`\`は**バックスラッシュ**で，`¥`でも良い場合があります．エディタ次第かも．私はalt+¥で入力しています．最近のエディタはしっかり区別してくれます．
 
 ## 特殊文字：とても種類が少ない
 
+- `\`，コマンドや環境に使う．`\\`で複数行式や行列の改行．表示するにはコマンドで`\backslash`=$\backslash$．似たようなものに`\setminus`=$\setminus$がある
 - 中括弧`{}`，コマンドや環境に使うので特殊な文字．そのまま使うと無視される．`{x}`=${x}$
 - アンダーバー`a_1`=$a_1$，複数文字なら`a_{10}`=$a_{10}$
 - ハット文字`a^2`=$a^2$，複数文字なら`a^{20}`=$a^{20}$
@@ -42,22 +43,23 @@ $$
 
 - 分数`\frac{n}{d}`=$\frac{n}{d}$，インラインなら小さく，別行立てなら大きく表示される．大きくしたいなら`\dfrac{n}{d}`=$\dfrac{n}{d}$．単純なものなら`n/d`=$n/d$と書く．微分$\dfrac{dy}{dx}$，偏微分$\dfrac{\partial y}{\partial x}$
 - 総和，総乗`\sum_{n=1}^5 n`=$\sum_{n=1}^5 n$，`\prod_{n=1}^5 n`=$\prod_{n=1}^5 n$．大きくしたいなら`\displaystyle \sum_{n=1}^5 n`=$\displaystyle \sum_{n=1}^5 n$
-- 三角関数`\sin`=$\sin$，`\cos`=$\cos$，`\tan`=$\tan$，`\tanh`=$\tanh$など，普通に`sin`は$sin$で斜体になりおすすめしない
+- 三角関数`\sin`=$\sin$，`\cos`=$\cos$，`\tan`=$\tan$，`\tanh`=$\tanh$など，普通に`sin`は$sin$で斜体になりマナー違反
 - 根ルート$\sqrt{2}$，3乗根$\sqrt[3]{2}$
-- $\max$，$\min$．$\sup$，$\inf$．添字も有効で$\displaystyle \max_{x \in D}\|f(x)\|$
-- 極限$f'(x)=\lim_{h\to \pm 0}\frac{f(x+h)-f(x)}{h}$
+- 最大最小極大極小$\max$，$\min$．$\sup$，$\inf$．添字も有効で$\displaystyle \max_{x \in D}\|f(x)\|$
+- 極限`\lim`．$f'(x)=\lim_{h\to \pm 0}\frac{f(x+h)-f(x)}{h}$
 - ベクトルなどを太字にする`$\boldsymbol{x}$`=$\boldsymbol{x}$
 - 実数空間$\mathbb{R}$，複素空間$\mathbb{C}$，自然数空間$\mathbb{N}$
 - 等号不等号$=$，$\neq$，$\leq$，$\geq$，近似等号$\approx$．2重線や点をつけた近似にもできるがおすすめしない．
-- 集合の要素・元$\in$，部分集合$\subset$，等号含む$\subseteq$
-- $\forall$，集合$D$に含まれる任意の$x$について，$f_1(x)=f_2(x)$を満たす．$f_1(x)=f_2(x),~\forall x\in D$
-- $\alpha$，$\beta$，$\gamma$，棒が出ないファイ$\varphi$，棒が出るファイ$\phi$，[LaTeXコマンド集，ギリシャ文字](http://www.latex-cmd.com/special/greek.html)
+- 集合の要素・元$\in$，部分集合$\subset$，等号含む$\subseteq$．反対なら$\supset,~\supseteq$
+- 集合の演算，共通部分$\cap$, 和集合$\cup$, 直和$\oplus$, 減算$\setminus$
+- for all $\forall$，存在する$\exists$
+- ギリシャ文字$\alpha$，$\beta$，$\gamma$，棒が出ないファイ$\varphi$，棒が出るファイ$\phi$，[LaTeXコマンド集，ギリシャ文字](http://www.latex-cmd.com/special/greek.html)
 - 丸やドット$\dots$，$\cdots$，$\vdots$，$\ddots$，$\cdot$，$\bullet$，$\circ$
 - 括弧$(x)$・$[x]$・$|x|$・$\| x\|$．$\{ x\}$
 - 括弧の大きさ自動調整$\left(\dfrac{n}{d}\right)$・$\left[\dfrac{n}{d}\right]$・$\left\|\dfrac{n}{d}\right\|$・$\left\{\dfrac{n}{d}\right\}$，手動調整[LaTeX入門，括弧の大きさを指定](https://medemanabu.net/latex/bracket/)．
 - 未定義関数の立体`\mathrm{diag}(x)`=$\mathrm{diag}(x)$，ベクトル$x$を対角要素にもつ行列
 - 広めのスペース空け$x\quad y$，$x\qquad y$
-- 式内で文字を書く$xはy$．Markdownでは直接書いてしまってよい．LaTeXでは`\mbox{}`や`\text{}`
+- 式内で文字を書く$xはy$．Markdownでは直接書いてしまってよい．LaTeXでは`\mbox{}`や`\text{}`で，MathJaxはどちらも処理してくれるが，日本語はバランス悪い．
 
 `\displaystyle`とか`\partial`とか長すぎと思ったら，LaTeXでは自作コマンド，MathJaxならmacrosで短縮コマンドを作ることができる．既存コマンド名との衝突に注意．
 
@@ -69,7 +71,7 @@ $$
 A := \begin{bmatrix}a&b\\ c&d\end{bmatrix}
 $$
 
-イコールが揃う複数行数式１：Latexでは全体に式番号が一つ付く
+イコールが揃う複数行数式１：`equation`+`split`環境，Latexでは全体に式番号が一つ付く
 
 $$
 \begin{equation}\tag{A1}\begin{split}
@@ -78,7 +80,7 @@ y =& g(x)
 \end{split}\end{equation}
 $$
 
-=が揃う複数行数式２：Latexではそれぞれに式番号が一つ付く
+=が揃う複数行数式２：`align`環境，Latexではそれぞれに式番号が一つ付く．`eqnarray`は使わなくて良い模様
 $$
 \begin{align}
 \tag{A2} \dot{x} =& f(x,~u) \\
@@ -86,7 +88,7 @@ $$
 \end{align}
 $$
 
-条件わけ
+条件わけ．右にカッコを閉じたい場合は`array`と`\left. \right\}`を駆使して下さい．`\left.`は表示されない．大きさ判定のために左右セットにしなければならないようで，非表示ですが必須．大きさを指定する$\bigr\}$などは片側でも良いが，手動調整は旨味がない．
 
 $$
 \tag{A4} f(x) :=
@@ -98,4 +100,4 @@ $$
 
 別行立て数式には`\tag{数字など}`で名前を付けられます．TyporaはLatexで便利な参照に対応していない様子．MathJaxなら`\label{...}, \ref{...}, \eqref{...}`の参照使えます．Typoraは挙動からすると内部の数式処理はMathJaxを使っているようなのでそのうちに使えるようになるのでは．Latexにコピペすることを想定すると，式番号を使う場合はLatexで使用される(1)などを避け，(A1) のようにしておけば番号が混ざらないので後で処理しやすい．Typoraは`split`へのtagはうまく処理してくれない様子．
 
-**注記**：本来のLatexとほんのちょっと記法が違うものがあります．LaTeXでは，`$$`は無しで`align`環境を書く．`split`環境は`$$`に対応していない場合があるので，`$$`ではなくequation環境内で使う．`equation`や`align`は自動番号付けされ，`align*`環境を使えば式番号を付けない．
+**注記**：本来のLatexとほんのちょっと記法が違うものがあります．LaTeXでは，`$$`は無しで`align`環境を書く．`split`環境は`$$`に対応していない場合があるので，`$$`ではなくequation環境内で使う．`equation`や`align`は自動番号付けされ，`align*`環境を使えば式番号を付けない．`align`環境で`\notag`と書けば，その行の番号を非表示にする．
