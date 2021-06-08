@@ -52,7 +52,7 @@
       argText = argText.replace(/\[(.+?)\]\((\.\/\?id\=.*?)\)/g, "<a href='javascript:loadMd(\"$2\",true);'>$1</a>");		// Inner Anchor Link
       return argText;
     }
-    var loadMd = function ( argText, gaSend ) {
+    var loadMd = function ( argText, inPageTransition ) {
       // Load markdown file
       let file = "./md/" + argText.replace("./?id=","").replace(/:/g, "/") + ".md";
       if (argText=="./")
@@ -65,14 +65,10 @@
           document.title = data.match(/^# (.+?)$/m)[1];
         if (window.navbarWoFw.elements.NavWoFwH1)
           window.navbarWoFw.elements.NavWoFwH1.innerHTML = document.title;
-        if ( gaSend ) {
+        if ( inPageTransition ) {
           window.navbarWoFw.setHamburgerMenu(false);
           window.history.pushState(null, null, argText);
           scrollTo(0, 0);  // absolute (hr, ver)
-          // For Google Analytics SPA ---
-          ga('set', 'page', "/"+location.search);
-          ga('send', 'pageview');
-          // --- For Google Analytics SPA
         }
       });
     }
@@ -99,6 +95,10 @@
 
       // Load Main md file
       loadMd( "./"+location.search, false);
+      // Process Back/Forward buttons of browser
+      window.addEventListener('popstate', function(e) {
+        loadMd( "./"+location.search, false);
+      });
 
       // MathJax Apache License Version 2.0, January 2004 http://www.apache.org/licenses/
       (function () {
@@ -159,14 +159,6 @@
         });
       })();
     });
-    </script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166116914-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-166116914-1');
     </script>
 </head>
 
