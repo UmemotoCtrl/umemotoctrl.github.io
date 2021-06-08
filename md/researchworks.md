@@ -1,6 +1,6 @@
 # 研究業績リスト Research Works
 
-**更新日：2020/7/29**
+**更新日：2021/6/8**
 
 ## 外部サイトで見る場合
 
@@ -13,6 +13,7 @@
 
 ## 学術論文 (査読あり) Journal Paper
 
+1. Tiehua Wang, Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Non-cascade Adaptive Sliding Mode Control for Quadrotor UAVs under Parametric Uncertainties and External Disturbance with Indoor Experiments", Journal of Intelligent and Robotic Systems, Vol. 102, No. 8, 2021.4, [DOI: 10.1007/s10846-021-01351-z](https://doi.org/10.1007/s10846-021-01351-z)
 1. Shigeru Nagasawa, Tetsuya Yamamoto, Kazuki Umemoto, Shigekazu Suzuki, Akira Hine, Daishiro Yamaguchi, "Estimation of bending characteristics of creased paperboard using 45° tapered groove against unbalanced punch indentation", Journal of Advanced Mechanical Design, Systems, and Manufacturing, Vol. 14, No. 6, 2020.7, [DOI: 10.1299/jamdsm.2020jamdsm0083](https://doi.org/10.1299/jamdsm.2020jamdsm0083)
 1. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Dynamic cooperative transportation control using friction forces of n multi-rotor unmanned aerial vehicles", Journal of Intelligent and Robotic Systems, 2020.5, [DOI: 10.1007/s10846-020-01212-1](https://doi.org/10.1007/s10846-020-01212-1)
 1. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, Tadashi Egami, "Stability Analysis of a Control System with Nonlinear Input Uncertainty based on Disturbance Observer", International Journal of Robust and Nonlinear Control, Vol. 30, No. 11, pp.4433-4448, 2020.4, [DOI: 10.1002/rnc.4999](https://doi.org/10.1002/rnc.4999)
