@@ -1,6 +1,6 @@
 # Latex数式コマンド集
 
-**更新日：2021/6/16**
+**更新日：2021/6/30**
 
 ## 基本編
 
@@ -72,7 +72,7 @@ $$
 A := \begin{bmatrix}a&b\\ c&d\end{bmatrix}
 $$
 
-イコールが揃う複数行数式１：`equation`+`split`環境，Latexでは全体に式番号が一つ付く
+イコールが揃う複数行数式１：`equation`+`split`または`equation`+`aligned`環境，全体に式番号が一つ付く
 
 $$
 \begin{equation}\tag{A1}\begin{split}
@@ -81,10 +81,17 @@ y =& g(x)
 \end{split}\end{equation}
 $$
 
+$$
+\begin{equation}\tag{A1}\begin{aligned}
+\dot{x} =& f(x,~u) \\
+y =& g(x)
+\end{aligned}\end{equation}
+$$
+
 =が揃う複数行数式２：`align`環境，Latexではそれぞれに式番号が一つ付く．`eqnarray`は使わなくて良い模様
 $$
 \begin{align}
-\tag{A2} \dot{x} =& f(x,~u) \\
+\tag{A2}\label{LabelX} \dot{x} =& f(x,~u) \\
 \tag{A3} y =& g(x)
 \end{align}
 $$
@@ -99,6 +106,7 @@ $$
 \end{cases}
 $$
 
-別行立て数式には`\tag{数字など}`で名前を付けられます．TyporaはLatexで便利な参照に対応していない様子．MathJaxなら`\label{...}, \ref{...}, \eqref{...}`の参照使えます．Typoraは挙動からすると内部の数式処理はMathJaxを使っているようなのでそのうちに使えるようになるのでは．Latexにコピペすることを想定すると，式番号を使う場合はLatexで使用される(1)などを避け，(A1) のようにしておけば番号が混ざらないので後で処理しやすい．Typoraは`split`へのtagはうまく処理してくれない様子．
+別行立て数式には`\tag{数字など}`で名前を付けられます．MathJaxやTyporaは参照にも対応しており，`$\eqref{LabelX}$`と書けば$\eqref{LabelX}$などと出してくれます．\label{...}と独立行式中に書けば，`\ref{...}, \eqref{...}`の参照が使えます．Latexにコピペすることを想定すると，式番号を使う場合はLatexで使用される(1)などを避け，(A1) のようにしておけば番号が混ざらないので後で処理しやすいかもしれない．Typoraは`split`へのtagはうまく処理してくれない様子．
 
 **注記**：本来のLatexとほんのちょっと記法が違うものがあります．LaTeXでは，`$$`は無しで`align`環境を書く．`split`環境は`$$`に対応していない場合があるので，`$$`ではなくequation環境内で使う．`equation`や`align`は自動番号付けされ，`align*`環境を使えば式番号を付けない．`align`環境で`\notag`と書けば，その行の番号を非表示にする．
+

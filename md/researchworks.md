@@ -1,6 +1,6 @@
 # 研究業績リスト Research Works
 
-**更新日：2021/6/8**
+**更新日：2021/8/1**
 
 ## 外部サイトで見る場合
 
@@ -13,14 +13,16 @@
 
 ## 学術論文 (査読あり) Journal Paper
 
-1. Tiehua Wang, Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Non-cascade Adaptive Sliding Mode Control for Quadrotor UAVs under Parametric Uncertainties and External Disturbance with Indoor Experiments", Journal of Intelligent and Robotic Systems, Vol. 102, No. 8, 2021.4, [DOI: 10.1007/s10846-021-01351-z](https://doi.org/10.1007/s10846-021-01351-z)
-1. Shigeru Nagasawa, Tetsuya Yamamoto, Kazuki Umemoto, Shigekazu Suzuki, Akira Hine, Daishiro Yamaguchi, "Estimation of bending characteristics of creased paperboard using 45° tapered groove against unbalanced punch indentation", Journal of Advanced Mechanical Design, Systems, and Manufacturing, Vol. 14, No. 6, 2020.7, [DOI: 10.1299/jamdsm.2020jamdsm0083](https://doi.org/10.1299/jamdsm.2020jamdsm0083)
-1. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Dynamic cooperative transportation control using friction forces of n multi-rotor unmanned aerial vehicles", Journal of Intelligent and Robotic Systems, 2020.5, [DOI: 10.1007/s10846-020-01212-1](https://doi.org/10.1007/s10846-020-01212-1)
+1. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Local Input-to-State Stability Analysis on Compact Set for Disturbance Observer-Based Uncertain Multivariable Nonlinear Control Systems", International Journal of Robust and Nonlinear Control, pp.1-18, 2021.7, [DOI: 10.1002/RNC.5711](https://doi.org/10.1002/RNC.5711)
+1. Tiehua Wang, Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Modeling and Control of a Quadrotor UAV Equipped with a Flexible Arm in Vertical Plane", IEEE Access, Vol. 9, No. 1, pp.98476-98489, 2021.7, [DOI: 10.1109/ACCESS.2021.3095536](https://doi.org/10.1109/ACCESS.2021.3095536)
+1. Tiehua Wang, Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Non-cascade Adaptive Sliding Mode Control for Quadrotor UAVs under Parametric Uncertainties and External Disturbance with Indoor Experiments", Journal of Intelligent and Robotic Systems, Vol. 102, No. 8, pp.1-21, 2021.4, [DOI: 10.1007/s10846-021-01351-z](https://doi.org/10.1007/s10846-021-01351-z)
+1. Shigeru Nagasawa, Tetsuya Yamamoto, Kazuki Umemoto, Shigekazu Suzuki, Akira Hine, Daishiro Yamaguchi, "Estimation of bending characteristics of creased paperboard using 45° tapered groove against unbalanced punch indentation", Journal of Advanced Mechanical Design, Systems, and Manufacturing, Vol. 14, No. 6, pp.1-11, 2020.7, [DOI: 10.1299/jamdsm.2020jamdsm0083](https://doi.org/10.1299/jamdsm.2020jamdsm0083)
+1. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Dynamic cooperative transportation control using friction forces of n multi-rotor unmanned aerial vehicles", Journal of Intelligent and Robotic Systems, Vol. 100, No. 1, pp.1085-1095, 2020.5, [DOI: 10.1007/s10846-020-01212-1](https://doi.org/10.1007/s10846-020-01212-1)
 1. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, Tadashi Egami, "Stability Analysis of a Control System with Nonlinear Input Uncertainty based on Disturbance Observer", International Journal of Robust and Nonlinear Control, Vol. 30, No. 11, pp.4433-4448, 2020.4, [DOI: 10.1002/rnc.4999](https://doi.org/10.1002/rnc.4999)
-1. Songtam Laosuwan, Shigeru Nagasawa, Kazuki Umemoto, "Development of Tensile Fixture with Corrugated Structure Sheet and Estimation of Tensile Strength of Glass Fibre Fabrics Based Single Face Corrugated Structure Sheet", AIMS Materials Science, 2020.2, [DOI: 10.3934/matersci.2020.1.75](https://doi.org/10.3934/matersci.2020.1.75)
-1. Shigeru Nagasawa, Akihiro Yamamoto, Thepwarchara Ruchirabha, Kazuki Umemoto, "Effects of Blade Tip Profile on In-Plane Tensile Properties of Wedge-Notched Polypropylene Sheet", International Journal of Automation Technology, 2019.11, [DOI: 10.20965/ijat.2019.p0780](https://doi.org/10.20965/ijat.2019.p0780)
-1. Takahiro Endo, Kazuki Umemoto, Fumitoshi Matsuno, "Exponential Stability of Dual Flexible Arms for Grasping and Orientation Control", IET Control Theory & Applications, 2019.6, [DOI: 10.1049/iet-cta.2019.0359](https://doi.org/10.1049/iet-cta.2019.0359)
-1. Tiehua Wang, Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Dynamic hybrid position/force control for the quadrotor with a multi-degree-of-freedom manipulator", Artificial Life and Robotics, 2019.2, [DOI: 10.1007/s10015-019-00534-0](https://doi.org/10.1007/s10015-019-00534-0)
+1. Songtam Laosuwan, Shigeru Nagasawa, Kazuki Umemoto, "Development of Tensile Fixture with Corrugated Structure Sheet and Estimation of Tensile Strength of Glass Fibre Fabrics Based Single Face Corrugated Structure Sheet", AIMS Materials Science, Vol. 7, No. 1, pp.75-92, 2020.2, [DOI: 10.3934/matersci.2020.1.75](https://doi.org/10.3934/matersci.2020.1.75)
+1. Shigeru Nagasawa, Akihiro Yamamoto, Thepwarchara Ruchirabha, Kazuki Umemoto, "Effects of Blade Tip Profile on In-Plane Tensile Properties of Wedge-Notched Polypropylene Sheet", International Journal of Automation Technology, Vol. 13, No. 6, pp.780-786, 2019.11, [DOI: 10.20965/ijat.2019.p0780](https://doi.org/10.20965/ijat.2019.p0780)
+1. Takahiro Endo, Kazuki Umemoto, Fumitoshi Matsuno, "Exponential Stability of Dual Flexible Arms for Grasping and Orientation Control", IET Control Theory & Applications, Vol. 13, No. 16, pp.2546-2555, 2019.6, [DOI: 10.1049/iet-cta.2019.0359](https://doi.org/10.1049/iet-cta.2019.0359)
+1. Tiehua Wang, Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Dynamic hybrid position/force control for the quadrotor with a multi-degree-of-freedom manipulator", Artificial Life and Robotics, Vol. 24, No. 1, pp.378-389, 2019.2, [DOI: 10.1007/s10015-019-00534-0](https://doi.org/10.1007/s10015-019-00534-0)
 1. 藤澤 隆介, 梅本 和希, 佐藤 徳孝, 田中 基康, 永谷 直久, 勝山 真規, "ワイヤ移動式橋梁点検ロボットシステムARANEUSの開発と運用", 土木学会論文集F4（建設マネジメント）, Vol. 73, No. 1, pp.26-37, 2017.4, [DOI: 10.2208/jscejcm.73.26](https://doi.org/10.2208/jscejcm.73.26)
 1. 江上 正, 渡邊 孝之, 梅本 和希, "横すべりを考慮した車両の経路制御手法の提案とその検証", 計測自動制御学会論文集, Vol. 53, No. 4, pp.268-275, 2017.4, [DOI: 10.9746/sicetr.53.268](https://doi.org/10.9746/sicetr.53.268)
 1. 江上 正, 長島 祥, 梅本 和希, "CMGユニットを用いたロープ型宇宙エレベーター実験用クライマーの昇降安定化制御", 日本ロボット学会誌, Vol. 35, No. 1, pp.47-54, 2017.2, [DOI: 10.7210/jrsj.35.47](https://doi.org/10.7210/jrsj.35.47)
