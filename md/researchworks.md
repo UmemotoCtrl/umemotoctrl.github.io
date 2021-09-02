@@ -38,10 +38,11 @@
 
 ## 会議論文 (査読あり) Reviewed Conference Paper
 
-1. Kazuki Umemoto, Fumitoshi Matsuno, Mingcong Deng, "Control System Design for Nonlinear Plants based on Generalized H．S．Black Formula using Robust Right Coprime Factorization", Proc. of the 2012 International Conference on Advanced Mechatronic Systems, pp.24-29, 2012.9
-2. Kazuki Umemoto, Mingcong Deng, "Nonlinear Control System Design for Unstable Plants with Input Saturation using Robust Right Coprime Factorization", Proc. of the 2010 International Conference on Modelling, Identification and Control, pp.310-315, 2010.7
-3. Mingcong Deng, Akira Inoue, Kazuki Umemoto, "Operator Based Nonlinear Control of Processes with Unknown Input Disturbances", Proc. of the 2009 IEEE International Conference on Networking, Sensing and Control, pp.752-755, 2009.3
-4. Mingcong Deng, Akira Inoue, Kazuki Umemoto, "Analysis and Experimental Study on Networked Nonlinear Controller Design for a Water Level Process Experimental Process", Proc. of the 2008 IEEE International Conference on Networking, Sensing and Control, pp.22-25, 2008.4
+1. Shigeru Nagasawa, Takaomi Nagumo, Azusa Sakamoto, Kazuki Umemoto, "Relaxation Characteristics of Creasing Process of Scored PaperboardforLiquidContainer", FORMING THE FUTURE Proc. of the 13th International Conference on the Technology of Plasticity, pp.1643-1654, 2021.7
+2. Kazuki Umemoto, Fumitoshi Matsuno, Mingcong Deng, "Control System Design for Nonlinear Plants based on Generalized H．S．Black Formula using Robust Right Coprime Factorization", Proc. of the 2012 International Conference on Advanced Mechatronic Systems, pp.24-29, 2012.9
+3. Kazuki Umemoto, Mingcong Deng, "Nonlinear Control System Design for Unstable Plants with Input Saturation using Robust Right Coprime Factorization", Proc. of the 2010 International Conference on Modelling, Identification and Control, pp.310-315, 2010.7
+4. Mingcong Deng, Akira Inoue, Kazuki Umemoto, "Operator Based Nonlinear Control of Processes with Unknown Input Disturbances", Proc. of the 2009 IEEE International Conference on Networking, Sensing and Control, pp.752-755, 2009.3
+5. Mingcong Deng, Akira Inoue, Kazuki Umemoto, "Analysis and Experimental Study on Networked Nonlinear Controller Design for a Water Level Process Experimental Process", Proc. of the 2008 IEEE International Conference on Networking, Sensing and Control, pp.22-25, 2008.4
 
 ## 会議論文 (査読なし) Conference Paper w/o Review
 
