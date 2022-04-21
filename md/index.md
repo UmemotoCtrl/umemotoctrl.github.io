@@ -49,7 +49,7 @@
 ### 学歴
 
 * 2014年3月　京都大学大学院 工学研究科 機械理工学専攻 博士後期課程 修了 博士（工学），非線形システムのロバスト制御とマルチロータ型UAVへの応用
-* 2010年3月　岡山大学大学院 自然科学研究科 機械理工学専攻 博士前期課程 修了 修士（工学），Control system design for nonlinear unstable plants with input saturation using robust right coprime factorization
+* 2010年3月　岡山大学大学院 自然科学研究科 機械システム工学専攻 博士前期課程 修了 修士（工学），Control system design for nonlinear unstable plants with input saturation using robust right coprime factorization
 * 2008年3月　岡山大学 工学部 システム工学科 卒業 学士（工学），ロバスト右既約分解に基づく水位プロセス実験装置に対するネットワーク制御系設計
 
 ### 所属学会

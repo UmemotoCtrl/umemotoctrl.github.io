@@ -4,7 +4,7 @@
 
 主に指導学生向けとして，役立ちそうな情報について記載したく思います．
 
-## 少しは書いてあるもの
+## まとめ書き
 
 * txtメモから卒業！メモ書きのためのエコシステム**[Markdown](./?id=tips:markdown)**
 * (個人的に十分な) **[Latex数式コマンド集 for Markdown](./?id=tips:latexMath)**
@@ -24,6 +24,8 @@
 - [Google Jamboard](https://jamboard.google.com/)：手書きメモのリアルタイム共有．実物じゃなくサービスのもの．Web会議で便利．Zoomなら同様の機能搭載
 - [Detexify](http://detexify.kirelabs.org/classify.html)：記号のLatex入力方法を探せます
 
+<!-- 未公開
+
 ## 記載予定のもの
 
 * 文書作成の決定版 (と思っています) **LaTeX**と差分表示の**latexdiff**．エディタはtexstudio
@@ -40,8 +42,6 @@
 * ディスク管理ツールでパーティションが操作できない！救世主**diskpart** (Windows)
 * テキストファイルの安心感！多機能かつシンプル**DokuWiki**．Markdown対応が弱めなのが残念．php勉強してプラグイン作ってしまおうかとも思ってしまうが基本は登場を待つ姿勢です．Gravも良さそう
 * BitwardenとAuthyでスマホ故障に備えた**パスワード管理**！スマホのみインストールしていて，スマホ故障したのでAuthyの復旧を試みましたが，手続きに2，3日かかったのでPCも設定しておいたほうが良いです．その節はAuthyさんありがとう！
-
-<!-- 未公開
 
 * 論文と発表資料の作り方〜なにを書くべきか〜
 * [査読コメント](./?id=tips:review)の作り方
