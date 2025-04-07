@@ -16,6 +16,15 @@
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/mdpjs@0.1.4/js/mdp.js" defer></script>
     <script defer>
+        function formatUnixTimestamp(unixTimestamp) {
+            const date = new Date(unixTimestamp * 1000);  // Unixタイムスタンプは秒単位なので、ミリ秒に変換
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1;  // 月は0から始まるため、1を足します
+            const day = date.getDate();
+
+            // フォーマットに合わせて年、月、日を返す
+            return `${year}/${month}/${day}`;
+        }
         async function fetchFileWithMetadata(url) {
             const response = await fetch(url);
             if (!response.ok) {
@@ -57,6 +66,9 @@
                 addClassToTags("h2", "subtitle", "mt-4", "has-text-weight-semibold");
                 addClassToTags("h3", "subtitle", "mt-4", "has-text-weight-semibold");
                 addClassToTags("h4", "subtitle", "mt-4", "has-text-weight-semibold");
+                addClassToTags("pre", "has-background-inherit");
+                addClassToTags("table", "table", "is-striped");
+                
                 var uls = document.getElementsByTagName("ul");
                 for (const ultag of uls) {
                     addConatainerClass(ultag);
@@ -70,7 +82,7 @@
                 console.error("読み込みエラー:", error);
             });
             // JSONファイルを取得して処理
-            const jsonFilePath = "./folder_tree_with_timestamp.json";
+            const jsonFilePath = "./folder_tree.json";
             fetch(jsonFilePath)
             .then(response => {
                 if (!response.ok) {
@@ -83,23 +95,14 @@
                 let element = document.createElement("div");
                 element.classList.add("my-2");
                 element.style = "text-align: end;";
+                var formattedDate;
                 if (hoge.length == 3) {
-                    for (let i = 0; i < data[""]["files"].length; i++) {
-                        if (hoge[2] == data[""]["files"][i].file_name) {
-                            element.innerHTML = "<p class=''>更新"+data[""]["files"][i].modified_time+"</p>";
-                            article.prepend(element);
-                            break;
-                        }
-                    }
+                    formattedDate = formatUnixTimestamp(data["md"][hoge[2]].last_modified);
                 } else if (hoge.length == 5) {
-                    for (let i = 0; i < data[hoge[3]]["files"].length; i++) {
-                        if (hoge[4] == data[hoge[3]]["files"][i].file_name) {
-                            element.innerHTML = "<p class=''>更新"+data[hoge[3]]["files"][i].modified_time+"</p>";
-                            article.prepend(element);
-                            break;
-                        }
-                    }
+                    formattedDate = formatUnixTimestamp(data["md"][hoge[3]]["children"][hoge[4]].last_modified);
                 }
+                element.innerHTML = "<p class=''>"+formattedDate+"更新</p>";
+                article.prepend(element);
             })
             .catch(error => {
                 console.error('エラー:', error);
@@ -168,7 +171,7 @@
               let elements = document.querySelectorAll('#article pre code');
               for (let ii = 0; ii < (elements||[]).length; ii++) hljs.highlightBlock(elements[ii]);
               let observer = new MutationObserver( function () {
-                var elements = document.querySelectorAll('#article pre code');
+                // var elements = document.querySelectorAll('#article pre code');
                 for (let ii = 0; ii < (elements||[]).length; ii++) hljs.highlightBlock(elements[ii]);
               });
               observer.observe(article, {childList: true});

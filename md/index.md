@@ -1,9 +1,8 @@
 <!-- # トップページ -->
 
-<!-- <div class="columns" style="text-align: center;"> -->
 <h1 class="title has-text-centered">梅本研究室にようこそ</h1>
 <p class="content has-text-centered">非線形システムのロバスト制御法と、そのロボットシステムへの応用を研究しています。</p>
-<!-- </div> -->
+
 <!-- 画像は4:3で用意 -->
 <div class="columns">
     <div class="column">
