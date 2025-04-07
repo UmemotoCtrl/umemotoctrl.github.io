@@ -1,7 +1,5 @@
 # 研究業績リスト Research Works
 
-**更新日：2021/8/1**
-
 ## 外部サイトで見る場合
 
 * [Google Scholar](https://scholar.google.com/citations?user=oc6Y-GEAAAAJ&hl=ja)
@@ -9,7 +7,7 @@
 * [researchmap](https://researchmap.jp/kumemoto/)
 * [Scopus](https://www.scopus.com/authid/detail.uri?authorId=24538065500)
 * [ORCiD](https://orcid.org/0000-0002-1148-4114)
-* [長岡技術科学大学研究者総覧](https://souran.nagaokaut.ac.jp/view?l=ja&u=100000683)
+* [福井大学研究者総覧](https://r-info.ad.u-fukui.ac.jp/Profiles/70/0006982/profile.html)
 
 ## 学術論文 (査読あり) Journal Paper
 

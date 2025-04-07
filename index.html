@@ -1,173 +1,206 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>梅本研究者情報 (個人用)</title>
-  <link rel="shortcut icon" type="image/x-icon" href="https://umemotoctrl.github.io/img/favicon.ico">
-  <!-- CSS -->
-  <!-- water.css The MIT License (MIT). Copyright (c) 2019 Kognise -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@1.4.0/dist/light.min.css">
-  <style>
-    :root {
-        --main-bg-color: rgb(250, 250, 250);
-        --times-font: 'Times New Roman', Times, serif;}
-    body { background-color: var(--main-bg-color);}
-    /* footer */
-    footer p { font-size: .9rem;}
-    /* update date */
-    main#article > h1 + p {
-      margin: 0;
-      padding: 0;
-      float: right;}
-    /* Sections */
-    main#article > h1 {
-        margin: 0;
-        padding: 0;
-        width: 0;
-        height: 0;
-        counter-reset: chapter;
-        visibility: hidden;}
-    main#article > h2 { counter-reset: sub-chapter;}
-    main#article > h3 { counter-reset: section;}
-    main#article > h2::before {
-        counter-increment: chapter;
-        content: counter(chapter, upper-roman) ". ";
-        font-family: var(--times-font);}
-    main#article > h3::before {
-        counter-increment: sub-chapter;
-        content: counter(chapter, upper-roman) "."counter(sub-chapter, decimal)". ";
-        font-family: var(--times-font);}
-    main#article > h4::before {
-        counter-increment: section;
-        content: counter(chapter, upper-roman) "."counter(sub-chapter, decimal)"."counter(section, decimal)" ";
-        font-family: var(--times-font);}
-    </style>
-  <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/mdpjs@0.1.4/js/mdp.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@0.05/js/navwofw.js" defer></script>
-  <script defer>
-    var translateInnerAnchor = function (argText) {
-      argText = argText.replace(/\[(.+?)\]\((\.\/)(?!\?id\=)\)/g, "<a href='javascript:loadMd(\"$2\",true);'>$1</a>");	// Inner Anchor Link
-      argText = argText.replace(/\[(.+?)\]\((\.\/\?id\=.*?)\)/g, "<a href='javascript:loadMd(\"$2\",true);'>$1</a>");		// Inner Anchor Link
-      return argText;
-    }
-    var loadMd = function ( argText, inPageTransition ) {
-      // Load markdown file
-      let file = "./md/" + argText.replace("./?id=","").replace(/:/g, "/") + ".md";
-      if (argText=="./")
-        file="./md/index.md";
-      fetch(file).then(function(response) {
-        return response.text();
-      }).then(function(data) {
-        article.innerHTML = mdp.render(translateInnerAnchor(data));
-        if (/^# (.+?)$/m.test(data))
-          document.title = data.match(/^# (.+?)$/m)[1];
-        if (window.navbarWoFw.elements.NavWoFwH1)
-          window.navbarWoFw.elements.NavWoFwH1.innerHTML = document.title;
-        if ( inPageTransition ) {
-          window.navbarWoFw.setHamburgerMenu(false);
-          window.history.pushState(null, null, argText);
-          scrollTo(0, 0);  // absolute (hr, ver)
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>福井大学 梅本研究室</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://umemotoctrl.github.io/img/favicon.ico">
+    <!-- CSS -->
+    <!-- Code copyright 2023 Jeremy Thomas. Code released under the MIT license. -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    >
+    <!-- Copyright © 2019 Kognise. The MIT License (MIT) -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@1.4.0/dist/light.min.css"> -->
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/mdpjs@0.1.4/js/mdp.js" defer></script>
+    <script defer>
+        async function fetchFileWithMetadata(url) {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const lastModified = response.headers.get('Last-Modified');
+            const content = await response.text(); // JSONなら response.json() にしてもOK
+            return {
+                content,
+                lastModified: lastModified ? new Date(lastModified) : null
+            };
         }
-      });
-    }
+        const addClassToTags = function (tag, ...classnames) {
+            const elements = Array.from( document.getElementsByTagName(tag) ) ;
+            for (const name of classnames) {
+                elements.forEach((element) => element.classList.add(name));
+            }
+        }
+        const addConatainerClass = function (elem) {
+            const element = document.createElement("div");
+            element.classList.add("content");
+            const pre = elem.nextElementSibling;
+            const parent = elem.parentNode;
+            element.prepend(elem);
+            parent.insertBefore(element, pre);
+        }
+        const loadMd = function ( argText, inPageTransition ) {
+          // Load markdown file
+          let file = "./md/" + argText.replace("./?id=","").replace(/:/g, "/") + ".md";
+          if (argText=="./")
+            file="./md/index.md";
+            fetchFileWithMetadata(file)
+            .then(({ content, lastModified }) => {
+                // console.log("更新日時:", lastModified);
+                // console.log("ファイル内容:", content);
+                // console.log(lastModified.getDate());
+                // console.log(lastModified.toLocaleString("ja-JP"));
+                // getFullYear()
+                article.innerHTML = mdp.render(content);
+                if (/^# (.+?)$/m.test(content))
+                    document.title = content.match(/^# (.+?)$/m)[1];
 
-    var mdp;
-    var article;
-
-    document.addEventListener('DOMContentLoaded', function() {
-      mdp = makeMDP();
-      article = document.getElementById("article");
-
-      // Load top menu
-      fetch('./md/topMenu.md').then(function(response) {
-        return response.text();
-      }).then(function(data) {
-        // window.navbarWoFw.mobile = true;
-        // window.navbarWoFw.config.cssRootProperties['--NavWoFwFontSize'] = '1rem';
-        // window.navbarWoFw.config.cssRootProperties['--NavWoFwMaxListHeight'] = '50rem';
-        window.navbarWoFw.config.cssRootProperties['--NavWoFwLiPaddingDesktop'] = '0.7rem 0.7rem';
-        window.navbarWoFw.addH1(document.title);
-        window.navbarWoFw.create(mdp.render(translateInnerAnchor(data)));
-        window.navbarWoFw.render();
-      });
-
-      // Load Main md file
-      loadMd( "./"+location.search, false);
-      // Process Back/Forward buttons of browser
-      window.addEventListener('popstate', function(e) {
-        loadMd( "./"+location.search, false);
-      });
-
-      // MathJax Apache License Version 2.0, January 2004 http://www.apache.org/licenses/
-      (function () {
-        window.MathJax = {
-          startup: {
-            pageReady: function () {
-              let observer = new MutationObserver( function () {
-                  MathJax.texReset();
-                  MathJax.typesetPromise(article.childNodes);
-              });
-              observer.observe(article, {childList: true});
-              return MathJax.startup.defaultPageReady();
-            },
-          },
-          tex: {
-            tags: 'ams',
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-          },
-          svg: {
-            fontCache: 'global',
-          },
-        };
-        var scriptIE = document.createElement("script");
-        scriptIE.src  = "https://polyfill.io/v3/polyfill.min.js?features=es6";
-        scriptIE.async = false;
-        document.getElementsByTagName("head")[0].appendChild(scriptIE);
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src  = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js";
-        script.async = true;
-        document.getElementsByTagName("head")[0].appendChild(script);
-      })();
-
-      // highlight.js BSD 3-Clause License. Copyright (c) 2006, Ivan Sagalaev.
-      (function () {
-        var link = document.createElement("link");
-        link.rel  = 'stylesheet'; // atom-one-dark, railscasts, monokai-sublime, zenburn, agate, lightfair, a11y-dark
-        link.href = '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/styles/monokai.min.css';
-        document.getElementsByTagName("head")[0].appendChild(link);
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src  = "//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/highlight.min.js";
-        script.async = false;
-        document.getElementsByTagName("head")[0].appendChild(script);
-        var script1 = document.createElement("script");
-        script1.type = "text/javascript";
-        script1.src  = "//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/languages/latex.min.js";
-        script1.async = false;
-        document.getElementsByTagName("head")[0].appendChild(script1);
-        script1.onload = (function () {
-          let elements = document.querySelectorAll('#article pre code');
-          for (let ii = 0; ii < (elements||[]).length; ii++) hljs.highlightBlock(elements[ii]);
-          let observer = new MutationObserver( function () {
-            var elements = document.querySelectorAll('#article pre code');
-            for (let ii = 0; ii < (elements||[]).length; ii++) hljs.highlightBlock(elements[ii]);
+                addClassToTags("h1", "title", "mt-4");
+                addClassToTags("h2", "subtitle", "mt-4", "has-text-weight-semibold");
+                addClassToTags("h3", "subtitle", "mt-4", "has-text-weight-semibold");
+                addClassToTags("h4", "subtitle", "mt-4", "has-text-weight-semibold");
+                var uls = document.getElementsByTagName("ul");
+                for (const ultag of uls) {
+                    addConatainerClass(ultag);
+                }
+                var uls = document.getElementsByTagName("ol");
+                for (const ultag of uls) {
+                    addConatainerClass(ultag);
+                }
+                let element = document.createElement("div");
+                element.classList.add("my-2");
+                element.style = "text-align: end;";
+                element.innerHTML = "<p class=''>更新時刻: "+lastModified.toLocaleString("ja-JP")+"</p>";
+                article.prepend(element);
+                // "<div class='columns'><div class='column'></div></div>"
+            })
+            .catch(error => {
+                console.error("読み込みエラー:", error);
+            });
+        }
+    
+        var mdp;
+        var article;
+    
+        document.addEventListener('DOMContentLoaded', function() {
+          mdp = makeMDP();
+          article = document.getElementById("article");
+    
+          // Load Main md file
+          loadMd( "./"+location.search, false);
+          // Process Back/Forward buttons of browser
+          window.addEventListener('popstate', function(e) {
+            loadMd( "./"+location.search, false);
           });
-          observer.observe(article, {childList: true});
+    
+          // MathJax Apache License Version 2.0, January 2004 http://www.apache.org/licenses/
+          (function () {
+            window.MathJax = {
+              startup: {
+                pageReady: function () {
+                  let observer = new MutationObserver( function () {
+                      MathJax.texReset();
+                      MathJax.typesetPromise(article.childNodes);
+                  });
+                  observer.observe(article, {childList: true});
+                  return MathJax.startup.defaultPageReady();
+                },
+              },
+              tex: {
+                tags: 'ams',
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+              },
+              svg: {
+                fontCache: 'global',
+              },
+            };
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src  = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js";
+            script.async = true;
+            document.getElementsByTagName("head")[0].appendChild(script);
+          })();
+    
+          // highlight.js BSD 3-Clause License. Copyright (c) 2006, Ivan Sagalaev.
+          (function () {
+            var link = document.createElement("link");
+            link.rel  = 'stylesheet'; // atom-one-dark, railscasts, monokai-sublime, zenburn, agate, lightfair, a11y-dark
+            link.href = '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/styles/monokai.min.css';
+            document.getElementsByTagName("head")[0].appendChild(link);
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src  = "//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/highlight.min.js";
+            script.async = false;
+            document.getElementsByTagName("head")[0].appendChild(script);
+            var script1 = document.createElement("script");
+            script1.type = "text/javascript";
+            script1.src  = "//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.1/build/languages/latex.min.js";
+            script1.async = false;
+            document.getElementsByTagName("head")[0].appendChild(script1);
+            script1.onload = (function () {
+              let elements = document.querySelectorAll('#article pre code');
+              for (let ii = 0; ii < (elements||[]).length; ii++) hljs.highlightBlock(elements[ii]);
+              let observer = new MutationObserver( function () {
+                var elements = document.querySelectorAll('#article pre code');
+                for (let ii = 0; ii < (elements||[]).length; ii++) hljs.highlightBlock(elements[ii]);
+              });
+              observer.observe(article, {childList: true});
+            });
+          })();
         });
-      })();
-    });
+    </script>
+    <script>
+        // ハンバーガーメニューを開閉するスクリプト
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.navbar-burger');
+            const menu = document.getElementById(burger.dataset.target);
+        
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+            });
+        });
+        // Navbarの高さ分の調整
+        function adjustBodyPadding() {
+            const navbar = document.querySelector('.navbar.is-fixed-top');
+            if (navbar) {
+                const navbarHeight = navbar.offsetHeight;
+                document.body.style.paddingTop = `${navbarHeight}px`;
+            }
+        }
+        document.addEventListener('DOMContentLoaded', adjustBodyPadding);
+        window.addEventListener('resize', adjustBodyPadding);
     </script>
 </head>
-
 <body>
-  <header></header>
-  <main id="article"></main>
-  <hr>
-  <footer>
-    <p>Internet Explorerでは表示できません．&copy; 2020 Kazuki Umemoto</p>
+    <header>
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand"><h1 class="title mt-4 ml-4">福井大学 梅本研究室</h1>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="navbar-menu" id="mainNav">
+                <!-- <div class="navbar-start"><a class="navbar-item" href="#">Top</a></div> -->
+                <div class="navbar-start"></div>
+                <div class="navbar-item"><a class="navbar-item" href="./">Top</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="#">研究紹介</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="./?id=piinfo">教員紹介</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="./?id=researchworks">論文リスト</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="./?id=recruitment">学生募集</a></div>
+                <!-- <div class="navbar-end"><a class="navbar-item" href="#">学生募集</a></div> -->
+            </div>
+        </nav>
+    </header>
+    <main id="article" class="container"></main>
+    <footer class="footer">
+        <div class="content has-text-centered"><p>&copy; 2020 Kazuki Umemoto</p></div>
     </footer>
-  </body>
+</body>
 </html>
