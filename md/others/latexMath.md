@@ -1,7 +1,5 @@
 # Latex数式コマンド集
 
-**更新日：2021/6/30**
-
 ## 基本編
 
 Markdown (具体的にはTyporaとこのサイトで使うMathJax) でLatex数式コマンドを使うことを想定しています．latexで使う場合は，amsmathやamssymbパッケージを\usepackage{amsmath,amssymb}として使用できるようにすれば使えるものを扱っています．MathJaxでは標準でamsの記号類が有効．[こちら](./md/tips/latexMath.md)からmdファイルをDL．Markdownで書き始めるには，インラインの文中式なら`$`で囲み，`$\alpha_1$`=$\alpha_1$，別行立てで書くなら`$$`で囲み

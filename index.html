@@ -49,11 +49,6 @@
             file="./md/index.md";
             fetchFileWithMetadata(file)
             .then(({ content, lastModified }) => {
-                // console.log("更新日時:", lastModified);
-                // console.log("ファイル内容:", content);
-                // console.log(lastModified.getDate());
-                // console.log(lastModified.toLocaleString("ja-JP"));
-                // getFullYear()
                 article.innerHTML = mdp.render(content);
                 if (/^# (.+?)$/m.test(content))
                     document.title = content.match(/^# (.+?)$/m)[1];
@@ -70,15 +65,44 @@
                 for (const ultag of uls) {
                     addConatainerClass(ultag);
                 }
-                let element = document.createElement("div");
-                element.classList.add("my-2");
-                element.style = "text-align: end;";
-                element.innerHTML = "<p class=''>更新時刻: "+lastModified.toLocaleString("ja-JP")+"</p>";
-                article.prepend(element);
-                // "<div class='columns'><div class='column'></div></div>"
             })
             .catch(error => {
                 console.error("読み込みエラー:", error);
+            });
+            // JSONファイルを取得して処理
+            const jsonFilePath = "./folder_tree_with_timestamp.json";
+            fetch(jsonFilePath)
+            .then(response => {
+                if (!response.ok) {
+                throw new Error('ファイルの取得に失敗しました');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const hoge = file.split('/');
+                let element = document.createElement("div");
+                element.classList.add("my-2");
+                element.style = "text-align: end;";
+                if (hoge.length == 3) {
+                    for (let i = 0; i < data[""]["files"].length; i++) {
+                        if (hoge[2] == data[""]["files"][i].file_name) {
+                            element.innerHTML = "<p class=''>更新"+data[""]["files"][i].modified_time+"</p>";
+                            article.prepend(element);
+                            break;
+                        }
+                    }
+                } else if (hoge.length == 5) {
+                    for (let i = 0; i < data[hoge[3]]["files"].length; i++) {
+                        if (hoge[4] == data[hoge[3]]["files"][i].file_name) {
+                            element.innerHTML = "<p class=''>更新"+data[hoge[3]]["files"][i].modified_time+"</p>";
+                            article.prepend(element);
+                            break;
+                        }
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('エラー:', error);
             });
         }
     
@@ -194,6 +218,11 @@
                 <div class="navbar-item"><a class="navbar-item" href="./?id=piinfo">教員紹介</a></div>
                 <div class="navbar-item"><a class="navbar-item" href="./?id=researchworks">論文リスト</a></div>
                 <div class="navbar-item"><a class="navbar-item" href="./?id=recruitment">学生募集</a></div>
+                <div class="navbar-item">
+                    <a class="navbar-item" href="./?id=tips">
+                        その他のコンテンツ
+                    </a>
+                </div>
                 <!-- <div class="navbar-end"><a class="navbar-item" href="#">学生募集</a></div> -->
             </div>
         </nav>

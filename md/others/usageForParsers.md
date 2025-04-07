@@ -1,7 +1,5 @@
 # Usage for Various Javascript Markdown Parsers in Client Side
 
-**Update: 2020/6/17**
-
 ## Introduction
 
 There are many javascript markdown parsers. For some of them, client-side usage is not introduced familiar with noobs. Therefore, I introduce simple usage for their parsers in client side.
