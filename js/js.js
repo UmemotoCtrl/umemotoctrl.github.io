@@ -35,10 +35,9 @@ function addConatainerClass (elem) {
     parent.insertBefore(element, pre);
 }
 function loadMd ( article, argText, inPageTransition ) {
-  // Load markdown file
-  let file = "./md/" + argText.replace("./?id=","").replace(/:/g, "/") + ".md";
-  if (argText=="./")
-    file="./md/index.md";
+    // Load markdown file
+    let file = "./md/" + argText.replace("./?id=","").replace(/:/g, "/") + ".md";
+    if (argText=="./") file="./md/index.md";
     fetchFileWithMetadata(file)
     .then(({ content, lastModified }) => {
         article.innerHTML = mdp.render(content);
@@ -59,51 +58,52 @@ function loadMd ( article, argText, inPageTransition ) {
         for (const ultag of uls) {
             addConatainerClass(ultag);
         }
-        // highlight.js
-        hljs.highlightAll();
-        // Katex
-        renderMathInElement(article, {
-            delimiters: [
-                {left: "$$", right: "$$", display: true},
-                {left: "$", right: "$", display: false},
-                {left: "\\(", right: "\\)", display: false},
-                {left: "\\begin{equation}", right: "\\end{equation}", display: true},
-                {left: "\\begin{align}", right: "\\end{align}", display: true}
-                // {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
-                // {left: "\\begin{gather}", right: "\\end{gather}", display: true},
-                // {left: "\\begin{CD}", right: "\\end{CD}", display: true},
-                // {left: "\\[", right: "\\]", display: true}
-            ]
-        });      
+        // JSONファイルを取得して処理
+        const jsonFilePath = "./folder_tree.json";
+        fetch(jsonFilePath)
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('ファイルの取得に失敗しました');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const hoge = file.split('/');
+            let element = document.createElement("div");
+            element.classList.add("my-2");
+            element.style = "text-align: end;";
+            var formattedDate;
+            if (hoge.length == 3) {
+                formattedDate = formatUnixTimestamp(data["md"][hoge[2]].last_modified);
+            } else if (hoge.length == 5) {
+                formattedDate = formatUnixTimestamp(data["md"][hoge[3]]["children"][hoge[4]].last_modified);
+            }
+            element.innerHTML = "<p class=''>"+formattedDate+"更新</p>";
+            article.prepend(element);
+
+            // highlight.js
+            hljs.highlightAll();
+            // Katex
+            renderMathInElement(article, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+                    {left: "\\begin{align}", right: "\\end{align}", display: true}
+                    // {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+                    // {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+                    // {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+                    // {left: "\\[", right: "\\]", display: true}
+                ]
+            });
+        })
+        .catch(error => {
+            console.error('JSON読み込みエラー:', error);
+        });
     })
     .catch(error => {
-        console.error("読み込みエラー:", error);
-    });
-    // JSONファイルを取得して処理
-    const jsonFilePath = "./folder_tree.json";
-    fetch(jsonFilePath)
-    .then(response => {
-        if (!response.ok) {
-        throw new Error('ファイルの取得に失敗しました');
-        }
-        return response.json();
-    })
-    .then(data => {
-        const hoge = file.split('/');
-        let element = document.createElement("div");
-        element.classList.add("my-2");
-        element.style = "text-align: end;";
-        var formattedDate;
-        if (hoge.length == 3) {
-            formattedDate = formatUnixTimestamp(data["md"][hoge[2]].last_modified);
-        } else if (hoge.length == 5) {
-            formattedDate = formatUnixTimestamp(data["md"][hoge[3]]["children"][hoge[4]].last_modified);
-        }
-        element.innerHTML = "<p class=''>"+formattedDate+"更新</p>";
-        article.prepend(element);
-    })
-    .catch(error => {
-        console.error('エラー:', error);
+        console.error("MD読み込みエラー:", error);
     });
 }
 
