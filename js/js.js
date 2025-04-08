@@ -44,6 +44,19 @@ function loadMd ( article, argText, inPageTransition ) {
         article.innerHTML = mdp.render(content);
         if (/^# (.+?)$/m.test(content))
             document.title = content.match(/^# (.+?)$/m)[1];
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false},
+                {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+                {left: "\\begin{align}", right: "\\end{align}", display: true}
+                // {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+                // {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+                // {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+                // {left: "\\[", right: "\\]", display: true}
+            ]
+        });      
 
         addClassToTags("h1", "title", "mt-4");
         addClassToTags("h2, h3, h4", "subtitle", "mt-4", "has-text-weight-semibold");
@@ -106,32 +119,32 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // MathJax Apache License Version 2.0, January 2004 http://www.apache.org/licenses/
-document.addEventListener('DOMContentLoaded', () => {  
-    window.MathJax = {
-      startup: {
-        pageReady: function () {
-          let observer = new MutationObserver( () => {
-              MathJax.texReset();
-              MathJax.typesetPromise(article.childNodes);
-          });
-          observer.observe(article, {childList: true});
-          return MathJax.startup.defaultPageReady();
-        },
-      },
-      tex: {
-        tags: 'ams',
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-      },
-      svg: {
-        fontCache: 'global',
-      },
-    };
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js";
-    script.async = true;
-    document.getElementsByTagName("head")[0].appendChild(script);
-});
+// document.addEventListener('DOMContentLoaded', () => {  
+//     window.MathJax = {
+//       startup: {
+//         pageReady: function () {
+//           let observer = new MutationObserver( () => {
+//               MathJax.texReset();
+//               MathJax.typesetPromise(article.childNodes);
+//           });
+//           observer.observe(article, {childList: true});
+//           return MathJax.startup.defaultPageReady();
+//         },
+//       },
+//       tex: {
+//         tags: 'ams',
+//         inlineMath: [['$', '$'], ['\\(', '\\)']],
+//       },
+//       svg: {
+//         fontCache: 'global',
+//       },
+//     };
+//     var script = document.createElement("script");
+//     script.type = "text/javascript";
+//     script.src  = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js";
+//     script.async = true;
+//     document.getElementsByTagName("head")[0].appendChild(script);
+// });
 
 // highlight.js BSD 3-Clause License. Copyright (c) 2006, Ivan Sagalaev.
 document.addEventListener('DOMContentLoaded', () => {

@@ -64,47 +64,32 @@ $$
 
 ## 環境：数式で使うものは少ない
 
-行列：array，matrix，pmatrix環境もあるが個人的にはbmatrix一択．
-
+* 行列：array，matrix，pmatrix環境もあるが個人的にはbmatrix一択．
 $$
 A := \begin{bmatrix}a&b\\ c&d\end{bmatrix}
 $$
-
-イコールが揃う複数行数式１：`equation`+`split`または`equation`+`aligned`環境，全体に式番号が一つ付く
-
-$$
-\begin{equation}\tag{A1}\begin{split}
-\dot{x} =& f(x,~u) \\
-y =& g(x)
-\end{split}\end{equation}
-$$
-
-$$
+* イコールが揃う複数行数式１：`equation`+`split`または`equation`+`aligned`環境，全体に式番号が一つ付く
 \begin{equation}\tag{A1}\begin{aligned}
 \dot{x} =& f(x,~u) \\
 y =& g(x)
 \end{aligned}\end{equation}
-$$
-
-=が揃う複数行数式２：`align`環境，Latexではそれぞれに式番号が一つ付く．`eqnarray`は使わなくて良い模様
-$$
+* =が揃う複数行数式２：`align`環境，Latexではそれぞれに式番号が一つ付く．`eqnarray`は使わなくて良い模様
+```latex
 \begin{align}
-\tag{A2}\label{LabelX} \dot{x} =& f(x,~u) \\
-\tag{A3} y =& g(x)
+\dot{x} =& f(x,~u) \\
+y =& g(x)
 \end{align}
-$$
-
-条件わけ．右にカッコを閉じたい場合は`array`と`\left. \right\}`を駆使して下さい．`\left.`は表示されない．大きさ判定のために左右セットにしなければならないようで，非表示ですが必須．大きさを指定する$\bigr\}$などは片側でも良いが，手動調整は旨味がない．
-
-$$
-\tag{A4} f(x) :=
+```
+* 条件わけ．右にカッコを閉じたい場合は`array`と`\left. \right\}`を駆使して下さい．`\left.`は表示されない．大きさ判定のために左右セットにしなければならないようで，非表示ですが必須．大きさを指定する$\bigr\}$などは片側でも良いが，手動調整は旨味がない．
+```latex
+\begin{equation}
+f(x) :=
 \begin{cases}
 1,\quad &\mbox{if}~ x\neq 0 \\
 0,\quad &\mbox{if}~ x = 0
-\end{cases}
-$$
+\end{cases}\end{equation}
+```
+* 別行立て数式には`\tag{数字など}`で名前を付けられます．MathJaxやTyporaは参照にも対応しており，`$\eqref{LabelX}$`と書けば$\eqref{LabelX}$などと出してくれます．\label{...}と独立行式中に書けば，`\ref{...}, \eqref{...}`の参照が使えます．Latexにコピペすることを想定すると，式番号を使う場合はLatexで使用される(1)などを避け，(A1) のようにしておけば番号が混ざらないので後で処理しやすいかもしれない．
 
-別行立て数式には`\tag{数字など}`で名前を付けられます．MathJaxやTyporaは参照にも対応しており，`$\eqref{LabelX}$`と書けば$\eqref{LabelX}$などと出してくれます．\label{...}と独立行式中に書けば，`\ref{...}, \eqref{...}`の参照が使えます．Latexにコピペすることを想定すると，式番号を使う場合はLatexで使用される(1)などを避け，(A1) のようにしておけば番号が混ざらないので後で処理しやすいかもしれない．Typoraは`split`へのtagはうまく処理してくれない様子．
-
-**注記**：本来のLatexとほんのちょっと記法が違うものがあります．LaTeXでは，`$$`は無しで`align`環境を書く．`split`環境は`$$`に対応していない場合があるので，`$$`ではなくequation環境内で使う．`equation`や`align`は自動番号付けされ，`align*`環境を使えば式番号を付けない．`align`環境で`\notag`と書けば，その行の番号を非表示にする．
+**注記**： MathJaxとKatexでも違い、使うソフトごとに対応がまばらで困ります。
 
