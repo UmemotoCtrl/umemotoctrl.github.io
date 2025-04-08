@@ -5,7 +5,7 @@
 
 ## 競争的資金
 
-<div style="float:right; width:fit-content;"><img src="./img/photo_ume.jpg" alt="顔写真" style="border-radius: 1em; width:10em;"></div>
+<div class="content is-pulled-right"><img class="image is-3by4" style="border-radius:1em;width:10em;" src="./img/photo_ume.jpg" alt="顔写真"></div>
 
 1. JST，A-STEP 産学共同（本格型）【分担】、新触感インターフェースシステムによる新しい生活様式ソリューション、2022 - 2024，JST，A-STEP 産学共同（本格型），新触感インターフェースシステムによる新しい生活様式ソリューション
 1. 科研費若手研究【代表】2020 – 2023， 多脚ロボットの衝突安全性を高めるための全身力覚センシングシステムの実現
@@ -32,10 +32,12 @@
 1. 計測自動制御学会 (SICE) 北陸支部優秀学生賞 上田 崇人、2024年度 (指導学生の受賞)
 2. 計測自動制御学会 (SICE) 北陸支部優秀学生賞 武野 駿斗、2024年度 (指導学生の受賞)
 3. Top Downloaded Article、Kazuki Umemoto, INTERNATIONAL JOURNAL OF ROBUST AND NONLINEAR CONTROL、Wiley、2021.
-<div class="content">
-    <figure class="image is-fullwidth" style="max-width: 60%; height: auto;"">
-        <img src="./img/TopDownloaded.png"/>
-    </figure>
+<div class="columns is-narrow">
+    <div class="column is-half is-offset-one-quarter">
+        <figure class="image is-full-width">
+            <img src="./img/TopDownloaded.png"/>
+        </figure>
+    </div>
 </div>
 
 ### 職歴
