@@ -43,7 +43,7 @@ $$
 | ベクトル値関数，ベクトル場 | $f:~\mathbb{R}\to \mathbb{R}^n$のような，ベクトルを返す関数．行列を返せば行列値関数，集合を返せば集合値関数．vector field, vector-valued function |
 | $C^n$級，class-$C^n$関数 | 関数の滑らかさを表し，$n$回微分可能であることを意味する．十分滑らかといえば，数えてないけど必要な回数微分可能である，という意図．多くの場合class-$C^\infty$は必要ない．べき乗関数や定数関数など，何回か微分して0でも微分できさえすればよい |
 | 解析関数 analytic function | class-$C^\infty$関数のこと．Taylor級数展開できることを意味している．$f$は解析的であるとする．など |
-| class-$\cal{K}$，class-$\cal{K}_\infty$，class-$\cal{KL}$関数 | 汎関数の性質．まとめて比較関数 comparison functionと言われる |
+| class-$\mathcal{K}$，class-$\mathcal{K}_\infty$，class-$\mathcal{KL}$関数 | 汎関数の性質．まとめて比較関数 comparison functionと言われる |
 | Lipschitz連続性 | 連続性の一種．Lipschitz連続なら（通常の）連続 |
 
 ### 行列関連
@@ -53,7 +53,7 @@ $$
 | $A^T,~A^\mathrm{T},~A^\top$ | 行列$A$の転置行列 |
 | $A^+,~A^\dagger$ | 行列$A$の擬似逆行列 |
 | $A>0,~A \geq 0$ | 実対称行列$A$は（半）正定値．$A$の固有値が正（対称なので固有値は実数）．任意のベクトル$x$に対して$x^T Ax>0$を満たす．$<,~\leq$もある |
-| $\lambda (A)$ | $A$の固有値．$\lambda_\max (A)$，$\lambda_\min (A)$で最大，最小固有値 |
+| $\lambda (A)$ | $A$の固有値．$\lambda_{\max} (A)$，$\lambda_{\min} (A)$で最大，最小固有値 |
 | $\det A$ | $A$の行列式，determinant |
 
 ### 集合関連

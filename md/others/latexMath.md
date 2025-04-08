@@ -32,7 +32,7 @@ $$
 
 ### 上付き記号
 
-- 時間微分に使う上ドット`\dot{x}`=$\dot{x}$，複数なら`\ddot{x}`=$\ddot{x}$，`\dddot{x}`=$\dddot{x}$，三つ以上は`x^{(3)}`=$x^{(3)}$と書くのが良い
+- 時間微分に使う上ドット`\dot{x}`=$\dot{x}$，複数なら`\ddot{x}`=$\ddot{x}$，三つ以上は`x^{(3)}`=$x^{(3)}$と書くのが良い
 - ハット`\hat{x}`=$\hat{x}$，`\widehat{XYZ}`=$\widehat{XYZ}$
 - チルダ`\tilde{x}`=$\tilde{x}$，`\widetilde{XYZ}`=$\widetilde{XYZ}$
 - オーバーバー`$\bar{x}$`=$\bar{x}$や`\overline{XYZ}`=$\overline{XYZ}$，アンダーも`\underline{XYZ}`=$\underline{XYZ}$．
@@ -58,7 +58,7 @@ $$
 - 括弧の大きさ自動調整$\left(\dfrac{n}{d}\right)$・$\left[\dfrac{n}{d}\right]$・$\left\|\dfrac{n}{d}\right\|$・$\left\{\dfrac{n}{d}\right\}$，手動調整[LaTeX入門，括弧の大きさを指定](https://medemanabu.net/latex/bracket/)．
 - 未定義関数の立体`\mathrm{diag}(x)`=$\mathrm{diag}(x)$，ベクトル$x$を対角要素にもつ行列
 - 広めのスペース空け`x\quad y`=$x\quad y$，`x\qquad y`=$x\qquad y$．複数行にわたる式の頭下げなんかに使う
-- 式内で文字を書く$xはy$．Markdownでは直接書いてしまってよい．LaTeXでは`\mbox{}`や`\text{}`で，MathJaxはどちらも処理してくれるが，日本語はバランス悪い．
+- 式内で文字を書く$x \text{ is } y$．Markdownでは直接書いてしまってよい．LaTeXでは`\mbox{}`や`\text{}`で，MathJaxはどちらも処理してくれるが，日本語はバランス悪い．
 
 `\displaystyle`とか`\partial`とか長すぎと思ったら，LaTeXでは自作コマンド，MathJaxならmacrosで短縮コマンドを作ることができる．既存コマンド名との衝突に注意．
 
@@ -89,7 +89,7 @@ f(x) :=
 0,\quad &\mbox{if}~ x = 0
 \end{cases}\end{equation}
 ```
-* 別行立て数式には`\tag{数字など}`で名前を付けられます．MathJaxやTyporaは参照にも対応しており，`$\eqref{LabelX}$`と書けば$\eqref{LabelX}$などと出してくれます．\label{...}と独立行式中に書けば，`\ref{...}, \eqref{...}`の参照が使えます．Latexにコピペすることを想定すると，式番号を使う場合はLatexで使用される(1)などを避け，(A1) のようにしておけば番号が混ざらないので後で処理しやすいかもしれない．
+* 別行立て数式には`\tag{数字など}`で名前を付けられます．MathJaxやTyporaは参照にも対応しており，`$\eqref{LabelX}$`と書けば番号を参照してくれます．\label{...}と独立行式中に書けば，`\ref{...}, \eqref{...}`の参照が使えます．Latexにコピペすることを想定すると，式番号を使う場合はLatexで使用される(1)などを避け，(A1) のようにしておけば番号が混ざらないので後で処理しやすいかもしれない．
 
 **注記**： MathJaxとKatexでも違い、使うソフトごとに対応がまばらで困ります。
 
