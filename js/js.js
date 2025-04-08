@@ -40,43 +40,40 @@ function loadMd ( article, argText, inPageTransition ) {
     if (argText=="./") file="./md/index.md";
     fetchFileWithMetadata(file)
     .then(({ content, lastModified }) => {
+        // markdownコンテンツを追加
         article.innerHTML = mdp.render(content);
-        if (/^# (.+?)$/m.test(content))
-            document.title = content.match(/^# (.+?)$/m)[1];
-        
+        // タイトル編集
+        if (/^# (.+?)$/m.test(content)) document.title = content.match(/^# (.+?)$/m)[1];
+        // Bulmaクラス追加
         addClassToTags("h1", "title", "mt-4");
         addClassToTags("h2, h3, h4", "subtitle", "mt-4", "has-text-weight-semibold");
         addClassToTags("pre", "has-background-inherit");
         addClassToTags("table", "table", "is-striped");
         addClassToTags("p > a, ul > li > a, ol > li > a", "button", "is-small");
-        
-        var uls = document.getElementsByTagName("ul");
-        for (const ultag of uls) {
-            addConatainerClass(ultag);
-        }
-        var uls = document.getElementsByTagName("ol");
-        for (const ultag of uls) {
-            addConatainerClass(ultag);
-        }
+        for (const ultag of document.getElementsByTagName("ul")) addConatainerClass(ultag);
+        for (const ultag of document.getElementsByTagName("ol")) addConatainerClass(ultag);
         // JSONファイルを取得して処理
         const jsonFilePath = "./folder_tree.json";
         fetch(jsonFilePath)
         .then(response => {
             if (!response.ok) {
-            throw new Error('ファイルの取得に失敗しました');
+            throw new Error('JSONファイルの取得に失敗しました');
             }
             return response.json();
         })
         .then(data => {
+            // 更新時刻追加
             const hoge = file.split('/');
             let element = document.createElement("div");
             element.classList.add("my-2");
             element.style = "text-align: end;";
             var formattedDate;
-            if (hoge.length == 3) {
-                formattedDate = formatUnixTimestamp(data["md"][hoge[2]].last_modified);
-            } else if (hoge.length == 5) {
-                formattedDate = formatUnixTimestamp(data["md"][hoge[3]]["children"][hoge[4]].last_modified);
+            switch (file.split('/').length) {
+                case 3:
+                    formattedDate = formatUnixTimestamp(data["md"][hoge[2]].last_modified);
+                    break;
+                case 5:
+                    formattedDate = formatUnixTimestamp(data["md"][hoge[3]]["children"][hoge[4]].last_modified);
             }
             element.innerHTML = "<p class=''>"+formattedDate+"更新</p>";
             article.prepend(element);
