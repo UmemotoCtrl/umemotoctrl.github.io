@@ -7,6 +7,10 @@
           "type": "file",
           "last_modified": 1744014326
         },
+        "aperiodic_explanation.webp": {
+          "type": "file",
+          "last_modified": 1744264495
+        },
         "bridge.png": {
           "type": "file",
           "last_modified": 1744088801
@@ -22,6 +26,14 @@
         "favicon.ico": {
           "type": "file",
           "last_modified": 1740124270
+        },
+        "feedback.webp": {
+          "type": "file",
+          "last_modified": 1744264495
+        },
+        "figures.pptx": {
+          "type": "file",
+          "last_modified": 1744264495
         },
         "legged.jpg": {
           "type": "file",
@@ -39,7 +51,7 @@
     },
     "index.md": {
       "type": "file",
-      "last_modified": 1744070061
+      "last_modified": 1744264495
     },
     "others": {
       "type": "directory",
@@ -72,14 +84,14 @@
     },
     "recruitment.md": {
       "type": "file",
-      "last_modified": 1744014326
+      "last_modified": 1744264495
     },
     "research": {
       "type": "directory",
       "children": {
         "aperiodic.md": {
           "type": "file",
-          "last_modified": 1744014326
+          "last_modified": 1744264495
         },
         "bridge.md": {
           "type": "file",
@@ -109,7 +121,7 @@
     },
     "tips.md": {
       "type": "file",
-      "last_modified": 1744021881
+      "last_modified": 1744264495
     }
   }
 }
