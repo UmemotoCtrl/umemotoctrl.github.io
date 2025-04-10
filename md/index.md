@@ -8,14 +8,14 @@
     <div class="column">
         <div class="card">
             <div class="card-image">
-                <figure class="image">
+                <a href="./?id=/research/bridge"><figure class="image">
                 <img
                     src="./img/bridge.png"
                 />
-                </figure>
+                </figure></a>
             </div>
             <div class="card-content">
-                <div class="content has-text-weight-medium has-text-centered">
+                <div class="content has-text-weight-semibold has-text-centered">
 橋梁点検ロボット
                 </div>
             </div>
@@ -24,14 +24,14 @@
     <div class="column">
         <div class="card">
             <div class="card-image">
-                <figure class="image">
+                <a href="./?id=/research/drone"><figure class="image">
                 <img
                     src="./img/drone.jpg"
                 />
-                </figure>
+                </figure></a>
             </div>
             <div class="card-content">
-                <div class="content has-text-weight-medium has-text-centered">
+                <div class="content has-text-weight-semibold has-text-centered">
 ドローンのロバスト自律制御
                 </a></div>
             </div>
@@ -50,9 +50,9 @@
                 </figure></a>
             </div>
             <div class="card-content">
-                <div class="content has-text-weight-semibold has-text-centered"><a class="has-text-inherit is-text">
+                <div class="content has-text-weight-semibold has-text-centered has-text-inherit is-text">
 非周期的サンプル値非線形制御
-                </a></div>
+                </div>
             </div>
         </a></div>
     </div>
@@ -61,14 +61,14 @@
     <div class="column">
         <div class="card">
             <div class="card-image">
-                <figure class="image">
+                <a href="./?id=/research/dob"><figure class="image">
                 <img
                     src="./img/DOb.png"
                 />
-                </figure>
+                </figure></a>
             </div>
             <div class="card-content">
-                <div class="content has-text-weight-medium has-text-centered">
+                <div class="content has-text-weight-semibold has-text-centered has-text-inherit is-text">
 外乱オブザーバに基づく制御
                 </div>
             </div>

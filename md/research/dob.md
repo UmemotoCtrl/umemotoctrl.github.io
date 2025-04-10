@@ -1,11 +1,6 @@
-# 他大学からの進学を歓迎します
+# 外乱オブザーバに基づく制御
 
-当研究室では，他大学・高専専攻科からの入学生を受け入れています．試験情報・学生生活・就職先・研究内容・経済的事項などに関しては，気軽にお問い合わせください．受験を希望される場合，事前の見学・面談をお勧めしています．推薦入試もあります。問い合わせは、umemoto (アット) g.u-fukui.ac.jp 宛にメールにてご連絡下さい．
+## 関連論文
 
-## 所属
-
-梅本研究室は福井大学 大学院 工学研究科 安全社会基盤工学専攻に所属しています．
-
-## 経済支援について
-
-大学院生の経済的サポートについては，メールでご相談ください．TA (Teaching Assitant、授業の補助)，RA (Research Assistant、研究の補助)，奨学金などによって支援を受けることができます．
+4. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Local Input-to-State Stability Analysis on Compact Set for Disturbance Observer-Based Uncertain Multivariable Nonlinear Control Systems", International Journal of Robust and Nonlinear Control, Vol. 31, No. 16, pp.7785-7802, 2021.7, [DOI: 10.1002/RNC.5711](https://doi.org/10.1002/RNC.5711)
+9. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, Tadashi Egami, "Stability Analysis of a Control System with Nonlinear Input Uncertainty based on Disturbance Observer", International Journal of Robust and Nonlinear Control, Vol. 30, No. 11, pp.4433-4448, 2020.4, [DOI: 10.1002/rnc.4999](https://doi.org/10.1002/rnc.4999)
