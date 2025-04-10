@@ -1,11 +1,19 @@
-# 他大学からの進学を歓迎します
+# 非周期的サンプル値非線形制御
 
-当研究室では，他大学・高専専攻科からの入学生を受け入れています．試験情報・学生生活・就職先・研究内容・経済的事項などに関しては，気軽にお問い合わせください．受験を希望される場合，事前の見学・面談をお勧めしています．推薦入試もあります。問い合わせは、umemoto (アット) g.u-fukui.ac.jp 宛にメールにてご連絡下さい．
+ロボットなどの制御対象はコンピュータを使って制御されます。制御システムは、センサから情報を得てモータなどのアクチュエータを動かす (フィードバック制御) 一連の流れを一定の時間間隔 (サンプリング時間) で実行するように実装されることが多いです。
+<div class="columns">
+  <div class="column is-three-fifths-desktop is-offset-one-fifth-desktop is-three-fifths-tablet is-offset-one-fifth-tablet">
+    <image src="./img/feedback.webp" />
+  </div>
+</div>
 
-## 所属
+システムの高度化によって、ネットワーク通信を使う場合などを例として、一定のサンプリング時間を確保することが難しい場合があります。その場合でもシステムの制御を実現する方法として、非周期的サンプル値制御があります。関連論文では、どの程度サンプル間隔が変化してもよいのかを理論的に解析しました。
+<div class="columns">
+  <div class="column is-three-fifths-desktop is-offset-one-fifth-desktop is-three-fifths-tablet is-offset-one-fifth-tablet">
+    <image src="./img/aperiodic_explanation.webp" />
+  </div>
+</div>
 
-梅本研究室は福井大学 大学院 工学研究科 安全社会基盤工学専攻に所属しています．
+## 関連論文
 
-## 経済支援について
-
-大学院生の経済的サポートについては，メールでご相談ください．TA (Teaching Assitant、授業の補助)，RA (Research Assistant、研究の補助)，奨学金などによって支援を受けることができます．
+* Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Local Robust Stability on Compact Set for Nonlinear Systems with Continuous Time Controller Against to Aperiodic Sampling and Disturbance", IET Control Theory & Applications, Vol. 17, No. 2, pp.133-143, 2023.1, [DOI: 10.1049/cth2.12367](https://doi.org/10.1049/cth2.12367)

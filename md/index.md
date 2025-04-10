@@ -8,48 +8,51 @@
     <div class="column">
         <div class="card">
             <div class="card-image">
-                <a href="#"><figure class="image">
+                <figure class="image">
                 <img
                     src="./img/bridge.png"
                 />
-                </figure></a>
+                </figure>
             </div>
             <div class="card-content">
-                <div class="content">
+                <div class="content has-text-weight-medium has-text-centered">
 橋梁点検ロボット
                 </div>
             </div>
-        </a></div>
+        </div>
     </div>
     <div class="column">
         <div class="card">
             <div class="card-image">
-                <a href="#"><figure class="image">
+                <figure class="image">
                 <img
                     src="./img/drone.jpg"
                 />
-                </figure></a>
+                </figure>
             </div>
             <div class="card-content">
-                <div class="content">
+                <div class="content has-text-weight-medium has-text-centered">
 ドローンのロバスト自律制御
-                </div>
+                </a></div>
             </div>
-        </a></div>
+        </div>
     </div>
     <div class="column">
         <div class="card">
+            <!-- <header class="card-header">
+                <p class="card-header-title">Component</p>
+            </header> -->
             <div class="card-image">
-                <a href="#"><figure class="image">
+                <a href="./?id=/research/aperiodic"><figure class="image">
                 <img
                     src="./img/Aperiodic.png"
                 />
                 </figure></a>
             </div>
             <div class="card-content">
-                <div class="content">
+                <div class="content has-text-weight-semibold has-text-centered"><a class="has-text-inherit is-text">
 非周期的サンプル値非線形制御
-                </div>
+                </a></div>
             </div>
         </a></div>
     </div>
@@ -58,34 +61,34 @@
     <div class="column">
         <div class="card">
             <div class="card-image">
-                <a href="#"><figure class="image">
+                <figure class="image">
                 <img
                     src="./img/DOb.png"
                 />
-                </figure></a>
+                </figure>
             </div>
             <div class="card-content">
-                <div class="content">
+                <div class="content has-text-weight-medium has-text-centered">
 外乱オブザーバに基づく制御
                 </div>
             </div>
-        </a></div>
+        </div>
     </div>
     <div class="column">
         <div class="card">
             <div class="card-image">
-                <a href="#"><figure class="image">
+                <figure class="image">
                 <img
                     src="./img/legged.jpg"
                 />
-                </figure></a>
+                </figure>
             </div>
             <div class="card-content">
-                <div class="content">
+                <div class="content has-text-weight-medium has-text-centered">
 柔軟なアクチュエータを用いた多脚ロボット
                 </div>
             </div>
-        </a></div>
+        </div>
     </div>
-    <div class="column">研究紹介の詳細は準備中です。</div>
+    <div class="column"></div>
 </div>
