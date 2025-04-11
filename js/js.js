@@ -13,7 +13,13 @@ async function fetchFileWithMetadata(url) {
         throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const lastModified = response.headers.get('Last-Modified');
-    const content = await response.text(); // JSONなら response.json() にしてもOK
+    const extension = url.split('.').pop().toLowerCase();
+    let content;
+    if (extension === 'json') {
+        content = await response.json();
+    } else {
+        content = await response.text();
+    }
     return {
         content,
         lastModified: lastModified ? new Date(lastModified) : null
@@ -36,8 +42,13 @@ function addConatainerClass (elem) {
 }
 function loadMd ( article, argText, inPageTransition ) {
     // Load markdown file
-    let file = "./md/" + argText.replace("./?id=","").replace(/:/g, "/") + ".md";
-    if (argText=="./") file="./md/index.md";
+    let file;
+    if (argText == "./") file = "./md/index.md";
+    else {
+        const match = argText.match(/^\.\/*\?id=(\/?[\w\/-]+)$/);
+        const idPath = match[1].replace(/^\/?/, '');
+        file = `./md/${idPath}.md`;
+    }
     fetchFileWithMetadata(file)
     .then(({ content, lastModified }) => {
         // markdownコンテンツを追加
@@ -54,33 +65,27 @@ function loadMd ( article, argText, inPageTransition ) {
         for (const ultag of document.getElementsByTagName("ol")) addConatainerClass(ultag);
         // JSONファイルを取得して処理
         const jsonFilePath = "./folder_tree.json";
-        fetch(jsonFilePath)
-        .then(response => {
-            if (!response.ok) {
-            throw new Error('JSONファイルの取得に失敗しました');
-            }
-            return response.json();
-        })
-        .then(data => {
+        fetchFileWithMetadata(jsonFilePath)
+        .then(({ content, lastModified }) => {
             // 更新時刻追加
             const hoge = file.split('/');
             let element = document.createElement("div");
-            element.classList.add("my-2");
+            element.classList.add("my-2", "has-text-weight-semibold");
             element.style = "text-align: end;";
             var formattedDate;
-            switch (file.split('/').length) {
-                case 3:
-                    formattedDate = formatUnixTimestamp(data["md"][hoge[2]].last_modified);
+            switch ((file.match(/\//g) || []).length) {
+                case 2:
+                    formattedDate = formatUnixTimestamp(content["md"][hoge[2]].last_modified);
                     break;
-                case 5:
-                    formattedDate = formatUnixTimestamp(data["md"][hoge[3]]["children"][hoge[4]].last_modified);
+                case 3:
+                    formattedDate = formatUnixTimestamp(content["md"][hoge[2]]["children"][hoge[3]].last_modified);
             }
             element.innerHTML = "<p class=''>"+formattedDate+"更新</p>";
             article.prepend(element);
 
-            // highlight.js
+            // highlight.js sync
             hljs.highlightAll();
-            // Katex
+            // Katex async
             renderMathInElement(article, {
                 delimiters: [
                     {left: "$$", right: "$$", display: true},
