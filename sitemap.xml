@@ -1,58 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-<url>
-<loc>https://umemotoctrl.github.io/</loc>
-<priority>1.0</priority>
-<changefreq>monthly</changefreq>
-</url>
-<url>
-<loc>https://umemotoctrl.github.io/?id=researchworks</loc>
-<priority>0.8</priority>
-<changefreq>monthly</changefreq>
-</url>
-<url>
-<loc>https://umemotoctrl.github.io/?id=tips</loc>
-<priority>0.8</priority>
-<changefreq>monthly</changefreq>
-</url>
-<url>
-<loc>https://umemotoctrl.github.io/?id=tips:markdown</loc>
-<priority>0.8</priority>
-<changefreq>monthly</changefreq>
-</url>
-<url>
-<loc>https://umemotoctrl.github.io/?id=tips:latexMath</loc>
-<priority>0.8</priority>
-<changefreq>monthly</changefreq>
-</url>
-<url>
-<loc>https://umemotoctrl.github.io/?id=tips:mathNotation</loc>
-<priority>0.8</priority>
-<changefreq>monthly</changefreq>
-</url>
-<url>
-<loc>https://umemotoctrl.github.io/?id=tips:chocolatey</loc>
-<priority>0.8</priority>
-<changefreq>monthly</changefreq>
-</url>
-<url>
-<loc>https://umemotoctrl.github.io/onlineTest.html</loc>
-<priority>0.8</priority>
-<changefreq>monthly</changefreq>
-</url>
-<url>
-<loc>https://umemotoctrl.github.io/mdpjs/</loc>
-<priority>0.8</priority>
-<changefreq>monthly</changefreq>
-</url>
-<url>
-<loc>https://umemotoctrl.github.io/?id=others:usageForParsers</loc>
-<priority>0.8</priority>
-<changefreq>monthly</changefreq>
-</url>
-<url>
-<loc>https://umemotoctrl.github.io/?id=others:MathjaxUsage</loc>
-<priority>0.8</priority>
-<changefreq>monthly</changefreq>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://umemotoctrl.github.io/</loc>
+    <lastmod>2025-04-10T15:29:04+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/piinfo</loc>
+    <lastmod>2025-04-08T14:06:41+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/recruitment</loc>
+    <lastmod>2025-04-10T14:54:55+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/researchworks</loc>
+    <lastmod>2025-04-08T14:06:41+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/sample</loc>
+    <lastmod>2020-06-02T14:11:26+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/tips</loc>
+    <lastmod>2025-04-10T14:54:55+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/others/latexMath</loc>
+    <lastmod>2025-04-08T16:27:07+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/others/markdown</loc>
+    <lastmod>2025-04-07T19:31:21+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/others/MathjaxUsage</loc>
+    <lastmod>2025-04-07T19:31:21+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/others/mathNotation</loc>
+    <lastmod>2025-04-08T16:27:07+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/others/usageForParsers</loc>
+    <lastmod>2025-04-07T19:31:21+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/research/aperiodic</loc>
+    <lastmod>2025-04-10T14:54:55+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/research/bridge</loc>
+    <lastmod>2025-04-10T15:29:04+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/research/dob</loc>
+    <lastmod>2025-04-10T15:29:04+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/research/drone</loc>
+    <lastmod>2025-04-10T15:29:04+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://umemotoctrl.github.io/?id=/research/smc</loc>
+    <lastmod>2025-04-07T17:25:26+09:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
