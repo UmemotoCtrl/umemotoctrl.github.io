@@ -7,7 +7,7 @@
 * [MathJax3の使い方](./?id=/others/MathjaxUsage)
 * [Client-side Javascript markdown parser usage](./?id=/others/usageForParsers)
 * [markdownの書き方](./?id=/others/markdown)
-* [markdown-MathJaxのオンラインエディタ](./onlineTest.html)
+* [markdown-Katexのオンラインエディタ](./onlineTest.html)
 * [javascript markdown parserの比較](./mdpjs/)
 * [latex数式](./?id=/others/latexMath)
 * [非線形制御関係の数学記法](./?id=/others/mathNotation)

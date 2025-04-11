@@ -1,153 +1,268 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>md-MathJaxオンライン動作テスト</title>
-  <link rel="shortcut icon" type="image/x-icon" href="https://umemotoctrl.github.io/img/favicon.ico" />
-  <!-- CSS -->
-  <!-- The MIT License (MIT), Copyright © 2019 Kognise -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
-  <style>
-    :root { --main-bg-color: whitesmoke;}
-    body {
-        background-color: var(--main-bg-color);
-        max-width: 100%;}
-    main {
-      margin: 0 auto;
-      display: flex;}
-    #mdInput {
-      /* height: 600px; */
-      min-height: 600px;
-      padding: 1rem;
-      margin-right: 1%;
-      width: 45%;}
-    div#article {
-      max-width: 53%;}
-    /* footer */
-    footer p { font-size: .9rem;}
-  </style>
-  <!-- JS -->
-  <!-- ace.js BSD License. Copyright (c) 2010, Ajax.org B.V. -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/mdpjs@0.1.4/js/mdp.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/NavWithoutFramework@0.05/js/navwofw.js" defer></script>
-  <script defer>
-    let writeHTML = function () {
-      var htmlTxt = mdp.render(mdInput.getValue());
-      article.innerHTML = htmlTxt;
-      raw.innerHTML = htmlTxt.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>mdpjs-Katexオンライン動作テスト</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://umemotoctrl.github.io/img/favicon.ico">
+    <!-- CSS -->
+    <!-- Bulma: Code copyright 2023 Jeremy Thomas. Code released under the MIT license. -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma@1.0.3/css/bulma.min.css"
+        integrity="sha256-RwYNyYLkMTjyYn8FRzVzQFtHXuHg9dpfkPCuf6j2XDM="
+        crossorigin="anonymous">
+    <!-- highlight.js: Copyright (c) 2006, Ivan Sagalaev. BSD 3-Clause License. -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css"
+        integrity="sha512-Jk4AqjWsdSzSWCSuQTfYRIF84Rq/eV0G2+tu07byYwHcbTGfdmLrHjUSwvzp5HvbiqK4ibmNwdcG49Y5RGYPTg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <!-- Katex: Copyright (c) 2013-2020 Khan Academy and other contributors. The MIT License (MIT). -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
+        integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
+        crossorigin="anonymous">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Kosugi Maru', sans-serif;
+      }
+      #mdInput {
+        min-height: 400px;
+      }
+    </style>
+    <!-- JS -->
+    <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
+        integrity="sha256-6NiFUFlJ86X0q91d0NU2lr0Tca0m/79PMQ3Nd8jNrok="
+        crossorigin="anonymous"></script>
+    <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+        integrity="sha256-u1PrlTOUUxquNv3VNwZcQkTrhUKQGjzpFGAdkyZ1uKw="
+        crossorigin="anonymous"></script>
+    <script
+        defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"
+        integrity="sha512-EBLzUL8XLl+va/zAsmXwS7Z2B1F9HUHkZwyS/VKwh3S7T/U0nF4BaU29EP/ZSf6zgiIxYAnKLu6bJ8dqpmX5uw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <script
+        defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/latex.min.js"
+        integrity="sha512-4h3uWtv1iEA4sgWqZ1is70GnmESsRzCRaGTyeajS/8Zq0CGWVCCRTrpEw5mJ57vF9LIfwNwCMNeV6IjGytrhrA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <script
+        defer
+        src="https://cdn.jsdelivr.net/gh/UmemotoCtrl/mdpjs@0.1.4/js/mdp.js"
+        integrity="sha256-g3uQXnXEt9Iy9g9W5QjQqbK+o8kv4qOH6OSS2wPXuzA="
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.39.1/ace.min.js" integrity="sha512-WgH9t1qfGMsgkGm6j8zrhj8UHqry1q+guPAJPGqIeWAVjs9/JsSUwAzdOLGvckuF+cbGie2XUYEKhCNybk5dTg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer>
+function formatUnixTimestamp(unixTimestamp) {
+    const date = new Date(unixTimestamp * 1000);  // Unixタイムスタンプは秒単位なので、ミリ秒に変換
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;  // 月は0から始まるため、1を足します
+    const day = date.getDate();
+    // フォーマットに合わせて年、月、日を返す
+    return `${year}/${month}/${day}`;
+}
+async function fetchFileWithMetadata(url) {
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    let writeHtmlLater = function () {
+    const lastModified = response.headers.get('Last-Modified');
+    const extension = url.split('.').pop().toLowerCase();
+    let content;
+    if (extension === 'json') {
+        content = await response.json();
+    } else {
+        content = await response.text();
+    }
+    return {
+        content,
+        lastModified: lastModified ? new Date(lastModified) : null
+    };
+}
+function addClassToTags (tag, ...classnames) {
+    const elements = document.querySelectorAll(tag);
+    for (const name of classnames) {
+        elements.forEach((element) => element.classList.add(name));
+    }
+}
+function addConatainerClass (elem) {
+    const element = document.createElement("div");
+    element.classList.add("content");
+    const pre = elem.nextElementSibling;
+    const parent = elem.parentNode;
+    element.prepend(elem);
+    parent.insertBefore(element, pre);
+}
+function loadMd ( article, argText, inPageTransition ) {
+    // Load markdown file
+    let file;
+    if (argText == "./") file = "./md/sample.md";
+    else {
+        const match = argText.match(/^\.\/*\?id=(\/?[\w\/-]+)$/);
+        const idPath = match[1].replace(/^\/?/, '');
+        file = `./md/${idPath}.md`;
+    }
+    fetchFileWithMetadata(file)
+    .then(({ content, lastModified }) => {
+        // markdownコンテンツを追加
+        article.innerHTML = mdp.render(content);
+        mdInput = ace.edit("mdInput");
+		    // mdInput.renderer.setMargin(30.5,1,1,1);
+        // mdInput.setShowPrintMargin(true);
+        // mdInput.setStyle("margin-top:100px; padding-top:100px");
+        // mdInput.moveCursorTo(0,0);
+        // mdInput.renderer.setPadding(0,0,300,300);
+        // mdInput.resize(true);
+        mdInput.setTheme("ace/theme/twilight");
+        mdInput.setFontSize(16);
+        mdInput.setValue(content);
+        mdInput.clearSelection();
+        mdInput.renderer.setScrollMargin(10); //マージン確保
+        mdInput.session.setMode("ace/mode/markdown");
+        mdInput.session.setUseWrapMode(true);
+        mdInput.session.setUndoManager(new ace.UndoManager());
+        mdInput.session.on("change", writeHtmlLater);
+        writeHTML();
+      })
+    .catch(error => {
+        console.error("MD読み込みエラー:", error);
+    });
+}
+
+var mdp;
+let mdInput;
+var timer;
+
+document.addEventListener('DOMContentLoaded', () => {
+  mdp = makeMDP();
+  var article = document.getElementById("article");
+
+  // Load Main md file
+  loadMd( article, "./"+location.search, false);
+  // Process Back/Forward buttons of browser
+  window.addEventListener('popstate',  (e) => {
+    loadMd( article, "./"+location.search, false);
+  });
+});
+
+// ハンバーガーメニューを開閉するスクリプト
+document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.navbar-burger');
+    const menu = document.getElementById(burger.dataset.target);
+
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('is-active');
+        menu.classList.toggle('is-active');
+    });
+});
+// Navbarの高さ分の調整
+function adjustBodyPadding() {
+    const navbar = document.querySelector('.navbar.is-fixed-top');
+    if (navbar) {
+        const navbarHeight = navbar.offsetHeight;
+        document.body.style.paddingTop = `${navbarHeight}px`;
+    }
+}
+document.addEventListener('DOMContentLoaded', adjustBodyPadding);
+window.addEventListener('resize', adjustBodyPadding);
+let writeHtmlLater = function () {
       if (typeof timer != "undefined") {
       }
       clearTimeout(timer);
       timer = setTimeout(writeHTML, 500);
-    }
+}
+let writeHTML = function () {
+  var htmlTxt = mdp.render(mdInput.getValue());
+  article.innerHTML = htmlTxt;
+  raw.innerHTML = htmlTxt.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        // Bulmaクラス追加
+        addClassToTags("h1", "title", "mt-4");
+        addClassToTags("h2, h3, h4", "subtitle", "mt-4", "has-text-weight-semibold");
+        addClassToTags("pre", "has-background-inherit");
+        addClassToTags("table", "table", "is-striped");
+        addClassToTags("p > a, ul > li > a, ol > li > a", "button", "is-small");
+        for (const ultag of document.getElementsByTagName("ul")) addConatainerClass(ultag);
+        for (const ultag of document.getElementsByTagName("ol")) addConatainerClass(ultag);
+        // highlight.js sync
+        hljs.highlightAll();
+        // Katex async
+        renderMathInElement(article, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false},
+                {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+                {left: "\\begin{align}", right: "\\end{align}", display: true}
+                // {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+                // {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+                // {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+                // {left: "\\[", right: "\\]", display: true}
+            ]
+        });
+}
 
-    var mdp;
-    var mdInput;
-    var article;
-    var raw;
-    var timer;
+    </script>
 
-    document.addEventListener('DOMContentLoaded', function() {
-      mdp = makeMDP();
-      mdInput = ace.edit("mdInput");
-      mdInput.setTheme("ace/theme/monokai");
-      mdInput.setFontSize(16);
-      mdInput.session.setMode("ace/mode/markdown");
-      mdInput.session.setUseWrapMode(true);
-      article = document.getElementById("article");
-      raw     = document.getElementById("raw");
-
-      // Load topMenu
-      fetch('./md/topMenu.md').then(function(response) {
-        return response.text();
-      }).then(function($data) {
-        window.navbarWoFw.config.cssRootProperties['--NavWoFwBackgroundColor'] = 'rgb(65, 147, 102)';
-        window.navbarWoFw.config.cssRootProperties['--NavWoFwFocusedColor'] = 'mediumseagreen';
-        window.navbarWoFw.config.cssRootProperties['--NavWoFwLiPaddingDesktop'] = '0.7rem 0.7rem';
-        window.navbarWoFw.create(mdp.render($data));
-        window.navbarWoFw.addH1('md-MathJaxオンライン動作テスト');
-        window.navbarWoFw.render();
-      });
-      // Load main md
-      if (location.search=="")
-        $file = "./md/sample.md";
-      else
-        $file = "./md/" + location.search.replace("?id=","").replace(/:/g, "/") + ".md";
-      fetch($file).then(function(response) {
-        return response.text();
-      }).then(function(data) {
-        mdInput.setValue(data);
-        mdInput.clearSelection();
-        mdInput.session.on("change", writeHtmlLater);
-        writeHTML( data );
-        mdInput.resize(true);
-      });
-
-      // MathJax Apache License Version 2.0, January 2004 http://www.apache.org/licenses/
-      (function () {
-        window.MathJax = {
-          startup: {
-            // elements: null,
-            // typeset: true,
-            // ready: Startup.defaultReady.bind(Startup),          // Called when components are loaded
-            pageReady: function () {
-              let observer = new MutationObserver( function () {
-                  MathJax.texReset();
-                  MathJax.typesetPromise(article.childNodes);
-              });
-              observer.observe(article, {childList: true});
-              return MathJax.startup.defaultPageReady();
-            },
-          },
-          tex: {
-            tags: 'ams',
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-            // macros: {
-            //   RR: '{\\bf R}',
-            //   bold: ['{\\bf #1}',1]
-            // },
-          },
-          svg: {
-            fontCache: 'global',
-          },
-          options: {
-            // skipHtmlTags: [            //  HTML tags that won't be searched for math
-            //   'script', 'noscript', 'style', 'textarea', 'pre',
-            //   'code', 'annotation', 'annotation-xml'
-            // ],
-            // processHtmlClass: 'tex2jax_process',  //  class that marks tags that should be searched
-            ignoreHtmlClass: 'tex2jax_ignore',
-          },
-        };
-        var scriptIE = document.createElement("script");
-        scriptIE.src  = "https://polyfill.io/v3/polyfill.min.js?features=es6";
-        scriptIE.async = false;
-        document.getElementsByTagName("head")[0].appendChild(scriptIE);
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src  = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js";
-        script.async = true;
-        document.getElementsByTagName("head")[0].appendChild(script);
-      })();
-    });
-  </script>
 </head>
-
 <body>
-  <header></header>
-  <main>
-    <div id="mdInput" class='tex2jax_ignore'></div>
-    <div id="article"></div>
-  </main>
-  <h2>markdown to HTML結果</h2>
-  <pre><code id="raw"></code></pre>
-  <hr />
-  <footer>
-    <p>Internet Explorerでは表示できません．&copy; 2020 Kazuki Umemoto</p>
-  </footer>
+    <header>
+        <nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand"><h1 class="title mt-4 ml-4 has-text-dark">mdpjs-Katexオンライン動作テスト</h1>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="navbar-menu has-text-weight-semibold" id="mainNav">
+                <!-- <div class="navbar-start"><a class="navbar-item" href="#">Top</a></div> -->
+                <div class="navbar-start"></div>
+                <div class="navbar-item"><a class="navbar-item" href="./">Top</a></div>
+                <!-- <div class="navbar-item"><a class="navbar-item" href="#">研究紹介</a></div> -->
+                <div class="navbar-item"><a class="navbar-item" href="./?id=piinfo">教員紹介</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="./?id=researchworks">論文リスト</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="./?id=recruitment">学生募集</a></div>
+                <div class="navbar-item">
+                    <a class="navbar-item" href="./?id=tips">
+                        その他のコンテンツ
+                    </a>
+                </div>
+                <!-- <div class="navbar-end"><a class="navbar-item" href="#">学生募集</a></div> -->
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+      <div class="columns">
+        <div class="column mt-5 is-three-fifths" id="mdInput">
+        </div>
+        <div class="column is-two-fifths" id="article">
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <h2>HTML出力</h2>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column" id="raw">
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+        <div class="content has-text-centered"><p>&copy; 2020 Kazuki Umemoto</p></div>
+    </footer>
 </body>
 </html>

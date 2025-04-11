@@ -7,9 +7,9 @@
 ### リスト
 
 1. アンカー・リンクの書き方．id指定でこのサイトのmdファイルを読み込めます
-  * [Markdownの書き方](./onlineTest.html?id=tips:markdown)
-  * [数式コマンド](./onlineTest.html?id=tips:latexMath)
-  * [数学記法](./onlineTest.html?id=tips:mathNotation)
+  * [Markdownの書き方](./onlineTest.html?id=/others/markdown)
+  * [数式コマンド](./onlineTest.html?id=/others/latexMath)
+  * [数学記法](./onlineTest.html?id=/others/mathNotation)
 1. 行内数式$ y= ax+ b$
 1. *em*
 1. **太字**
