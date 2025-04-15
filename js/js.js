@@ -63,6 +63,39 @@ function loadMd ( article, argText, inPageTransition ) {
         addClassToTags("p > a, ul > li > a, ol > li > a", "button", "is-small");
         for (const ultag of document.getElementsByTagName("ul")) addConatainerClass(ultag);
         for (const ultag of document.getElementsByTagName("ol")) addConatainerClass(ultag);
+        // インライン数式のレンダリング
+        document.querySelectorAll("span.mdpmath").forEach((dom) => {
+            dom.innerHTML = katex.renderToString(dom.innerHTML
+                .replace(/&lt;/g, '<')
+                .replace(/&gt;/g, '>')
+                .replace(/&quot;/g, '"')
+                .replace(/&#39;/g, "'")
+                .replace(/&amp;/g, '&')
+                .replace(/\$(.+?)\$/g, '$1'));
+        });
+        // 独立行数式のレンダリング
+        document.querySelectorAll("div.mdpmath").forEach((dom) => {
+            const regs = [
+                /\$\$([\s\S]+)\$\$/,
+                /\\\[([\s\S]+)\\\]/
+            ];
+            const innerText = dom.innerHTML
+                .replace(regs[0], "$1")
+                .replace(regs[1], "$1")
+                .replace(/&lt;/g, '<')
+                .replace(/&gt;/g, '>')
+                .replace(/&quot;/g, '"')
+                .replace(/&#39;/g, "'")
+                .replace(/&amp;/g, '&');
+            dom.innerHTML = katex.renderToString(innerText, {
+                displayMode: true,
+                throwOnError: false
+            });
+        });
+        // highlight.js sync
+        document.querySelectorAll('pre code[class*="language-"]').forEach((dom) => {
+            hljs.highlightElement(dom);
+        });
         // JSONファイルを取得して処理
         const jsonFilePath = "./folder_tree.json";
         fetchFileWithMetadata(jsonFilePath)
@@ -72,7 +105,7 @@ function loadMd ( article, argText, inPageTransition ) {
             let element = document.createElement("div");
             element.classList.add("my-2", "has-text-weight-semibold");
             element.style = "text-align: end;";
-            var formattedDate;
+            let formattedDate;
             switch ((file.match(/\//g) || []).length) {
                 case 2:
                     formattedDate = formatUnixTimestamp(content["md"][hoge[2]].last_modified);
@@ -82,23 +115,6 @@ function loadMd ( article, argText, inPageTransition ) {
             }
             element.innerHTML = "<p class=''>"+formattedDate+"更新</p>";
             article.prepend(element);
-
-            // highlight.js sync
-            hljs.highlightAll();
-            // Katex async
-            renderMathInElement(article, {
-                delimiters: [
-                    {left: "$$", right: "$$", display: true},
-                    {left: "$", right: "$", display: false},
-                    {left: "\\(", right: "\\)", display: false},
-                    {left: "\\begin{equation}", right: "\\end{equation}", display: true},
-                    {left: "\\begin{align}", right: "\\end{align}", display: true}
-                    // {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
-                    // {left: "\\begin{gather}", right: "\\end{gather}", display: true},
-                    // {left: "\\begin{CD}", right: "\\end{CD}", display: true},
-                    // {left: "\\[", right: "\\]", display: true}
-                ]
-            });
         })
         .catch(error => {
             console.error('JSON読み込みエラー:', error);
@@ -106,21 +122,22 @@ function loadMd ( article, argText, inPageTransition ) {
     })
     .catch(error => {
         console.error("MD読み込みエラー:", error);
+        article.innerHTML = "<p>コンテンツの読み込みに失敗しました。再読み込みを試してください。</p>";
     });
 }
 
-var mdp;
+let mdp;
 
 document.addEventListener('DOMContentLoaded', () => {
-  mdp = makeMDP();
-  var article = document.getElementById("article");
+    mdp = makeMDP();
+    let article = document.getElementById("article");
 
-  // Load Main md file
-  loadMd( article, "./"+location.search, false);
-  // Process Back/Forward buttons of browser
-  window.addEventListener('popstate',  (e) => {
+    // Load Main md file
     loadMd( article, "./"+location.search, false);
-  });
+    // Process Back/Forward buttons of browser
+    window.addEventListener('popstate',  (e) => {
+        loadMd( article, "./"+location.search, false);
+    });
 });
 
 // ハンバーガーメニューを開閉するスクリプト

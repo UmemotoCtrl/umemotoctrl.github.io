@@ -5,6 +5,12 @@ BASE_URL = "https://umemotoctrl.github.io"
 ROOT_DIR = "./md"
 SITEMAP_FILENAME = "sitemap.xml"
 
+# 手動で追加するURL
+MANUAL_URLS = [
+    "https://umemotoctrl.github.io/mdpjs/",
+    "https://umemotoctrl.github.io/onlineTest.html"
+]
+
 def generate_url(file_path: str) -> str:
     relative_path = os.path.relpath(file_path, ROOT_DIR)
     without_ext = os.path.splitext(relative_path)[0]
@@ -42,6 +48,16 @@ def collect_md_files():
 def generate_sitemap():
     urls = []
 
+    # 手動で追加したURLを最初に追加
+    for manual_url in MANUAL_URLS:
+        urls.append(f"""  <url>
+    <loc>{manual_url}</loc>
+    <lastmod>2025-01-01</lastmod>  <!-- 固定日付 -->
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>""")
+
+    # MDファイルからURLを生成
     for md_file in collect_md_files():
         url = generate_url(md_file)
         lastmod = get_git_lastmod(md_file)
