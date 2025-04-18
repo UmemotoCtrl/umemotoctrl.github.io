@@ -16,7 +16,7 @@
             </div>
             <div class="card-content">
                 <div class="content has-text-weight-semibold has-text-centered">
-橋梁点検ロボット
+2017年 橋梁点検ロボット
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
             </div>
             <div class="card-content">
                 <div class="content has-text-weight-semibold has-text-centered">
-ドローンのロバスト自律制御
+2014年～ ドローンのロバスト自律制御
                 </a></div>
             </div>
         </div>
@@ -51,7 +51,7 @@
             </div>
             <div class="card-content">
                 <div class="content has-text-weight-semibold has-text-centered has-text-inherit is-text">
-非周期的サンプル値非線形制御
+2023年 非周期的サンプル値非線形制御
                 </div>
             </div>
         </a></div>
@@ -69,7 +69,7 @@
             </div>
             <div class="card-content">
                 <div class="content has-text-weight-semibold has-text-centered has-text-inherit is-text">
-外乱オブザーバに基づく制御
+2020年～ 外乱オブザーバに基づく制御
                 </div>
             </div>
         </div>
@@ -85,10 +85,24 @@
             </div>
             <div class="card-content">
                 <div class="content has-text-weight-medium has-text-centered">
-柔軟なアクチュエータを用いた多脚ロボット
+2016年～ 柔軟なアクチュエータを用いた多脚ロボット
                 </div>
             </div>
         </div>
     </div>
     <div class="column"></div>
 </div>
+<!-- お知らせ -->
+<div class="columns is-centered mb-5">
+    <div class="column is-three-fifths">
+
+## News
+
+<!-- * 2025年5月 システム制御情報学会 SCI'25で発表予定 -->
+* 2025年3月24日 計測自動制御学会 (SICE) 北陸支部優秀学生賞 上田 崇人(修士１年)
+* 2025年3月24日 計測自動制御学会 (SICE) 北陸支部優秀学生賞 武野 駿斗(修士１年)
+* 2024年9月14日 上田 崇人、武野 駿斗、牛田 和希(修士１年)が2024年度電気・情報関係学会北陸支部連合大会 (JHES2024)で発表しました。
+
+    </div>
+</div>
+
