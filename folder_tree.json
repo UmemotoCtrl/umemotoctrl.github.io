@@ -51,7 +51,7 @@
     },
     "index.md": {
       "type": "file",
-      "last_modified": 1744266544
+      "last_modified": 1744956921
     },
     "others": {
       "type": "directory",
@@ -104,10 +104,6 @@
         "drone.md": {
           "type": "file",
           "last_modified": 1744266544
-        },
-        "smc.md": {
-          "type": "file",
-          "last_modified": 1744014326
         }
       }
     },
