@@ -1,9 +1,9 @@
 # 外乱オブザーバに基づく制御
+## 論文「Local Input-to-State Stability Analysis on Compact Set for Disturbance Observer-Based Uncertain Multivariable Nonlinear Control Systems」の紹介
 
 ---
 
 ### **背景と目的**
-## 論文「Local Input-to-State Stability Analysis on Compact Set for Disturbance Observer-Based Uncertain Multivariable Nonlinear Control Systems」の紹介
 
 - **外乱オブザーバ（DOBC）とは？**
 制御対象（ロボットや機械など）に対して、外部から加わる予測できない力やモデルの不確かさ（外乱・不確かさ）を推定し、それを打ち消すことでロバスト（頑健）な制御を実現する方法です。
