@@ -54,6 +54,7 @@
 
 ### 所属学会
 
+* 日本機械学会 2024年7月〜現在
 * RSJ（日本ロボット学会）2017年4月〜現在
 * IEEE（The Institute of Electrical and Electronics Engineers）2014年6月〜現在
 * ISCIE（システム制御情報学会）2014年5月〜現在
