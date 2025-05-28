@@ -49,6 +49,12 @@
 
 ## 会議論文 (査読なし) Conference Paper w/o Review
 
+1. 塚田 泰生, 北川 慶⼀郎, 上田 崇人, 梅本 和希 , "SEAを用いたロボットアームの把持力制御", 第69回 システム制御情報学会 研究発表講演会 SCI'25, 2025.5
+1. 志垣 俊介, 永谷 直久, 水元 惟暁, 梅本 和希, 龍 宏亮, 藤澤 隆介, "⼩型⽣物へ複合刺激を印加可能にするサーボスフィアの制御と評価 ", 第69回 システム制御情報学会 研究発表講演会 SCI'25, 2025.5
+1. 上田 崇人, 梅本 和希 , "SEAを用いたロボットの非線形弾性を考慮した位置制御", 2024年度電気・情報関係学会北陸支部連合大会 (JHES2024), 2024.9
+1. 武野 駿斗, 梅本 和希 , "SEAを用いたロボットの非線形弾性を考慮した力推定", 2024年度電気・情報関係学会北陸支部連合大会 (JHES2024), 2024.9
+1. 牛田 和希, 梅本 和希 , "ドローンのオンボード画像位置計測手法の検討", 2024年度電気・情報関係学会北陸支部連合大会 (JHES2024), 2024.9
+1. 大浦 翼, 梅本 和希, 明田川 正人, "直列弾性アクチュエータを用いた多脚ロボットの力推定", 2024年度精密工学会春季大会学術講演会, 2024.3
 1. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Domain of Attraction Estimation for Nonlinear Systems with Parametric Uncertainty via State Transformation", AROB-ISBC-SWARM2022, 2022.
 2. Kazuhide Nakata, Kazuki Umemoto, Kenji Kaneko, Fujisawa Ryusuke, "Development And Operation Of Wire Movement Type Bridge Inspection Robot System ARANEUS", International Symposium on Applied Science 2019, 2020.
 3. 志田 拓哉, 吉川 智康, 江上 正, 梅本 和希, "直列弾性アクチュエータを用いた4脚ロボットの外力と接触点推定", 第61回自動制御連合講演会, 2018.11
