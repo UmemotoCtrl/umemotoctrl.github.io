@@ -51,14 +51,14 @@
     },
     "index.md": {
       "type": "file",
-      "last_modified": 1745202793
+      "last_modified": 1748392005
     },
     "others": {
       "type": "directory",
       "children": {
         "latexMath.md": {
           "type": "file",
-          "last_modified": 1744695735
+          "last_modified": 1750295161
         },
         "markdown.md": {
           "type": "file",
@@ -70,7 +70,7 @@
         },
         "mathNotation.md": {
           "type": "file",
-          "last_modified": 1744097227
+          "last_modified": 1750295161
         },
         "usageForParsers.md": {
           "type": "file",
@@ -80,7 +80,7 @@
     },
     "piinfo.md": {
       "type": "file",
-      "last_modified": 1744088801
+      "last_modified": 1750290792
     },
     "recruitment.md": {
       "type": "file",
@@ -91,25 +91,25 @@
       "children": {
         "aperiodic.md": {
           "type": "file",
-          "last_modified": 1744264495
+          "last_modified": 1750295161
         },
         "bridge.md": {
           "type": "file",
-          "last_modified": 1745202793
+          "last_modified": 1750295161
         },
         "dob.md": {
           "type": "file",
-          "last_modified": 1745202793
+          "last_modified": 1750295161
         },
         "drone.md": {
           "type": "file",
-          "last_modified": 1745202793
+          "last_modified": 1750295161
         }
       }
     },
     "researchworks.md": {
       "type": "file",
-      "last_modified": 1744088801
+      "last_modified": 1748392005
     },
     "sample.md": {
       "type": "file",

@@ -99,15 +99,15 @@ function loadMd ( article, argText, inPageTransition ) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const options = {
+    const optionsMarkedKatex = {
         throwOnError: false,
         displayMode: false,
         nonStandard: true
     };
-    const optFootnotes = {
+    const optionsFootnotes = {
         description: "参考文献"
     };
-    marked.use(markedKatex(options)).use(markedFootnote(optFootnotes));
+    marked.use(markedKatex(optionsMarkedKatex)).use(markedFootnote(optionsFootnotes));
     let article = document.getElementById("article");
 
     // Load Main md file
