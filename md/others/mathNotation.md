@@ -9,6 +9,7 @@
 ## 微分（または差分）方程式とは
 
 常微分方程式 orthogonal differential equation (ODE) が制御分野ではあれこれ議論されます．またの名をequation of motion (EOMというのは見たことない)，dynamical equation，dynamicsと言います．時間（変数はほとんど常に$t$）についての微分方程式です．頻出するのは
+
 $$
 \dot{x}(t) = f(x) + g(x) u(t)
 $$

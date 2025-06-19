@@ -69,20 +69,25 @@ $$
 A := \begin{bmatrix}a&b\\ c&d\end{bmatrix}
 $$
 * イコールが揃う複数行数式１：`equation`+`split`または`equation`+`aligned`環境，全体に式番号が一つ付く
+$$
 \begin{equation}
 \tag{A1}\begin{aligned}
 \dot{x} =& f(x,~u) \\
 y =& g(x)
 \end{aligned}
 \end{equation}
+$$
 
 * =が揃う複数行数式２：`align`環境，Latexではそれぞれに式番号が一つ付く．`eqnarray`は使わなくて良い模様
+$$
 \begin{align}
 \dot{x} =& f(x,~u) \\
 y =& g(x)
 \end{align}
+$$
 
 * 条件わけ．右にカッコを閉じたい場合は`array`と`\left. \right\}`を駆使して下さい．`\left.`は表示されない．大きさ判定のために左右セットにしなければならないようで，非表示ですが必須．大きさを指定する$\bigr\}$などは片側でも良いが，手動調整は旨味がない．
+$$
 \begin{equation}
 f(x) :=
 \begin{cases}
@@ -90,7 +95,7 @@ f(x) :=
 0,\quad &\text{if}~ x = 0
 \end{cases}
 \end{equation}
-
+$$
 * 別行立て数式には`\tag{数字など}`で名前を付けられます．MathJaxやTyporaは参照にも対応しており，`$\eqref{LabelX}$`と書けば番号を参照してくれます．\label{...}と独立行式中に書けば，`\ref{...}, \eqref{...}`の参照が使えます．Latexにコピペすることを想定すると，式番号を使う場合はLatexで使用される(1)などを避け，(A1) のようにしておけば番号が混ざらないので後で処理しやすいかもしれない．
 
 **注記**： MathJaxとKatexでも違い、使うソフトごとに対応がまばらで困ります。

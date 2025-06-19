@@ -52,7 +52,8 @@ function loadMd ( article, argText, inPageTransition ) {
     fetchFileWithMetadata(file)
     .then(({ content, lastModified }) => {
         // markdownコンテンツを追加
-        article.innerHTML = mdp.render(content);
+        // console.log(content);
+        article.innerHTML = marked.parse(content);
         // タイトル編集
         if (/^# (.+?)$/m.test(content)) document.title = content.match(/^# (.+?)$/m)[1];
         // Bulmaクラス追加
@@ -63,35 +64,6 @@ function loadMd ( article, argText, inPageTransition ) {
         addClassToTags("p > a, ul > li > a, ol > li > a", "button", "is-small");
         for (const ultag of document.getElementsByTagName("ul")) addConatainerClass(ultag);
         for (const ultag of document.getElementsByTagName("ol")) addConatainerClass(ultag);
-        // インライン数式のレンダリング
-        document.querySelectorAll("span.mdpmath").forEach((dom) => {
-            dom.innerHTML = katex.renderToString(dom.innerHTML
-                .replace(/&lt;/g, '<')
-                .replace(/&gt;/g, '>')
-                .replace(/&quot;/g, '"')
-                .replace(/&#39;/g, "'")
-                .replace(/&amp;/g, '&')
-                .replace(/\$(.+?)\$/g, '$1'));
-        });
-        // 独立行数式のレンダリング
-        document.querySelectorAll("div.mdpmath").forEach((dom) => {
-            const regs = [
-                /\$\$([\s\S]+)\$\$/,
-                /\\\[([\s\S]+)\\\]/
-            ];
-            const innerText = dom.innerHTML
-                .replace(regs[0], "$1")
-                .replace(regs[1], "$1")
-                .replace(/&lt;/g, '<')
-                .replace(/&gt;/g, '>')
-                .replace(/&quot;/g, '"')
-                .replace(/&#39;/g, "'")
-                .replace(/&amp;/g, '&');
-            dom.innerHTML = katex.renderToString(innerText, {
-                displayMode: true,
-                throwOnError: false
-            });
-        });
         // highlight.js sync
         document.querySelectorAll('pre code[class*="language-"]').forEach((dom) => {
             hljs.highlightElement(dom);
@@ -126,10 +98,16 @@ function loadMd ( article, argText, inPageTransition ) {
     });
 }
 
-let mdp;
-
 document.addEventListener('DOMContentLoaded', () => {
-    mdp = makeMDP();
+    const options = {
+        throwOnError: false,
+        displayMode: false,
+        nonStandard: true
+    };
+    const optFootnotes = {
+        description: "参考文献"
+    };
+    marked.use(markedKatex(options)).use(markedFootnote(optFootnotes));
     let article = document.getElementById("article");
 
     // Load Main md file
