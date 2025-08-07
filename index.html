@@ -40,11 +40,17 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
     <style>
-      body {
-        font-family: 'Kosugi Maru', sans-serif;
-        padding-top: 76px;
-      }
-    </style>
+        body {
+            font-family: 'Nunito', 'Kosugi Maru', sans-serif;        
+            padding-top: 76px;
+        }
+        main {
+            padding-bottom: 30px;
+        }
+        h2.subtitle {
+            border-left: solid 5px hsl(171, 100%, 41%);/*左線*/
+        }
+      </style>
     <!-- JS -->
     <script
         defer
@@ -80,7 +86,7 @@
 <body>
     <header>
         <nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand"><h1 class="title mt-4 ml-4 has-text-dark">福井大学 梅本研究室</h1>
+            <div class="navbar-brand"><p class="is-size-3 has-text-weight-bold my-4 ml-4 has-text-dark">福井大学 梅本研究室</p>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNav">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -91,10 +97,10 @@
             <div class="navbar-menu has-text-weight-semibold" id="mainNav">
                 <!-- <div class="navbar-start"><a class="navbar-item" href="#">Top</a></div> -->
                 <div class="navbar-start"></div>
-                <div class="navbar-item"><a class="navbar-item" href="./">Top</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="./">ホーム</a></div>
                 <!-- <div class="navbar-item"><a class="navbar-item" href="#">研究紹介</a></div> -->
                 <div class="navbar-item"><a class="navbar-item" href="./?id=piinfo">教員紹介</a></div>
-                <div class="navbar-item"><a class="navbar-item" href="./?id=researchworks">論文リスト</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="./?id=researchworks">研究業績</a></div>
                 <div class="navbar-item"><a class="navbar-item" href="./?id=recruitment">学生募集</a></div>
                 <div class="navbar-item">
                     <a class="navbar-item" href="./?id=tips">
@@ -114,7 +120,7 @@
             このWebサイトはJavaScriptを使用しています。正しく表示・操作するには、ブラウザのJavaScriptを有効にしてください。
         </div>
     </noscript>
-    <footer class="footer">
+    <footer class="footer mt-1">
         <div class="container">
           <div class="columns is-vcentered is-centered is-mobile">
             <div class="column is-narrow">

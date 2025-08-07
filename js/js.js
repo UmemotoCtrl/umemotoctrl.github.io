@@ -58,7 +58,7 @@ function loadMd ( article, argText, inPageTransition ) {
         if (/^# (.+?)$/m.test(content)) document.title = content.match(/^# (.+?)$/m)[1];
         // Bulmaクラス追加
         addClassToTags("h1", "title", "mt-4");
-        addClassToTags("h2, h3, h4", "subtitle", "mt-4", "has-text-weight-semibold");
+        addClassToTags("h2, h3, h4", "subtitle", "mt-4", "py-1", "pl-3");
         addClassToTags("pre", "has-background-inherit");
         addClassToTags("table", "table", "is-striped");
         addClassToTags("p > a, ul > li > a, ol > li > a", "button", "is-small");

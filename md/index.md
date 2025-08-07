@@ -1,7 +1,8 @@
 <!-- # トップページ -->
-
-<h1 class="title has-text-centered">梅本研究室にようこそ</h1>
-<p class="content has-text-centered">非線形システムのロバスト制御法と、そのロボットシステムへの応用を研究しています。</p>
+<div class="m-4 p-4">
+    <h1 class="content has-text-centered is-size-3">梅本研究室にようこそ</h1>
+    <p class="content has-text-centered">非線形システムのロバスト制御法と、そのロバスト制御法のドローンや柔軟ロボットなどロボットシステムへの応用を研究しています。</p>
+</div>
 
 <!-- 画像は4:3で用意 -->
 <div class="columns">
@@ -92,11 +93,12 @@
     </div>
     <div class="column"></div>
 </div>
+
 <!-- お知らせ -->
-<div class="columns is-centered mb-5">
+<div class="columns is-centered">
     <div class="column is-three-fifths">
 
-## News
+## ニュース
 
 * 2025年5月27日 塚田 泰生(修士1年)が第69回 システム制御情報学会 研究発表講演会 SCI'25で発表しました。
 * 2025年4月7日 研究室HPができました。
