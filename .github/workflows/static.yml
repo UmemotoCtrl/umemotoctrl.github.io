@@ -31,6 +31,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Run generate_sitemap.py
+        run: python generate_sitemap.py
+
       - name: Run update.py
         run: python update.py
 
