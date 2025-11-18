@@ -1,6 +1,6 @@
 <!-- # トップページ -->
 <div class="m-4 p-4">
-    <h1 class="content has-text-centered is-size-3">梅本研究室にようこそ</h1>
+    <h1 class="content has-text-centered is-size-3 has-text-weight-medium">梅本研究室にようこそ</h1>
     <p class="content has-text-centered">非線形システムのロバスト制御法と、そのロバスト制御法のドローンや柔軟ロボットなどロボットシステムへの応用を研究しています。</p>
 </div>
 
