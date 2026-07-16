@@ -12,9 +12,6 @@
 
 ## 学術論文 (査読あり) Journal Paper
 
-1. 龍 宏亮, 志垣 俊介, 梅本 和希, 水元 惟暁, 藤澤 隆介,
-小型陸生生物の非拘束行動計測に向けた三自由度サーボスフィアPSYCHO-ANTAM の工学的基盤,
-システム制御情報学会論文誌 (2026).
 1. Takeru Katagiri, Sogo Kodama, Kotaro Kawahara, Kazuki Umemoto, Takanori Miyoshi, Tadachika Nakayama, "Response characteristics of pressure-sensitive conductive elastomer sensors using OFC electrode with triangular wave concavo–convex surfaces", Sensors, Vol. 24, No. 7, 2024.4. [DOI: 10.3390/s24072349](https://doi.org/10.3390/s24072349)
 1. Takeru Katagiri, Nguyen Chi Trung Ngo, Yuki Togawa, Sogo Kodama, Kotaro Kawahara, Kazuki Umemoto, Takanori Miyoshi, Tadachika Nakayama, "Investigation of Contact Surface Changes and Sensor Response of a Pressure-Sensitive Conductive Elastomer", electronics, Vol. 12, No. 21, 2023.11. [DOI: 10.3390/electronics12214532](https://doi.org/10.3390/electronics12214532)
 1. Hosuk Yeon, Kazuki Umemoto, Susumu Shimizu, Takahiro Endo, Fumitoshi Matsuno, Kazuma Mizuki, "Control system design for a class of non-cascade nonlinear under-actuated systems with an application to a rotary crane system", Mechatronics, Vol. 96, No. 1, 2023.10. [DOI: 10.1016/j.mechatronics.2023.103087](https://doi.org/10.1016/j.mechatronics.2023.103087)
@@ -51,7 +48,12 @@
 5. Mingcong Deng, Akira Inoue, Kazuki Umemoto, "Analysis and Experimental Study on Networked Nonlinear Controller Design for a Water Level Process Experimental Process", Proc. of the 2008 IEEE International Conference on Networking, Sensing and Control, pp.22-25, 2008.4
 
 ## 会議論文 (査読なし) Conference Paper w/o Review
-
+1. 谷口 怜楽, 瀧 敬太, 山田 拓実, 梅本 和希, "柔軟物体の把持運搬のための変形計測", システム制御情報学会研究発表講演会 SCI'26, 2026.5
+1. 柳瀬 智生, 瀧 敬太, 梅本 和希, "ムササビ型ロボットの開発と飛行制御", システム制御情報学会研究発表講演会 SCI'26, 2026.5
+1. 南部 太陽, 瀧 敬太, 梅本 和希 , "ドローン姿勢制御におけるデータ駆動型制御手法の比較", システム制御情報学会研究発表講演会 SCI'26, 2026.5
+1. 瀧 敬太, 梅本 和希, 不破 淳太, "クワッドロータ吊り下げ荷の機体内部センサを用いた揺れ推定とRLS逐次最小二乗法による揺れ抑制制御", 日本機械学会 北陸信越支部 2026年合同講演会, 2026.3
+1. 松浦 光輝, 瀧 敬太, 梅本 和希, "バックステッピング制御を用いたドローンの安定化", 日本機械学会 北陸信越支部 2026年合同講演会, 2026.3
+1. 中川 廣昭, 梅本 和希, "有理リアプノフ関数とSOS手法を用いたDOA推定手法の汎用最適化ソルバー実装", 第13回計測自動制御学会制御部門マルチシンポジウム, 2026.3
 1. 塚田 泰生, 北川 慶⼀郎, 上田 崇人, 梅本 和希 , "SEAを用いたロボットアームの把持力制御", 第69回 システム制御情報学会 研究発表講演会 SCI'25, 2025.5
 1. 志垣 俊介, 永谷 直久, 水元 惟暁, 梅本 和希, 龍 宏亮, 藤澤 隆介, "⼩型⽣物へ複合刺激を印加可能にするサーボスフィアの制御と評価 ", 第69回 システム制御情報学会 研究発表講演会 SCI'25, 2025.5
 1. 上田 崇人, 梅本 和希 , "SEAを用いたロボットの非線形弾性を考慮した位置制御", 2024年度電気・情報関係学会北陸支部連合大会 (JHES2024), 2024.9
