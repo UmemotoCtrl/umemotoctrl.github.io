@@ -31,21 +31,21 @@
 
 ## 学会・社会貢献活動
 
-1. システム制御情報学会 研究発表講演会 SCI'26 実行委員会 委員, , 2026.5.24-26
+1. システム制御情報学会 研究発表講演会 SCI'26 実行委員会 委員, 2026.5.24-26
 1. 計測自動制御学会 第13回 制御部門マルチシンポジウム MSCS2026 プログラム副委員長, 2026.3.3-6
 1. 2025-26年度計測自動制御学会代議員, 計測自動制御学会, 2025.4.1-2026.3.31
 1. 第63期 福井県担当幹事, 日本機械学会 北陸信越支部, 2025.4.1-2026.3.31
-1. システム制御情報学会 研究発表講演会 SCI'25 実行委員会 委員, , 2024.10.23-2025.5.27
+1. システム制御情報学会 研究発表講演会 SCI'25 実行委員会 委員, 2024.10.23-2025.5.27
 1. 第28, 29期運営委員, 計測自動制御学会 北陸支部, 2024.2.1-2026.1.31
 1. Program Committee, SWARM2024, 2024.2.11-9.20
 1. Local Committees, 8th International Conference on Control and Robotics Engineering (ICCRE 2023), 2023.4.21-4.23
 1. Program Committee, AROB-ISBC-SWARM 2022, 2022.1.25-1.27
 1. Executive Committee, DARS-SWARM2021, 2021.6.1-6.4
-1. Program Committee, 14th Internatinal Symposium on Distributed Autonomous Robotic Systems (DARS2018), 2018.10.15-10.17
+1. Program Committee, 14th International Symposium on Distributed Autonomous Robotic Systems (DARS2018), 2018.10.15-10.17
 2. SCI'18 実行委員, システム制御情報学会, 2018.5.16-5.18
 3. Program Committee, ICAMechS 2017, 2017.12.6-12.9
 4. 会誌編集委員, 日本ロボット学会, 2017.4.1-2018.3.31
-5. Program Committee, 13th Internatinal Symposium on Distributed Autonomous Robotic Systems (DARS2016), 2016.11.6-11.9
+5. Program Committee, 13th International Symposium on Distributed Autonomous Robotic Systems (DARS2016), 2016.11.6-11.9
 6. Program Committee, ICAMechS 2015, 2015.8.22-8.25
 7. Program Committee, ICAMechS 2014, 2014.8.10-8.12
 
