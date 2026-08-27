@@ -53,7 +53,7 @@
 - 摩擦力をうまく使い、滑りを防ぎながら効率的に運搬できる点が特徴です。
 - 将来的には、実際のUAVを使った実験も計画されています。
 
-他にも[^2], [^3], [^4], [^5]などの論文を投稿しています。
+他にも[^2], [^3], [^4], [^5]などの論文が出版されています。
 
 [^2]: Tiehua Wang, Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Modeling and Control of a Quadrotor UAV Equipped with a Flexible Arm in Vertical Plane", IEEE Access, Vol. 9, No. 1, pp.98476-98489, 2021.7, [DOI: 10.1109/ACCESS.2021.3095536](https://doi.org/10.1109/ACCESS.2021.3095536)
 [^3]: Tiehua Wang, Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Non-cascade Adaptive Sliding Mode Control for Quadrotor UAVs under Parametric Uncertainties and External Disturbance with Indoor Experiments", Journal of Intelligent and Robotic Systems, Vol. 102, No. 8, pp.1-21, 2021.4, [DOI: 10.1007/s10846-021-01351-z](https://doi.org/10.1007/s10846-021-01351-z)

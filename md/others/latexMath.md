@@ -48,7 +48,7 @@ $$
 - 極限`\lim`．$f'(x):=\lim_{h\to \pm 0}\frac{f(x+h)-f(x)}{h}$
 - ベクトルなどを太字にする`$\boldsymbol{x}$`=$\boldsymbol{x}$
 - 実数空間`\mathbb{R}`=$\mathbb{R}$，複素空間$\mathbb{C}$，自然数空間$\mathbb{N}$
-- 等号不等号`=`=$=$，`\neq`=$\neq$，`\leq`=$\leq$，`\geq`=$\geq$，近似等号`\approx`=$\approx$，恒等式と合同`\equiv`=$\equiv$，その否定`\not\equiv`=$\not\equiv$．2重線の不等号`\geqq`=$\geqq$，点をつけた近似`\fallingdotseqに`=$\fallingdotseq$もできる．
+- 等号不等号`=`=$=$，`\neq`=$\neq$，`\leq`=$\leq$，`\geq`=$\geq$，近似等号`\approx`=$\approx$，恒等式と合同`\equiv`=$\equiv$，その否定`\not\equiv`=$\not\equiv$．2重線の不等号`\geqq`=$\geqq$，点をつけた近似`\fallingdotseq`=$\fallingdotseq$もできる．
 - 集合の要素・元`\in`=$\in$，部分集合`\subset`=$\subset$，等号含む`\subseteq`=$\subseteq$．反対なら`\supset`=$\supset,~\supseteq$
 - 集合の演算，共通部分$\cap$, 和集合$\cup$, 直和$\oplus$, 減算$\setminus$
 - for all `\forall`=$\forall$，存在する`\exists`=$\exists$
