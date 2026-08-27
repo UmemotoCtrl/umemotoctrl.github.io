@@ -57,7 +57,7 @@
 <div class="columns is-narrow">
     <div class="column is-half is-offset-one-quarter">
         <figure class="image is-full-width">
-            <img src="./img/TopDownloaded.png"/>
+            <img src="./img/TopDownloaded.png" alt="Top Downloaded Article 受賞画像"/>
         </figure>
     </div>
 </div>

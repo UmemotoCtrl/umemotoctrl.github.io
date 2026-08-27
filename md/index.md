@@ -12,6 +12,7 @@
                 <a href="./?id=/research/bridge"><figure class="image">
                 <img
                     src="./img/bridge.png"
+                    alt="橋梁点検ロボット ARANEUS"
                 />
                 </figure></a>
             </div>
@@ -28,13 +29,14 @@
                 <a href="./?id=/research/drone"><figure class="image">
                 <img
                     src="./img/drone.jpg"
+                    alt="ドローンの協調運搬"
                 />
                 </figure></a>
             </div>
             <div class="card-content">
                 <div class="content has-text-weight-semibold has-text-centered">
 2014年～ ドローンのロバスト自律制御
-                </a></div>
+                </div>
             </div>
         </div>
     </div>
@@ -47,6 +49,7 @@
                 <a href="./?id=/research/aperiodic"><figure class="image">
                 <img
                     src="./img/Aperiodic.png"
+                    alt="非周期的サンプル値非線形制御"
                 />
                 </figure></a>
             </div>
@@ -55,7 +58,7 @@
 2023年 非周期的サンプル値非線形制御
                 </div>
             </div>
-        </a></div>
+        </div>
     </div>
 </div>
 <div class="columns">
@@ -65,6 +68,7 @@
                 <a href="./?id=/research/dob"><figure class="image">
                 <img
                     src="./img/DOb.png"
+                    alt="外乱オブザーバに基づく制御"
                 />
                 </figure></a>
             </div>
@@ -81,6 +85,7 @@
                 <figure class="image">
                 <img
                     src="./img/legged.jpg"
+                    alt="多脚ロボット"
                 />
                 </figure>
             </div>

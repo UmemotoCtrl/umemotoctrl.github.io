@@ -15,7 +15,7 @@
 1. Takeru Katagiri, Sogo Kodama, Kotaro Kawahara, Kazuki Umemoto, Takanori Miyoshi, Tadachika Nakayama, "Response characteristics of pressure-sensitive conductive elastomer sensors using OFC electrode with triangular wave concavo–convex surfaces", Sensors, Vol. 24, No. 7, 2024.4. [DOI: 10.3390/s24072349](https://doi.org/10.3390/s24072349)
 1. Takeru Katagiri, Nguyen Chi Trung Ngo, Yuki Togawa, Sogo Kodama, Kotaro Kawahara, Kazuki Umemoto, Takanori Miyoshi, Tadachika Nakayama, "Investigation of Contact Surface Changes and Sensor Response of a Pressure-Sensitive Conductive Elastomer", electronics, Vol. 12, No. 21, 2023.11. [DOI: 10.3390/electronics12214532](https://doi.org/10.3390/electronics12214532)
 1. Hosuk Yeon, Kazuki Umemoto, Susumu Shimizu, Takahiro Endo, Fumitoshi Matsuno, Kazuma Mizuki, "Control system design for a class of non-cascade nonlinear under-actuated systems with an application to a rotary crane system", Mechatronics, Vol. 96, No. 1, 2023.10. [DOI: 10.1016/j.mechatronics.2023.103087](https://doi.org/10.1016/j.mechatronics.2023.103087)
-1. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Local Robust Stability on Compact Set for Nonlinear Systems with Continuous Time Controller Against to Aperiodic Sampling and Disturbance", IET Control Theory & Applications, Vol. 17, No. 2, pp.133-143, 2022.10. [DOI: 10.1049/cth2.12367](https://doi.org/10.1049/cth2.12367)
+1. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Local Robust Stability on Compact Set for Nonlinear Systems with Continuous Time Controller Against to Aperiodic Sampling and Disturbance", IET Control Theory & Applications, Vol. 17, No. 2, pp.133-143, 2023.1. [DOI: 10.1049/cth2.12367](https://doi.org/10.1049/cth2.12367)
 1. Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Local Input-to-State Stability Analysis on Compact Set for Disturbance Observer-Based Uncertain Multivariable Nonlinear Control Systems", International Journal of Robust and Nonlinear Control, Vol. 31, No. 16, pp.7785-7802, 2021.7. [DOI: 10.1002/RNC.5711](https://doi.org/10.1002/RNC.5711)
 1. Tiehua Wang, Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Modeling and Control of a Quadrotor UAV Equipped with a Flexible Arm in Vertical Plane", IEEE Access, Vol. 9, No. 1, pp.98476-98489, 2021.7. [DOI: 10.1109/ACCESS.2021.3095536](https://doi.org/10.1109/ACCESS.2021.3095536)
 1. Tiehua Wang, Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Non-cascade Adaptive Sliding Mode Control for Quadrotor UAVs under Parametric Uncertainties and External Disturbance with Indoor Experiments", Journal of Intelligent and Robotic Systems, Vol. 102, No. 8, pp.1-21, 2021.4. [DOI: 10.1007/s10846-021-01351-z](https://doi.org/10.1007/s10846-021-01351-z)
@@ -33,6 +33,10 @@
 19. 梅本 和希, 池田 拓也, 松野 文俊, "スライディングモード制御によるマルチロータ型UAVのロバスト追従制御", 計測自動制御学会論文集, Vol. 50, No. 2, pp.170-176, 2014.2. [DOI: 10.9746/sicetr.50.170](https://doi.org/10.9746/sicetr.50.170)
 20. Kazuki Umemoto, Mingcong Deng, Fumitoshi Matsuno, "Tracking Control and Error Analysis for Nonlinear Plants using Robust Right Coprime Factorization", International Journal of Advanced Mechatronic Systems, Vol. 5, No. 5, pp.326-334, 2013.9. [DOI: 10.1504/IJAMECHS.2013.059788](https://doi.org/10.1504/IJAMECHS.2013.059788)
 21. Kazuki Umemoto, Mingcong Deng, "Operator-based Non-linear Control System Design for Unstable Plants with Input Saturation", International Journal of Advanced Mechatronic Systems, Vol. 3, No. 4, pp.297-303, 2011.5. [DOI: 10.1504/IJAMECHS.2011.043378](https://doi.org/10.1504/IJAMECHS.2011.043378)
+
+## プレプリント Preprint
+
+1. K. Taki, K. Umemoto, "Payload Swing Estimation and Damping Without Payload Parameters for Multirotor UAVs", arXiv:2608.18625 [eess.SY], 2026.8. [arXiv:2608.18625](https://arxiv.org/abs/2608.18625) [DOI: 10.48550/arXiv.2608.18625](https://doi.org/10.48550/arXiv.2608.18625)
 
 ## 特許 Patent
 

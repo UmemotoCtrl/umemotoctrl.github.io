@@ -64,53 +64,19 @@
         integrity="sha256-g3uQXnXEt9Iy9g9W5QjQqbK+o8kv4qOH6OSS2wPXuzA="
         crossorigin="anonymous"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.39.1/ace.min.js" integrity="sha512-WgH9t1qfGMsgkGm6j8zrhj8UHqry1q+guPAJPGqIeWAVjs9/JsSUwAzdOLGvckuF+cbGie2XUYEKhCNybk5dTg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="./js/common.js"></script>
     <script defer>
-function formatUnixTimestamp(unixTimestamp) {
-    const date = new Date(unixTimestamp * 1000);  // Unixタイムスタンプは秒単位なので、ミリ秒に変換
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;  // 月は0から始まるため、1を足します
-    const day = date.getDate();
-    // フォーマットに合わせて年、月、日を返す
-    return `${year}/${month}/${day}`;
-}
-async function fetchFileWithMetadata(url) {
-    const response = await fetch(url);
-    if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    const lastModified = response.headers.get('Last-Modified');
-    const extension = url.split('.').pop().toLowerCase();
-    let content;
-    if (extension === 'json') {
-        content = await response.json();
-    } else {
-        content = await response.text();
-    }
-    return {
-        content,
-        lastModified: lastModified ? new Date(lastModified) : null
-    };
-}
-function addClassToTags (tag, ...classnames) {
-    const elements = document.querySelectorAll(tag);
-    for (const name of classnames) {
-        elements.forEach((element) => element.classList.add(name));
-    }
-}
-function addConatainerClass (elem) {
-    const element = document.createElement("div");
-    element.classList.add("content");
-    const pre = elem.nextElementSibling;
-    const parent = elem.parentNode;
-    element.prepend(elem);
-    parent.insertBefore(element, pre);
-}
 function loadMd ( article, argText, inPageTransition ) {
     // Load markdown file
     let file;
     if (argText == "./") file = "./md/sample.md";
     else {
         const match = argText.match(/^\.\/*\?id=(\/?[\w\/-]+)$/);
+        if (!match) {
+            // 不正な ?id= パラメータ（例: ?id=tips:markdown）では何も読み込まない
+            console.warn("Invalid id parameter: " + argText);
+            return;
+        }
         const idPath = match[1].replace(/^\/?/, '');
         file = `./md/${idPath}.md`;
     }
@@ -279,7 +245,7 @@ let writeHTML = function () {
       </div>
     </main>
     <footer class="footer">
-        <div class="content has-text-centered"><p>&copy; 2020 Kazuki Umemoto</p></div>
+        <div class="content has-text-centered"><p>&copy; 2020-2026 Kazuki Umemoto</p></div>
     </footer>
 </body>
 </html>

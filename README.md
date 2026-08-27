@@ -17,5 +17,6 @@ This repository includes a [Dev Container](https://containers.dev/) configuratio
 * A static server is started with `npm start` (port 3000).
   Open http://localhost:3000 to preview the site.
   Note that an HTTP server is required because the site loads `md/*.md` files via `fetch()`.
-* The image includes Node.js 24 and Python 3. The scripts `update.py`, `generate_sitemap.py`,
-  and `check_sitemap_urls.py` use only the standard library, so they work as-is.
+* The image includes Node.js 24 and Python 3. The scripts `update.py` and `generate_sitemap.py`
+  use only the standard library, so they work as-is. `check_sitemap_urls.py` requires the
+  `requests` package (`pip install requests`).

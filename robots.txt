@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /md/
-Disallow: /img/
-Disallow: /js/
+Allow: /
+
+Sitemap: https://umemotoctrl.github.io/sitemap.xml

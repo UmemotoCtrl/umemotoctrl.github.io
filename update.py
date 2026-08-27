@@ -38,4 +38,4 @@ result = {
 with open("folder_tree.json", "w", encoding="utf-8") as f:
     json.dump(result, f, ensure_ascii=False, indent=2)
 
-print("✅ Unixタイムスタンプでツリーを書き出しました: tree_with_unix_timestamps.json")
+print("✅ Unixタイムスタンプでツリーを書き出しました: folder_tree.json")

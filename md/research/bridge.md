@@ -4,6 +4,7 @@
 <figure class="image is-pulled-right" style="width:60%">
     <img
         src="./img/bridge.png"
+        alt="橋梁点検ロボット ARANEUS"
     />
 </figure>
 <!-- </div> -->

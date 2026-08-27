@@ -1,123 +1,74 @@
 {
   "md": {
-    "img": {
-      "type": "directory",
-      "children": {
-        "Aperiodic.png": {
-          "type": "file",
-          "last_modified": 1744014326
-        },
-        "aperiodic_explanation.webp": {
-          "type": "file",
-          "last_modified": 1744264495
-        },
-        "bridge.png": {
-          "type": "file",
-          "last_modified": 1744088801
-        },
-        "DOb.png": {
-          "type": "file",
-          "last_modified": 1744014326
-        },
-        "drone.jpg": {
-          "type": "file",
-          "last_modified": 1744088801
-        },
-        "favicon.ico": {
-          "type": "file",
-          "last_modified": 1740124270
-        },
-        "feedback.webp": {
-          "type": "file",
-          "last_modified": 1744264495
-        },
-        "figures.pptx": {
-          "type": "file",
-          "last_modified": 1744264495
-        },
-        "legged.jpg": {
-          "type": "file",
-          "last_modified": 1744088801
-        },
-        "photo_ume.jpg": {
-          "type": "file",
-          "last_modified": 1740124270
-        },
-        "TopDownloaded.png": {
-          "type": "file",
-          "last_modified": 1744088801
-        }
-      }
-    },
     "index.md": {
       "type": "file",
-      "last_modified": 1784185766
+      "last_modified": 1787800885
     },
     "others": {
       "type": "directory",
       "children": {
+        "MathjaxUsage.md": {
+          "type": "file",
+          "last_modified": 1787800885
+        },
         "latexMath.md": {
           "type": "file",
-          "last_modified": 1750295161
+          "last_modified": 1787800885
         },
         "markdown.md": {
           "type": "file",
-          "last_modified": 1744021881
-        },
-        "MathjaxUsage.md": {
-          "type": "file",
-          "last_modified": 1744021881
+          "last_modified": 1787800885
         },
         "mathNotation.md": {
           "type": "file",
-          "last_modified": 1750295161
+          "last_modified": 1787800885
         },
         "usageForParsers.md": {
           "type": "file",
-          "last_modified": 1744021881
+          "last_modified": 1787800885
         }
       }
     },
     "piinfo.md": {
       "type": "file",
-      "last_modified": 1784185766
+      "last_modified": 1787800885
     },
     "recruitment.md": {
       "type": "file",
-      "last_modified": 1744264495
+      "last_modified": 1787800885
     },
     "research": {
       "type": "directory",
       "children": {
         "aperiodic.md": {
           "type": "file",
-          "last_modified": 1750295161
+          "last_modified": 1787801518
         },
         "bridge.md": {
           "type": "file",
-          "last_modified": 1750295161
+          "last_modified": 1787801518
         },
         "dob.md": {
           "type": "file",
-          "last_modified": 1750295161
+          "last_modified": 1787800885
         },
         "drone.md": {
           "type": "file",
-          "last_modified": 1750295161
+          "last_modified": 1787800885
         }
       }
     },
     "researchworks.md": {
       "type": "file",
-      "last_modified": 1784185766
+      "last_modified": 1787800885
     },
     "sample.md": {
       "type": "file",
-      "last_modified": 1744345801
+      "last_modified": 1787800885
     },
     "tips.md": {
       "type": "file",
-      "last_modified": 1785311729
+      "last_modified": 1787800885
     }
   }
 }
