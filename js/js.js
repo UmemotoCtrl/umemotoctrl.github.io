@@ -55,7 +55,8 @@ function loadMd ( article, argText, inPageTransition ) {
         // console.log(content);
         article.innerHTML = marked.parse(content);
         // タイトル編集
-        if (/^# (.+?)$/m.test(content)) document.title = content.match(/^# (.+?)$/m)[1];
+        const titleMatch = content.match(/^# (.+?)$/m);
+        if (titleMatch) document.title = titleMatch[1].replace(/\[\^[^\]]*\]/g, '').trim();
         // Bulmaクラス追加
         addClassToTags("h1", "title", "mt-4");
         addClassToTags("h2, h3, h4", "subtitle", "mt-4", "py-1", "pl-3");
