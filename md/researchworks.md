@@ -12,6 +12,7 @@
 
 ## 学術論文 (査読あり) Journal Paper
 
+1. 龍 宏亮, 志垣 俊介, 梅本 和希, 水元 惟暁, 藤澤 隆介, "小型陸生生物の非拘束行動計測に向けた三自由度サーボスフィアPSYCHO-ANTAM の工学的基盤", システム制御情報学会論文誌, Vol. 39, No. 9, pp.238-249, 2026.9. [DOI: 10.5687/iscie.39.238](https://doi.org/10.5687/iscie.39.238)
 1. Takeru Katagiri, Sogo Kodama, Kotaro Kawahara, Kazuki Umemoto, Takanori Miyoshi, Tadachika Nakayama, "Response characteristics of pressure-sensitive conductive elastomer sensors using OFC electrode with triangular wave concavo–convex surfaces", Sensors, Vol. 24, No. 7, 2024.4. [DOI: 10.3390/s24072349](https://doi.org/10.3390/s24072349)
 1. Takeru Katagiri, Nguyen Chi Trung Ngo, Yuki Togawa, Sogo Kodama, Kotaro Kawahara, Kazuki Umemoto, Takanori Miyoshi, Tadachika Nakayama, "Investigation of Contact Surface Changes and Sensor Response of a Pressure-Sensitive Conductive Elastomer", electronics, Vol. 12, No. 21, 2023.11. [DOI: 10.3390/electronics12214532](https://doi.org/10.3390/electronics12214532)
 1. Hosuk Yeon, Kazuki Umemoto, Susumu Shimizu, Takahiro Endo, Fumitoshi Matsuno, Kazuma Mizuki, "Control system design for a class of non-cascade nonlinear under-actuated systems with an application to a rotary crane system", Mechatronics, Vol. 96, No. 1, 2023.10. [DOI: 10.1016/j.mechatronics.2023.103087](https://doi.org/10.1016/j.mechatronics.2023.103087)
