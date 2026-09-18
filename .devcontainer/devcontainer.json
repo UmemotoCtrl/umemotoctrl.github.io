@@ -1,20 +1,26 @@
 {
-  "name": "umemotoctrl.github.io",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:24-bookworm",
-  "forwardPorts": [3000],
-  "postCreateCommand": "npm install",
+  "name": "Node.js + reveal.js",
+  // "remoteUser": "node",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [5173],
   "customizations": {
     "vscode": {
       "extensions": [
-        "esbenp.prettier-vscode",
-        "yzhang.markdown-all-in-one"
-      ],
-      "settings": {
-        "editor.formatOnSave": true,
-        "files.associations": {
-          "*.md": "markdown"
-        }
-      }
+        "multicoder.multicoder",
+        // "formulahendry.acp-client",
+        "marp-team.marp-vscode",
+        // "ms-azuretools.vscode-containers",
+        "saoudrizwan.claude-dev"
+      ]
     }
-  }
+  },
+  "mounts": [
+    // Docker Container間共有のnamed volumeを使いて、Cline、Hermes Agentの設定を引き継ぐ。
+    // targetはパス直接指定でないとビルドエラー
+    "source=setting-node-cline,target=/root/.cline,type=volume",
+    "source=setting-node-claude,target=/root/.claude,type=volume",
+    "source=setting-node-hermes,target=/root/.hermes,type=volume"
+  ]
 }
