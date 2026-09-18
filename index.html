@@ -108,6 +108,27 @@ Issue:
         }
         h2.subtitle {
             border-left: solid 5px hsl(171, 100%, 41%);/*左線*/
+            border-radius: 0 8px 8px 0;
+            background: hsl(171, 100%, 96%);
+        }
+        .card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,.08);
+            transition: transform .2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+        }
+        .navbar.is-fixed-top {
+            backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(0,0,0,.08);
+        }
+        .button.is-small {
+            border-radius: 999px;
+        }
+        main img {
+            border-radius: 8px;
         }
       </style>
     <!-- JS -->
