@@ -5,7 +5,7 @@
 
 * 制御工学とロボティクスの研究に従事，1986年3月生，福井大学所属
 * 連絡先：umemoto (アット) g.u-fukui.ac.jp
-* <a href="https://github.com/UmemotoCtrl" target="_blank">GitHub</a>
+* <a href="https://github.com/UmemotoCtrl" target="_blank">GitHub</a> <a href="https://github.com/orgs/UmemotoLab/" target="_blank">GitHub Organization</a>
 * [研究業績リスト List of research works](./?id=researchworks)
 
 ## 競争的資金
@@ -53,7 +53,7 @@
 
 1. (指導学生の受賞) 計測自動制御学会 (SICE) 北陸支部優秀学生賞 上田 崇人, 2024年度
 2. (指導学生の受賞) 計測自動制御学会 (SICE) 北陸支部優秀学生賞 武野 駿斗, 2024年度
-3. Top Downloaded Article, Kazuki Umemoto, INTERNATIONAL JOURNAL OF ROBUST AND NONLINEAR CONTROL, Wiley, 2021.
+3. Top Downloaded Article, Kazuki Umemoto, INTERNATIONAL JOURNAL OF ROBUST AND NONLINEAR CONTROL, Wiley, 2023-3-30.
 <div class="columns is-narrow">
     <div class="column is-half is-offset-one-quarter">
         <figure class="image is-full-width">
@@ -70,7 +70,7 @@
 
 ## 学歴
 
-* 2014年3月　京都大学大学院 工学研究科 機械理工学専攻 博士後期課程 修了 博士（工学），非線形システムのロバスト制御とマルチロータ型UAVへの応用
+* 2014年3月24日　京都大学大学院 工学研究科 機械理工学専攻 博士後期課程 修了 博士（工学），非線形システムのロバスト制御とマルチロータ型UAVへの応用
 * 2010年3月　岡山大学大学院 自然科学研究科 機械システム工学専攻 博士前期課程 修了 修士（工学），Control system design for nonlinear unstable plants with input saturation using robust right coprime factorization
 * 2008年3月　岡山大学 工学部 システム工学科 卒業 学士（工学），ロバスト右既約分解に基づく水位プロセス実験装置に対するネットワーク制御系設計
 
