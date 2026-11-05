@@ -1,10 +1,10 @@
 {
-  "name": "Node.js + reveal.js",
+  "name": "Umemoto Laboratory static site",
   // "remoteUser": "node",
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "forwardPorts": [5173],
+  "forwardPorts": [3000],
   "customizations": {
     "vscode": {
       "extensions": [

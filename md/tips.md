@@ -5,13 +5,13 @@
 主に指導学生向けとして，役立ちそうな情報について記載します．
 
 * [解析力学 講義ノート](./etc/analytical_mechanics_essentials.pdf): 電子媒体としての見やすさのため、余白を小さくしてあります．印刷する場合は余白を大きくした方が良いかもしれません．
-* [MathJax3の使い方](./?id=/others/MathjaxUsage)
-* [Client-side Javascript markdown parser usage](./?id=/others/usageForParsers)
-* [markdownの書き方](./?id=/others/markdown)
+* [MathJax3の使い方](others/MathjaxUsage.md)
+* [Client-side Javascript markdown parser usage](others/usageForParsers.md)
+* [markdownの書き方](others/markdown.md)
 * [markdown-Katexのオンラインエディタ](./onlineTest.html)
-* [javascript markdown parserの比較](./mdpjs/)
-* [latex数式](./?id=/others/latexMath)
-* [非線形制御関係の数学記法](./?id=/others/mathNotation)
+* [javascript markdown parserの比較](https://umemotoctrl.github.io/mdpjs/)
+* [latex数式](others/latexMath.md)
+* [非線形制御関係の数学記法](others/mathNotation.md)
 
 <!-- * txtメモから卒業！メモ書きのためのエコシステム**[Markdown](./?id=tips:markdown)**
 * (個人的に十分な) **[Latex数式コマンド集 for Markdown](./?id=tips:latexMath)**

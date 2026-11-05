@@ -49,7 +49,7 @@ Issue:
             "@type": "CollegeOrUniversity",
             "name": "福井大学"
           },
-          "url": "https://umemotoctrl.github.io/?id=piinfo",
+          "url": "https://umemotoctrl.github.io/piinfo/",
           "sameAs": [
             "https://researchmap.jp/kumemoto/",
             "https://orcid.org/0000-0002-1148-4114"
@@ -87,8 +87,8 @@ Issue:
     <!-- Katex: Copyright (c) 2013-2020 Khan Academy and other contributors. The MIT License (MIT). -->
     <link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
-        integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
+        href="https://cdn.jsdelivr.net/npm/katex@0.18.2/dist/katex.min.css"
+        integrity="sha384-qArEAQvOPs1o7K1iAybhs66g8nYTXVt4VLOQ3abu+OMLJyPNfaH4Wpko0X2epHJ+"
         crossorigin="anonymous">
     <!-- Fonts -->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet"> -->
@@ -131,41 +131,10 @@ Issue:
             border-radius: 8px;
         }
       </style>
-    <!-- JS -->
-    <script
-        defer
-        src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
-        integrity="sha256-6NiFUFlJ86X0q91d0NU2lr0Tca0m/79PMQ3Nd8jNrok="
-        crossorigin="anonymous"></script>
-    <script
-        defer
-        src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"
-        integrity="sha512-EBLzUL8XLl+va/zAsmXwS7Z2B1F9HUHkZwyS/VKwh3S7T/U0nF4BaU29EP/ZSf6zgiIxYAnKLu6bJ8dqpmX5uw=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
-    <script
-        defer
-        src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/latex.min.js"
-        integrity="sha512-4h3uWtv1iEA4sgWqZ1is70GnmESsRzCRaGTyeajS/8Zq0CGWVCCRTrpEw5mJ57vF9LIfwNwCMNeV6IjGytrhrA=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
-    <script
-        defer
-        src="https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.12/lib/marked.umd.min.js"
-        integrity="sha512-eGGZ4h+DnTfurMAik9A5hFOXrzP32Z9Nisi4ixrWdQ2+1BQDqI1x72vIV/l8xi7qz66kBN/gxuIiBVZ6mzo8Zg=="
-        crossorigin="anonymous"></script>
-    <script
-        defer
-        src="https://cdn.jsdelivr.net/npm/marked-katex-extension@5.1.4/lib/index.umd.min.js"
-        integrity="sha384-IXJ8W/3kyGnP7SVnERNsdc5ioHobIqAZ0gCZsNlGKnJ4wTfiMkTUsKKb/0XvsDT6"
-        crossorigin="anonymous"></script>
-    <script
-        defer
-        src="https://cdn.jsdelivr.net/npm/marked-footnote@1.4.0/dist/index.umd.min.js"
-        integrity="sha384-U2JaaoXhDznoUlBasI0QYYOcShh12YmdJKK0MMebphXwGi+wTXwp0hB7lk3YKtgH"
-        crossorigin="anonymous"></script>
-    <script defer src="./js/common.js"></script>
-    <script defer src="./js/js.js"></script>
+    <script data-root-script="./js/site.js" defer></script>
+    <script id="legacy-url-redirect">
+        // The builder injects the article route list into js/legacy-url.js.
+    </script>
 
 </head>
 <body>
@@ -182,13 +151,13 @@ Issue:
             <div class="navbar-menu has-text-weight-semibold" id="mainNav">
                 <!-- <div class="navbar-start"><a class="navbar-item" href="#">Top</a></div> -->
                 <div class="navbar-start"></div>
-                <div class="navbar-item"><a class="navbar-item" href="./">ホーム</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="./" data-site-page="">ホーム</a></div>
                 <!-- <div class="navbar-item"><a class="navbar-item" href="#">研究紹介</a></div> -->
-                <div class="navbar-item"><a class="navbar-item" href="./?id=piinfo">教員紹介</a></div>
-                <div class="navbar-item"><a class="navbar-item" href="./?id=researchworks">研究業績</a></div>
-                <div class="navbar-item"><a class="navbar-item" href="./?id=recruitment">学生募集</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="./piinfo/" data-site-page="piinfo/">教員紹介</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="./researchworks/" data-site-page="researchworks/">研究業績</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="./recruitment/" data-site-page="recruitment/">学生募集</a></div>
                 <div class="navbar-item">
-                    <a class="navbar-item" href="./?id=tips">
+                    <a class="navbar-item" href="./tips/" data-site-page="tips/">
                         その他のコンテンツ
                     </a>
                 </div>
@@ -210,7 +179,7 @@ Issue:
           <div class="columns is-vcentered is-centered is-mobile">
             <div class="column is-narrow">
               <a href="https://www.u-fukui.ac.jp/" target="_blank" rel="noopener">
-                <img src="./img/transparent_Sy-e2.png" alt="福井大学ロゴ" style="height:48px;">
+                <img src="./img/transparent_Sy-e2.png" data-root-asset="img/transparent_Sy-e2.png" alt="福井大学ロゴ" style="height:48px;">
               </a>
             </div>
             <div class="column is-narrow has-text-left">

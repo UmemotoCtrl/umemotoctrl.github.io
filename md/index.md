@@ -9,7 +9,7 @@
     <div class="column">
         <div class="card">
             <div class="card-image">
-                <a href="./?id=/research/bridge"><figure class="image">
+                <a href="./research/bridge.md"><figure class="image">
                 <img
                     src="./img/bridge.png"
                     alt="橋梁点検ロボット ARANEUS"
@@ -26,7 +26,7 @@
     <div class="column">
         <div class="card">
             <div class="card-image">
-                <a href="./?id=/research/drone"><figure class="image">
+                <a href="./research/drone.md"><figure class="image">
                 <img
                     src="./img/drone.jpg"
                     alt="ドローンの協調運搬"
@@ -46,7 +46,7 @@
                 <p class="card-header-title">Component</p>
             </header> -->
             <div class="card-image">
-                <a href="./?id=/research/aperiodic"><figure class="image">
+                <a href="./research/aperiodic.md"><figure class="image">
                 <img
                     src="./img/Aperiodic.png"
                     alt="非周期的サンプル値非線形制御"
@@ -65,7 +65,7 @@
     <div class="column">
         <div class="card">
             <div class="card-image">
-                <a href="./?id=/research/dob"><figure class="image">
+                <a href="./research/dob.md"><figure class="image">
                 <img
                     src="./img/DOb.png"
                     alt="外乱オブザーバに基づく制御"
@@ -91,7 +91,7 @@
             </div>
             <div class="card-content">
                 <div class="content has-text-weight-medium has-text-centered">
-2016年～ 柔軟なアクチュエータを用いた多脚ロボット
+2016年～ 柔軟アクチュエータを用いた多脚ロボット
                 </div>
             </div>
         </div>

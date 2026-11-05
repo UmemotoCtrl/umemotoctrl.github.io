@@ -6,7 +6,7 @@
 * 制御工学とロボティクスの研究に従事，1986年3月生，福井大学所属
 * 連絡先：umemoto (アット) g.u-fukui.ac.jp
 * <a href="https://github.com/UmemotoCtrl" target="_blank">GitHub</a> <a href="https://github.com/orgs/UmemotoLab/" target="_blank">GitHub Organization</a>
-* [研究業績リスト List of research works](./?id=researchworks)
+* [研究業績リスト List of research works](researchworks.md)
 
 ## 競争的資金
 
