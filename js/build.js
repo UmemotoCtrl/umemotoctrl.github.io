@@ -7,7 +7,7 @@ import { extractTitle, renderArticleDom } from "./render.js";
 
 export const BASE_URL = "https://umemotoctrl.github.io";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const OUTPUT_DIRECTORY = path.join(ROOT, "dist");
+const OUTPUT_DIRECTORY = path.join(ROOT, "docs");
 const STATIC_DIRECTORIES = ["etc", "img"];
 const STATIC_FILES = ["onlineTest.html", "robots.txt"];
 function toPosix(filePath) {
@@ -308,5 +308,5 @@ export async function buildSite() {
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
     const pages = await buildSite();
-    console.log(`Built ${pages.length} Markdown pages in dist/.`);
+    console.log(`Built ${pages.length} Markdown pages in docs/.`);
 }

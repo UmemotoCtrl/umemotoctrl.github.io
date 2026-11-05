@@ -7,7 +7,7 @@ import { JSDOM } from "jsdom";
 import { buildSite } from "./build.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const output = path.join(root, "dist");
+const output = path.join(root, "docs");
 let pages;
 
 before(async () => {

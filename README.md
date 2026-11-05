@@ -18,12 +18,12 @@ This repository includes a [Dev Container](https://containers.dev/) configuratio
 * Run `npm start` to build the site and start a preview server on port 3000.
   Open http://localhost:3000 to preview the site.
 * `index.html` is the shared template. The custom Node.js builder in `js/build.js`
-  converts `md/*.md` with the renderer in `js/render.js` and writes the complete site to `dist/`.
+  converts `md/*.md` with the renderer in `js/render.js` and writes the complete site to `docs/`.
 * Article links in Markdown use paths to source Markdown files, such as `researchworks.md`.
   The builder converts them to page URLs. Links to images, PDFs, and `md/*.md` source downloads
   remain relative to the repository root.
 * `onlineTest.html` remains a dynamic Markdown editor. The other articles contain pre-rendered
   Markdown, KaTeX, and highlighted code, so they are readable without browser-side rendering.
 * Run `npm run check` to verify rendering, generated metadata, sitemap URLs, and local links.
-* Push to `master` to build and deploy `dist/` through `.github/workflows/static.yml`.
+* Push to `master` to build and deploy `docs/` through `.github/workflows/static.yml`.
   Set GitHub Pages **Source** to **GitHub Actions**. Git history supplies article update dates.

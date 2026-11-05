@@ -1,0 +1,248 @@
+<!doctype html>
+<!--
+Issue:
+    * 学生募集の拡充、雰囲気・進路・メンバー
+    * 研究紹介の拡充
+    * 
+--><!DOCTYPE html><html lang="ja"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="外乱オブザーバに基づく制御 | 福井大学 梅本研究室">
+    <title>外乱オブザーバに基づく制御</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://umemotoctrl.github.io/img/favicon.ico">
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="福井大学 梅本研究室">
+    <meta property="og:title" content="外乱オブザーバに基づく制御">
+    <meta property="og:description" content="外乱オブザーバに基づく制御 | 福井大学 梅本研究室">
+    <meta property="og:url" content="https://umemotoctrl.github.io/research/dob/">
+    <meta property="og:image" content="https://umemotoctrl.github.io/img/photo_ume.jpg">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="外乱オブザーバに基づく制御">
+    <meta name="twitter:description" content="外乱オブザーバに基づく制御 | 福井大学 梅本研究室">
+    <meta name="twitter:image" content="https://umemotoctrl.github.io/img/photo_ume.jpg">
+    <!-- 構造化データ (JSON-LD) -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://umemotoctrl.github.io/#website",
+      "url": "https://umemotoctrl.github.io/",
+      "name": "福井大学 梅本研究室",
+      "inLanguage": "ja",
+      "description": "非線形システムのロバスト制御法と、そのドローンや柔軟ロボットなどロボットシステムへの応用を研究しています。"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://umemotoctrl.github.io/#person",
+      "name": "Kazuki Umemoto",
+      "givenName": "Kazuki",
+      "familyName": "Umemoto",
+      "alternateName": "梅本 和希",
+      "jobTitle": "准教授",
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "福井大学"
+      },
+      "url": "https://umemotoctrl.github.io/piinfo/",
+      "sameAs": [
+        "https://researchmap.jp/kumemoto/",
+        "https://orcid.org/0000-0002-1148-4114"
+      ]
+    }
+  ]
+}</script>
+    <!-- CSS -->
+    <!-- Bulma: Code copyright 2023 Jeremy Thomas. Code released under the MIT license. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.3/css/bulma.min.css" integrity="sha256-RwYNyYLkMTjyYn8FRzVzQFtHXuHg9dpfkPCuf6j2XDM=" crossorigin="anonymous">
+    <!-- highlight.js: Copyright (c) 2006, Ivan Sagalaev. BSD 3-Clause License. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css" integrity="sha512-Jk4AqjWsdSzSWCSuQTfYRIF84Rq/eV0G2+tu07byYwHcbTGfdmLrHjUSwvzp5HvbiqK4ibmNwdcG49Y5RGYPTg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- highlightjsの良さそうなStyles
+        atom-one-dark
+        github-dark-dimmed
+        github-dark
+        monokai
+        obsidian
+        panda-syntax-dark
+        stackoverflow-dark
+        qtcreator-dark
+        vs2015
+        xt256
+    -->
+    <!-- Katex: Copyright (c) 2013-2020 Khan Academy and other contributors. The MIT License (MIT). -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.2/dist/katex.min.css" integrity="sha384-qArEAQvOPs1o7K1iAybhs66g8nYTXVt4VLOQ3abu+OMLJyPNfaH4Wpko0X2epHJ+" crossorigin="anonymous">
+    <!-- Fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&amp;display=block" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            padding-top: 76px;
+        }
+        main {
+            padding-bottom: 30px;
+        }
+        h2.subtitle {
+            border-left: solid 5px hsl(171, 100%, 41%);/*左線*/
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.45rem;
+        }
+        .card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,.08);
+            transition: transform .2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+        }
+        .navbar.is-fixed-top {
+            backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(0,0,0,.08);
+        }
+        .button.is-small {
+            border-radius: 999px;
+        }
+        main img {
+            border-radius: 8px;
+        }
+      </style>
+    <script defer="" src="../../js/site.js"></script>
+    
+
+<link rel="canonical" href="https://umemotoctrl.github.io/research/dob/"></head>
+<body>
+    <header>
+        <nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand"><p class="is-size-3 has-text-weight-bold my-4 ml-4 has-text-dark">福井大学 梅本研究室</p>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="navbar-menu has-text-weight-semibold" id="mainNav">
+                <!-- <div class="navbar-start"><a class="navbar-item" href="#">Top</a></div> -->
+                <div class="navbar-start"></div>
+                <div class="navbar-item"><a class="navbar-item" href="../../">ホーム</a></div>
+                <!-- <div class="navbar-item"><a class="navbar-item" href="#">研究紹介</a></div> -->
+                <div class="navbar-item"><a class="navbar-item" href="../../piinfo/">教員紹介</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="../../researchworks/">研究業績</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="../../recruitment/">学生募集</a></div>
+                <div class="navbar-item">
+                    <a class="navbar-item" href="../../tips/">
+                        その他のコンテンツ
+                    </a>
+                </div>
+                <!-- <div class="navbar-end"><a class="navbar-item" href="#">学生募集</a></div> -->
+            </div>
+        </nav>
+    </header>
+    <main id="article" class="container" role="main"><div class="my-2 has-text-weight-semibold" style="text-align: end;"><p>2026/9/4更新</p></div><h1 class="title mt-4">外乱オブザーバに基づく制御</h1>
+<h2 class="subtitle mt-4 py-1 pl-3">論文「Local Input-to-State Stability Analysis on Compact Set for Disturbance Observer-Based Uncertain Multivariable Nonlinear Control Systems」<sup><a id="footnote-ref-1" href="#footnote-1" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>の紹介</h2>
+<hr>
+<h3 class="subtitle mt-4 py-1 pl-3"><strong>背景と目的</strong></h3>
+<div class="content"><ul>
+<li><strong>外乱オブザーバ（DOBC）とは？</strong>
+制御対象（ロボットや機械など）に対して、外部から加わる予測できない力やモデルの不確かさ（外乱・不確かさ）を推定し、それを打ち消すことでロバスト（頑健）な制御を実現する方法です。</li>
+<li><strong>安定性とは？</strong>
+制御システムが外乱を受けても暴走せず、目標値の近くにとどまる性質を指します。
+特に「入力対状態安定性（ISS）」は、外乱入力が小さければシステムの状態も小さく抑えられることを意味します。</li>
+<li><strong>本研究の課題意識</strong>
+既存のISS理論は、システムの全状態空間（全ての初期値や外乱）で安定性を保証しようとします。しかし、現実の機械では物理的に到達できないような大きな外乱や初期値まで考慮する必要はありません。
+そこで「局所ISS（LISS）」という、ある範囲（コンパクト集合）内での安定性に着目します。これにより、より多くの実用的なシステムで安定性を証明できるようになります。</li>
+</ul></div>
+<hr>
+<h3 class="subtitle mt-4 py-1 pl-3"><strong>主な内容と新規性</strong></h3>
+<div class="content"><ul>
+<li><strong>LISS Lyapunov関数 on コンパクト集合（LISS LF CS）の提案</strong>
+LISSを保証するためのLyapunov関数（システムのエネルギーのようなもの）を、状態の一部領域（コンパクト集合）でだけ減少するように設計し、安定性を証明する手法を提案しています。</li>
+<li><strong>DOBCシステムの安定性解析</strong><div class="content"><ul>
+<li>多入力・多変数（MIMO）システムに対して、外乱や不確かさが時間や状態に依存する場合でも、LISS LF CSを使えば安定性を保証できることを理論的に示しました。</li>
+<li>これにより、従来のISSでは解析できなかった複雑なシステム（例：多関節ロボットマニピュレータ）にも適用可能となります。</li>
+</ul></div>
+</li>
+<li><strong>収束速度や定常誤差の評価</strong>
+LISS LF CSを使うことで、システムがどれくらいの速さで安定し、外乱があるときにどの程度まで状態が収束するか（定常誤差）も明確に評価できることを示しています。</li>
+</ul></div>
+<hr>
+<h3 class="subtitle mt-4 py-1 pl-3"><strong>理論のポイント</strong></h3>
+<div class="content"><ul>
+<li><strong>ISSとLISSの違い</strong><div class="content"><ul>
+<li>ISS：どんなに大きな初期値や外乱でも安定性を保証（現実的には過剰）。</li>
+<li>LISS：ある範囲内の初期値・外乱で安定性を保証（現実的・実用的）。</li>
+</ul></div>
+</li>
+<li><strong>Lyapunov関数の使い方</strong>
+システムの状態が大きいときにエネルギー関数（Lyapunov関数）が減少することを示すことで、安定性を証明します。本論文では、その減少条件を「全空間」ではなく「コンパクト集合」内に限定しています。</li>
+<li><strong>DOBCの特徴</strong>
+外乱の大きさ自体ではなく、その「時間変化の速さ」によって制御誤差が決まる、という特徴があります。これは、外乱がゆっくり変化するなら大きくても誤差は小さく抑えられることを意味します。</li>
+</ul></div>
+<hr>
+<h3 class="subtitle mt-4 py-1 pl-3"><strong>数値シミュレーション例</strong></h3>
+<div class="content"><ul>
+<li><strong>多関節ロボットマニピュレータでの検証</strong>
+提案理論を2リンクロボットアームに適用し、外乱やパラメータの不確かさがある場合でも、DOBCを使うことで局所的な安定性（LISS）が保たれることを数値的に示しました。</li>
+<li><strong>他方式との比較</strong>
+フィードバック線形化や高ゲインフィードバック（HGFB）との比較も行い、DOBCの方がロバスト性（外乱抑制性能）が高いことを示しています。</li>
+</ul></div>
+<hr>
+<h3 class="subtitle mt-4 py-1 pl-3"><strong>まとめ：この論文の意義</strong></h3>
+<div class="content"><ul>
+<li><strong>理論的貢献</strong>
+LISS LF CSという新しい安定性解析手法を提案し、DOBCを使った多変数・非線形システムの安定性をより広いクラスで保証できることを示しました。</li>
+<li><strong>実用的意義</strong>
+ロボットや機械システムなど、現実の制御対象に対して「現実的な範囲」での安定性を理論的に保証できるため、今後のロバスト制御設計に役立ちます。</li>
+</ul></div>
+<hr>
+<h3 class="subtitle mt-4 py-1 pl-3"><strong>キーワード解説</strong></h3>
+<div class="content"><ul>
+<li><strong>外乱オブザーバ（DO, DOBC）</strong>：外乱を推定して補償する制御器</li>
+<li><strong>Lyapunov関数</strong>：安定性を証明するためのエネルギー的指標</li>
+<li><strong>ISS（入力対状態安定性）</strong>：外乱が小さければ状態も小さく抑えられる性質</li>
+<li><strong>LISS（局所ISS）</strong>：ある範囲内でのISS</li>
+<li><strong>コンパクト集合</strong>：有限な範囲のこと</li>
+</ul></div>
+<p>他にも<sup><a id="footnote-ref-2" href="#footnote-2" data-footnote-ref="" aria-describedby="footnote-label">2</a></sup>などの論文が出版されています。</p>
+<section class="footnotes" data-footnotes="">
+<h2 id="footnote-label" class="sr-only subtitle mt-4 py-1 pl-3">参考文献</h2>
+<div class="content"><ol>
+<li id="footnote-1">
+<p>Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, "Local Input-to-State Stability Analysis on Compact Set for Disturbance Observer-Based Uncertain Multivariable Nonlinear Control Systems", International Journal of Robust and Nonlinear Control, Vol. 31, No. 16, pp.7785-7802, 2021.7, <a href="https://doi.org/10.1002/RNC.5711" class="button is-small">DOI: 10.1002/RNC.5711</a> <a href="#footnote-ref-1" data-footnote-backref="" aria-label="Back to reference 1" class="button is-small">↩</a></p>
+</li>
+<li id="footnote-2">
+<p>Kazuki Umemoto, Takahiro Endo, Fumitoshi Matsuno, Tadashi Egami, "Stability Analysis of a Control System with Nonlinear Input Uncertainty based on Disturbance Observer", International Journal of Robust and Nonlinear Control, Vol. 30, No. 11, pp.4433-4448, 2020.4, <a href="https://doi.org/10.1002/rnc.4999" class="button is-small">DOI: 10.1002/rnc.4999</a> <a href="#footnote-ref-2" data-footnote-backref="" aria-label="Back to reference 2" class="button is-small">↩</a></p>
+</li>
+</ol></div>
+</section>
+</main>
+    
+    <footer class="footer mt-1">
+        <div class="container">
+          <div class="columns is-vcentered is-centered is-mobile">
+            <div class="column is-narrow">
+              <a href="https://www.u-fukui.ac.jp/" target="_blank" rel="noopener">
+                <img src="../../img/transparent_Sy-e2.png" alt="福井大学ロゴ" style="height:48px;">
+              </a>
+            </div>
+            <div class="column is-narrow has-text-left">
+              <p class="mb-1">© 2020-2026 Kazuki Umemoto</p>
+              <p class="mb-0">
+                お問い合わせ: umemoto (アット) g.u-fukui.ac.jp<br>
+                <span class="is-size-7">※(アット)を@に置き換えてください。</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+</body></html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://umemotoctrl.github.io/sitemap.xml

@@ -1,0 +1,365 @@
+<!doctype html>
+<!--
+Issue:
+    * 学生募集の拡充、雰囲気・進路・メンバー
+    * 研究紹介の拡充
+    * 
+--><!DOCTYPE html><html lang="ja"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Markdown | 福井大学 梅本研究室">
+    <title>Markdown</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://umemotoctrl.github.io/img/favicon.ico">
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="福井大学 梅本研究室">
+    <meta property="og:title" content="Markdown">
+    <meta property="og:description" content="Markdown | 福井大学 梅本研究室">
+    <meta property="og:url" content="https://umemotoctrl.github.io/others/markdown/">
+    <meta property="og:image" content="https://umemotoctrl.github.io/img/photo_ume.jpg">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Markdown">
+    <meta name="twitter:description" content="Markdown | 福井大学 梅本研究室">
+    <meta name="twitter:image" content="https://umemotoctrl.github.io/img/photo_ume.jpg">
+    <!-- 構造化データ (JSON-LD) -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://umemotoctrl.github.io/#website",
+      "url": "https://umemotoctrl.github.io/",
+      "name": "福井大学 梅本研究室",
+      "inLanguage": "ja",
+      "description": "非線形システムのロバスト制御法と、そのドローンや柔軟ロボットなどロボットシステムへの応用を研究しています。"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://umemotoctrl.github.io/#person",
+      "name": "Kazuki Umemoto",
+      "givenName": "Kazuki",
+      "familyName": "Umemoto",
+      "alternateName": "梅本 和希",
+      "jobTitle": "准教授",
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "福井大学"
+      },
+      "url": "https://umemotoctrl.github.io/piinfo/",
+      "sameAs": [
+        "https://researchmap.jp/kumemoto/",
+        "https://orcid.org/0000-0002-1148-4114"
+      ]
+    }
+  ]
+}</script>
+    <!-- CSS -->
+    <!-- Bulma: Code copyright 2023 Jeremy Thomas. Code released under the MIT license. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.3/css/bulma.min.css" integrity="sha256-RwYNyYLkMTjyYn8FRzVzQFtHXuHg9dpfkPCuf6j2XDM=" crossorigin="anonymous">
+    <!-- highlight.js: Copyright (c) 2006, Ivan Sagalaev. BSD 3-Clause License. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css" integrity="sha512-Jk4AqjWsdSzSWCSuQTfYRIF84Rq/eV0G2+tu07byYwHcbTGfdmLrHjUSwvzp5HvbiqK4ibmNwdcG49Y5RGYPTg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- highlightjsの良さそうなStyles
+        atom-one-dark
+        github-dark-dimmed
+        github-dark
+        monokai
+        obsidian
+        panda-syntax-dark
+        stackoverflow-dark
+        qtcreator-dark
+        vs2015
+        xt256
+    -->
+    <!-- Katex: Copyright (c) 2013-2020 Khan Academy and other contributors. The MIT License (MIT). -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.2/dist/katex.min.css" integrity="sha384-qArEAQvOPs1o7K1iAybhs66g8nYTXVt4VLOQ3abu+OMLJyPNfaH4Wpko0X2epHJ+" crossorigin="anonymous">
+    <!-- Fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&amp;display=block" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            padding-top: 76px;
+        }
+        main {
+            padding-bottom: 30px;
+        }
+        h2.subtitle {
+            border-left: solid 5px hsl(171, 100%, 41%);/*左線*/
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.45rem;
+        }
+        .card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,.08);
+            transition: transform .2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+        }
+        .navbar.is-fixed-top {
+            backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(0,0,0,.08);
+        }
+        .button.is-small {
+            border-radius: 999px;
+        }
+        main img {
+            border-radius: 8px;
+        }
+      </style>
+    <script defer="" src="../../js/site.js"></script>
+    
+
+<link rel="canonical" href="https://umemotoctrl.github.io/others/markdown/"></head>
+<body>
+    <header>
+        <nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand"><p class="is-size-3 has-text-weight-bold my-4 ml-4 has-text-dark">福井大学 梅本研究室</p>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="navbar-menu has-text-weight-semibold" id="mainNav">
+                <!-- <div class="navbar-start"><a class="navbar-item" href="#">Top</a></div> -->
+                <div class="navbar-start"></div>
+                <div class="navbar-item"><a class="navbar-item" href="../../">ホーム</a></div>
+                <!-- <div class="navbar-item"><a class="navbar-item" href="#">研究紹介</a></div> -->
+                <div class="navbar-item"><a class="navbar-item" href="../../piinfo/">教員紹介</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="../../researchworks/">研究業績</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="../../recruitment/">学生募集</a></div>
+                <div class="navbar-item">
+                    <a class="navbar-item" href="../../tips/">
+                        その他のコンテンツ
+                    </a>
+                </div>
+                <!-- <div class="navbar-end"><a class="navbar-item" href="#">学生募集</a></div> -->
+            </div>
+        </nav>
+    </header>
+    <main id="article" class="container" role="main"><div class="my-2 has-text-weight-semibold" style="text-align: end;"><p>2026/11/5更新</p></div><h1 class="title mt-4">Markdown</h1>
+<h2 class="subtitle mt-4 py-1 pl-3">導入：Markdownとは</h2>
+<p>markdownはテキストでメモ書きするための取り決めです．目次はこう書きましょう，リストはこう書きましょうというルール集だと言え，windows標準のメモ帳でも書けるので導入しやすい優しさがあります．markdown自体は記述ルールですが，便利なソフトウェアが開発されており，きれいに表示することができますのでメモに限らず短い文書にも使えます．GitHub, Qiitaなど様々なサービスもあり，高度なエコシステムが構築されています．</p>
+<p>覚えることも少なく役に立つので,txt拡張子を多用している人はぜひmd拡張子に乗り換えましょう！ちなみにこのWebサイトはmarkdownで記載したファイルを静的なHTMLへ変換することで，コンテンツをmarkdownで書けるようにしています．このページのmdファイルは<a href="../../md/others/markdown.md" class="button is-small">こちら</a>にあります (md拡張子で開き方がわからなければメモ帳にドラッグアンドドロップ！もしくはTyporaをインストール！)．</p>
+<p>記法はmarked，Typoraで扱えるものを想定し，おそらくMarkdownの方言の一種であるGitHub Flavored Markdownにほぼ準拠しているように思います．</p>
+<h2 class="subtitle mt-4 py-1 pl-3">Markdown記法</h2>
+<h3 class="subtitle mt-4 py-1 pl-3">目次: ファイルの始まりは<code>#</code></h3>
+<p>文書=ファイルの1行目に<code># タイトル</code> (#の後は半角スペースを入れる) とタイトルを書きます．<code>##</code>で章のタイトル，<code>###</code>でさらに小さい区切りの節のタイトルを書きます．<code>#</code>の数を増やせばさらに小さく区切れますが，いくつまで対応しているかはわかりません．markdownで長い文書は書かない方が良いので，多くても4つ<code>####</code>までにしておくのが良いように思います．</p>
+<pre class="has-background-inherit"><code class="hljs language-markdown"><span class="hljs-section"># タイトル</span>
+
+<span class="hljs-section">## 章立て1</span>
+
+<span class="hljs-section">### 節1-1</span>
+
+<span class="hljs-section">### 節1-2</span>
+
+<span class="hljs-section">## 章立て2</span>
+
+<span class="hljs-section">### 節2-1</span></code></pre>
+<p>のような感じで構成します．タイトル行の前後は空白行を入れるルールがあるようです．</p>
+<h3 class="subtitle mt-4 py-1 pl-3">段落は一行開ける</h3>
+<pre class="has-background-inherit"><code class="hljs language-markdown">第１段落はこれ
+
+第２段落がこれ</code></pre>
+<p>とすれば，</p>
+<p>第１段落はこれ</p>
+<p>第２段落がこれ</p>
+<p>のように段落が区切られます．</p>
+<pre class="has-background-inherit"><code class="hljs language-markdown">第１段落はこれ
+第２段落がこれ</code></pre>
+<p>のように詰めると，</p>
+<p>第１段落はこれ
+第２段落がこれ</p>
+<p>と，<strong>基本的には</strong>改行が無視されます．基本外が多くあり，Typoraは<code>&lt;br&gt;</code>の改行タグ扱いします．</p>
+<h3 class="subtitle mt-4 py-1 pl-3">リストは<code>*</code>と<code>1.</code>！番号は自動で増える！</h3>
+<p>階層にすることもでき，</p>
+<pre class="has-background-inherit"><code class="hljs language-markdown"><span class="hljs-bullet">*</span> 1つめ
+<span class="hljs-bullet">  -</span> itm1-1
+<span class="hljs-bullet">  -</span> itm1-2
+<span class="hljs-bullet">    1.</span> a
+<span class="hljs-bullet">    2.</span> b
+<span class="hljs-bullet">    3.</span> c
+<span class="hljs-bullet">*</span> 2つめ
+
+<span class="hljs-bullet">1.</span> 1つめ
+b
+<span class="hljs-bullet">  1.</span> 1-1
+<span class="hljs-bullet">  1.</span> 1-2
+<span class="hljs-bullet">  1.</span> 1-3
+<span class="hljs-bullet">1.</span> 2つめ
+a
+<span class="hljs-bullet">  -</span> itm1-1
+<span class="hljs-bullet">  -</span> itm1-1
+<span class="hljs-bullet">  -</span> itm1-2
+<span class="hljs-bullet">1.</span> 3つめ
+aa</code></pre>
+<p>は</p>
+<div class="content"><ul>
+<li>1つめ<div class="content"><ul>
+<li>itm1-1</li>
+<li>itm1-2<div class="content"><ol>
+<li>a</li>
+<li>b</li>
+<li>c</li>
+</ol></div>
+</li>
+</ul></div>
+</li>
+<li>2つめ</li>
+</ul></div>
+<div class="content"><ol>
+<li>1つめ
+b</li>
+<li>1-1</li>
+<li>1-2</li>
+<li>1-3</li>
+<li>2つめ
+a</li>
+</ol></div>
+<div class="content"><ul>
+<li>itm1-1</li>
+<li>itm1-1</li>
+<li>itm1-2</li>
+</ul></div>
+<div class="content"><ol>
+<li>3つめ
+aa</li>
+</ol></div>
+<p>のように，ビューワを使えば表示されます．<code>1.</code> (番号は好きなもので良い) とすれば勝手に表示番号が調整されます．<code>*</code>記号と<code>-</code>記号はどちらでも構いませんが，階層を見やすくするために，階層ごとに交互に使うのが良いのではないでしょうか．</p>
+<h4 class="subtitle mt-4 py-1 pl-3">空白行を含むリスト</h4>
+<p>各項目が長文になったりした場合の処理のため，少しだけ扱いが異なります．<code>&lt;p&gt;</code>タグが挿入されます．markdown考案者のサイトかどこかに説明がありましたが，結構実装にばらつきがあるようで，環境に左右さます．</p>
+<pre class="has-background-inherit"><code class="hljs language-markdown"><span class="hljs-bullet">1.</span> 1つめ
+b
+
+<span class="hljs-bullet">  1.</span> 1-1
+<span class="hljs-bullet">  1.</span> 1-2
+<span class="hljs-bullet">  1.</span> 1-3
+<span class="hljs-bullet">1.</span> 2つめ
+a
+<span class="hljs-bullet">  -</span> itm1-1
+<span class="hljs-bullet">  -</span> itm1-1
+<span class="hljs-bullet">  -</span> itm1-2
+<span class="hljs-bullet">1.</span> 3つめ
+aa</code></pre>
+<p>は</p>
+<div class="content"><ol>
+<li><p>1つめ
+b</p>
+</li>
+<li><p>1-1</p>
+</li>
+<li><p>1-2</p>
+</li>
+<li><p>1-3</p>
+</li>
+<li><p>2つめ
+a</p>
+</li>
+</ol></div>
+<div class="content"><ul>
+<li>itm1-1</li>
+<li>itm1-1</li>
+<li>itm1-2</li>
+</ul></div>
+<div class="content"><ol>
+<li>3つめ
+aa</li>
+</ol></div>
+<h3 class="subtitle mt-4 py-1 pl-3">強調は<code>*</code>か<code>**</code>で囲む！<code>~~</code>で打ち消し線</h3>
+<p><em>abc</em>とか<strong>あいう</strong>のようになります．<code>*</code>は斜体ですが，日本語ではほとんど使わないでしょうね．アンダーラインは・・・ありません！<code>&lt;u&gt;文字&lt;/u&gt;</code>と<u>htmlタグ</u>で書いてください．打ち消し線などは<del>確か</del>あります．<code>~~</code>で囲んでください．</p>
+<h3 class="subtitle mt-4 py-1 pl-3">コードは｀=Shift+@で囲む．複数行は｀｀｀</h3>
+<p>行内なら｀code｀と書き，<code>code</code>と表示されます．</p>
+<pre class="has-background-inherit"><code class="hljs language-markdown">｀｀｀Python
+print("hoge")
+print("hoge")
+print("hoge")
+print("hoge")
+｀｀｀</code></pre>
+<p>と書くと (表示の都合上囲み文字を全角にしています)，</p>
+<pre class="has-background-inherit"><code class="hljs language-Python"><span class="hljs-built_in">print</span>(<span class="hljs-string">"hoge"</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"hoge"</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"hoge"</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"hoge"</span>)</code></pre>
+<p>こうなります．一行目のPythonと書いているのは，コードの種類を指定するもので，Syntax highlight つまり色付けをしてくれる場合がありますので忘れないように書いておきましょう．</p>
+<h3 class="subtitle mt-4 py-1 pl-3">リンクと画像</h3>
+<p><code>[markdown](markdown.md)</code>と書けば<a href="./" class="button is-small">markdown</a>と表示されます．<code>[表示文字](url)</code>です．</p>
+<p>画像も似たような書き方で表示できます．<code>![画像が表示されない時の文字](url)</code>大きさ調整をしたい場合はhtmlのimgタグを使えば良いようです．その他にも記法はあると思いますが，他は解説サイトを見てください．</p>
+<h3 class="subtitle mt-4 py-1 pl-3">表を書く</h3>
+<pre class="has-background-inherit"><code class="hljs language-markdown">| 項目１ | 項目２ |
+| :---  | :---  |
+| あ | い |
+| う | え |</code></pre>
+<p>と書けば，</p>
+<table class="table is-striped">
+<thead>
+<tr>
+<th>項目１</th>
+<th>項目２</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>あ</td>
+<td>い</td>
+</tr>
+<tr>
+<td>う</td>
+<td>え</td>
+</tr>
+</tbody></table>
+<p>と表示されます．2行目の<code>-</code>は一つ以上あれば良いようです．1行目の説明欄は必須．<code>:---</code>は左寄せ，<code>:---:</code>は中寄せ，<code>---:</code>は右寄せと，align指定ができます．</p>
+<h3 class="subtitle mt-4 py-1 pl-3">横線を引く</h3>
+<p><code>---</code>と書けば，</p>
+<hr>
+<p>のように引かれます．</p>
+<h3 class="subtitle mt-4 py-1 pl-3">コメント（非表示文）を書きたい</h3>
+<p>Markdown自体にはコメント機能はありません．一応htmlで<code>&lt;!-- 表示されない --&gt;</code>とすることも可能です．</p>
+<h3 class="subtitle mt-4 py-1 pl-3">いざとなったらhtmlタグを直接書ける</h3>
+<p>markdownのビューワでは，htmlへの変換を通してきれいな表示を実現します．htmlタグはそのままhtmlとして扱われます．推奨されてはいないかもしれませんが，markdownはかしこまったものでない文書を書く目的が主なので，臨機応変に対応したら良いのではないでしょうか．</p>
+<h3 class="subtitle mt-4 py-1 pl-3">特殊記法は避けた方が良い</h3>
+<p>章立てをまとめて表示したりするTOC機能などの拡張を提供しているソフトがありますが，複数の環境で閲覧することを想定すると綺麗に表示されない場合が多くあるので，基本記法だけで記載するのが良いように思います．無法状態にならないようにしましょう．</p>
+<h3 class="subtitle mt-4 py-1 pl-3">とは言いつつも数式は使いましょう！</h3>
+<p>数式はおそらく標準ではありませんが，かなり多くのソフトウェアで対応していますし，書けないと不便ですのでぜひ覚えて使いましょう．<code>$</code>や<code>$$</code>で囲んだ部分にLatex数式で書きますが，詳細は追って書きます．</p>
+<p>状態量を<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msup><mi mathvariant="double-struck">R</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">x\in \mathbb{R}^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6889em;"></span><span class="mord"><span class="mord mathbb">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span>とした運動方程式
+$$
+\dot{x} := \frac{dx}{dt} = f(x)
+$$
+について考えましょう．のように書けます．きれいに表示されると気持ちいいですね．本サイトではMathJaxで表示しています．ver 3.0からかなり表示が早くなったとの噂で，確かに早い．</p>
+<h2 class="subtitle mt-4 py-1 pl-3">おすすめmarkdownエディタ</h2>
+<div class="content"><ul>
+<li><a href="https://obsidian.md/" class="button is-small">Obsidian</a></li>
+<li><a href="https://www.marktext.cc/" class="button is-small">MarkText</a> </li>
+<li><a href="https://typora.io/" class="button is-small">Typora</a>
+が閲覧，編集におすすめです．</li>
+</ul></div>
+</main>
+    
+    <footer class="footer mt-1">
+        <div class="container">
+          <div class="columns is-vcentered is-centered is-mobile">
+            <div class="column is-narrow">
+              <a href="https://www.u-fukui.ac.jp/" target="_blank" rel="noopener">
+                <img src="../../img/transparent_Sy-e2.png" alt="福井大学ロゴ" style="height:48px;">
+              </a>
+            </div>
+            <div class="column is-narrow has-text-left">
+              <p class="mb-1">© 2020-2026 Kazuki Umemoto</p>
+              <p class="mb-0">
+                お問い合わせ: umemoto (アット) g.u-fukui.ac.jp<br>
+                <span class="is-size-7">※(アット)を@に置き換えてください。</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+</body></html>

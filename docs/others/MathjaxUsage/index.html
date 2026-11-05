@@ -1,0 +1,276 @@
+<!doctype html>
+<!--
+Issue:
+    * 学生募集の拡充、雰囲気・進路・メンバー
+    * 研究紹介の拡充
+    * 
+--><!DOCTYPE html><html lang="ja"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="おすすめなMathJax3の使い方 | 福井大学 梅本研究室">
+    <title>おすすめなMathJax3の使い方</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://umemotoctrl.github.io/img/favicon.ico">
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="福井大学 梅本研究室">
+    <meta property="og:title" content="おすすめなMathJax3の使い方">
+    <meta property="og:description" content="おすすめなMathJax3の使い方 | 福井大学 梅本研究室">
+    <meta property="og:url" content="https://umemotoctrl.github.io/others/MathjaxUsage/">
+    <meta property="og:image" content="https://umemotoctrl.github.io/img/photo_ume.jpg">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="おすすめなMathJax3の使い方">
+    <meta name="twitter:description" content="おすすめなMathJax3の使い方 | 福井大学 梅本研究室">
+    <meta name="twitter:image" content="https://umemotoctrl.github.io/img/photo_ume.jpg">
+    <!-- 構造化データ (JSON-LD) -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://umemotoctrl.github.io/#website",
+      "url": "https://umemotoctrl.github.io/",
+      "name": "福井大学 梅本研究室",
+      "inLanguage": "ja",
+      "description": "非線形システムのロバスト制御法と、そのドローンや柔軟ロボットなどロボットシステムへの応用を研究しています。"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://umemotoctrl.github.io/#person",
+      "name": "Kazuki Umemoto",
+      "givenName": "Kazuki",
+      "familyName": "Umemoto",
+      "alternateName": "梅本 和希",
+      "jobTitle": "准教授",
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "福井大学"
+      },
+      "url": "https://umemotoctrl.github.io/piinfo/",
+      "sameAs": [
+        "https://researchmap.jp/kumemoto/",
+        "https://orcid.org/0000-0002-1148-4114"
+      ]
+    }
+  ]
+}</script>
+    <!-- CSS -->
+    <!-- Bulma: Code copyright 2023 Jeremy Thomas. Code released under the MIT license. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.3/css/bulma.min.css" integrity="sha256-RwYNyYLkMTjyYn8FRzVzQFtHXuHg9dpfkPCuf6j2XDM=" crossorigin="anonymous">
+    <!-- highlight.js: Copyright (c) 2006, Ivan Sagalaev. BSD 3-Clause License. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css" integrity="sha512-Jk4AqjWsdSzSWCSuQTfYRIF84Rq/eV0G2+tu07byYwHcbTGfdmLrHjUSwvzp5HvbiqK4ibmNwdcG49Y5RGYPTg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- highlightjsの良さそうなStyles
+        atom-one-dark
+        github-dark-dimmed
+        github-dark
+        monokai
+        obsidian
+        panda-syntax-dark
+        stackoverflow-dark
+        qtcreator-dark
+        vs2015
+        xt256
+    -->
+    <!-- Katex: Copyright (c) 2013-2020 Khan Academy and other contributors. The MIT License (MIT). -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.2/dist/katex.min.css" integrity="sha384-qArEAQvOPs1o7K1iAybhs66g8nYTXVt4VLOQ3abu+OMLJyPNfaH4Wpko0X2epHJ+" crossorigin="anonymous">
+    <!-- Fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&amp;display=block" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            padding-top: 76px;
+        }
+        main {
+            padding-bottom: 30px;
+        }
+        h2.subtitle {
+            border-left: solid 5px hsl(171, 100%, 41%);/*左線*/
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.45rem;
+        }
+        .card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,.08);
+            transition: transform .2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+        }
+        .navbar.is-fixed-top {
+            backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(0,0,0,.08);
+        }
+        .button.is-small {
+            border-radius: 999px;
+        }
+        main img {
+            border-radius: 8px;
+        }
+      </style>
+    <script defer="" src="../../js/site.js"></script>
+    
+
+<link rel="canonical" href="https://umemotoctrl.github.io/others/MathjaxUsage/"></head>
+<body>
+    <header>
+        <nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand"><p class="is-size-3 has-text-weight-bold my-4 ml-4 has-text-dark">福井大学 梅本研究室</p>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="navbar-menu has-text-weight-semibold" id="mainNav">
+                <!-- <div class="navbar-start"><a class="navbar-item" href="#">Top</a></div> -->
+                <div class="navbar-start"></div>
+                <div class="navbar-item"><a class="navbar-item" href="../../">ホーム</a></div>
+                <!-- <div class="navbar-item"><a class="navbar-item" href="#">研究紹介</a></div> -->
+                <div class="navbar-item"><a class="navbar-item" href="../../piinfo/">教員紹介</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="../../researchworks/">研究業績</a></div>
+                <div class="navbar-item"><a class="navbar-item" href="../../recruitment/">学生募集</a></div>
+                <div class="navbar-item">
+                    <a class="navbar-item" href="../../tips/">
+                        その他のコンテンツ
+                    </a>
+                </div>
+                <!-- <div class="navbar-end"><a class="navbar-item" href="#">学生募集</a></div> -->
+            </div>
+        </nav>
+    </header>
+    <main id="article" class="container" role="main"><div class="my-2 has-text-weight-semibold" style="text-align: end;"><p>2026/9/4更新</p></div><h1 class="title mt-4">おすすめなMathJax3の使い方</h1>
+<h2 class="subtitle mt-4 py-1 pl-3">導入</h2>
+<p>MathJaxはWeb上で数式を表示するためのデファクトスタンダードなライブラリです．使い方は簡単で，Javascriptが使えるサーバーなら，すぐに実装できます．ver.3になって，読み込みが早くなったようです．早くなったとは言っても，どうしてもややもたつくので，コンテンツのレンダリング後に読み込む方法と，動的なサイトで使う場合の処理やもろもろの設定について紹介します．</p>
+<h2 class="subtitle mt-4 py-1 pl-3">使い方</h2>
+<h3 class="subtitle mt-4 py-1 pl-3">最もシンプルな使い方</h3>
+<p>本家Webの<a href="https://www.mathjax.org/#gettingstarted" class="button is-small">getting started</a>にある方法は</p>
+<pre class="has-background-inherit"><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://polyfill.io/v3/polyfill.min.js?features=es6"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"MathJax-script"</span> <span class="hljs-attr">async</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<p>です．一行目はIEへの対応に必要なもので，なくても最近のブラウザなら動きます．この書き方で問題になる（ことがある）のは，１つ目がまずレンダリングをブロック（読み込んで処理するまでhtmlの表示が進まない）することと，<code>tex-svg.js</code>のダウンロードが早く終わった時に，レンダリングをブロックする可能性があることです．画面の表示が遅れてしまいます（<a href="https://qiita.com/phanect/items/82c85ea4b8f9c373d684" class="button is-small">参考</a>からの受け売りです）．１つ目についてはdefer指定で解決できるかもしれませんが，asyncの２つ目があるために処理順が問題になる恐れがあるので止めた方が良さそうです．</p>
+<h3 class="subtitle mt-4 py-1 pl-3">後から読み込む方法</h3>
+<p>数式を綺麗に表示するのは後で良いのであれば，後から読み込む方法があります．画面読み込み時の処理を書く方法に</p>
+<pre class="has-background-inherit"><code class="hljs language-javascript"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'DOMContentLoaded'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+<span class="hljs-comment">// ここにhtmlロード時の処理を書く</span>
+});</code></pre>
+<pre class="has-background-inherit"><code class="hljs language-javascript"><span class="hljs-variable language_">window</span>.<span class="hljs-property">onload</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+<span class="hljs-comment">// ここにhtmlロード時の処理を書く</span>
+};</code></pre>
+<p>があります．大抵は上の方法で問題ないように思います．下側は画像などの読み込みが優先されるとのこと．これを使って，<a href="http://docs.mathjax.org/en/latest/web/typeset.html" class="button is-small">公式ドキュメント</a>にもあるように</p>
+<pre class="has-background-inherit"><code class="hljs language-javascript"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'DOMContentLoaded'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+  	<span class="hljs-comment">// この中の最後の方に以下をかく</span>
+       (<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">window</span>.<span class="hljs-property">MathJax</span> = {
+          <span class="hljs-attr">tex</span>: {
+          <span class="hljs-attr">inlineMath</span>: [[<span class="hljs-string">'$'</span>, <span class="hljs-string">'$'</span>], [<span class="hljs-string">'\\('</span>, <span class="hljs-string">'\\)'</span>]]
+          },
+          <span class="hljs-attr">svg</span>: {
+          <span class="hljs-attr">fontCache</span>: <span class="hljs-string">'global'</span>
+          }
+        };
+        <span class="hljs-keyword">var</span> scriptIE = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">"script"</span>);
+        scriptIE.<span class="hljs-property">src</span>  = <span class="hljs-string">"https://polyfill.io/v3/polyfill.min.js?features=es6"</span>;
+        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>(<span class="hljs-string">"head"</span>)[<span class="hljs-number">0</span>].<span class="hljs-title function_">appendChild</span>(scriptIE);
+        <span class="hljs-keyword">var</span> script = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">"script"</span>);
+        script.<span class="hljs-property">type</span> = <span class="hljs-string">"text/javascript"</span>;
+        script.<span class="hljs-property">src</span>  = <span class="hljs-string">"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"</span>;
+        script.<span class="hljs-property">async</span> = <span class="hljs-literal">true</span>;
+        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>(<span class="hljs-string">"head"</span>)[<span class="hljs-number">0</span>].<span class="hljs-title function_">appendChild</span>(script);
+      })();
+});</code></pre>
+<p>とすれば，htmlが表示されてからMathJaxのダウンロードと処理が開始することになります．MathJaxは読み込みが終わった時に，ページ内の数式を自動で整形するので，ページ表示後少ししてから数式が整形されていく形になります．<code>document.createElement</code>でタグを作ってheadに追加するプログラムで，headに追加すればブラウザが処理してくれます．冒頭部分は設定です．</p>
+<h3 class="subtitle mt-4 py-1 pl-3">動的なサイトでの使用法</h3>
+<p>動的なサイトの場合は，後から追加された数式は自動では処理してくれません．数式を追加した後に，<code>MathJax.typesetPromise()</code>を実行してやれば整形してくれますが，せっかくなので，変更イベントを監視して自動で処理する方法を書きます．<code>typesetPromise()</code>は引数を与えないと全体を，引数を与えるとその引数の部分を整形してくれます．<code>MathJax.typeset()</code>というのもありますが，Promiseを使った方が良いと本家のドキュメントにあった気がします．</p>
+<pre class="has-background-inherit"><code class="hljs language-javascript"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'DOMContentLoaded'</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+  	<span class="hljs-comment">// この中の最後の方に以下をかく</span>
+       (<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+        <span class="hljs-variable language_">window</span>.<span class="hljs-property">MathJax</span> = {
+          <span class="hljs-attr">startup</span>:&nbsp;{
+            <span class="hljs-attr">pageReady</span>:&nbsp;<span class="hljs-keyword">function</span>&nbsp;(<span class="hljs-params"></span>)&nbsp;{
+              <span class="hljs-keyword">let</span>&nbsp;observer&nbsp;=&nbsp;<span class="hljs-keyword">new</span>&nbsp;<span class="hljs-title class_">MutationObserver</span>(&nbsp;<span class="hljs-keyword">function</span>&nbsp;(<span class="hljs-params"></span>)&nbsp;{
+                  <span class="hljs-title class_">MathJax</span>.<span class="hljs-title function_">texReset</span>();
+                  <span class="hljs-title class_">MathJax</span>.<span class="hljs-title function_">typesetPromise</span>(targetElement.<span class="hljs-property">childNodes</span>);
+              });
+              observer.<span class="hljs-title function_">observe</span>(targetElement,&nbsp;{<span class="hljs-attr">childList</span>:&nbsp;<span class="hljs-literal">true</span>});
+              <span class="hljs-keyword">return</span>&nbsp;<span class="hljs-title class_">MathJax</span>.<span class="hljs-property">startup</span>.<span class="hljs-title function_">defaultPageReady</span>();
+            },
+          },
+          <span class="hljs-attr">tex</span>: {
+          <span class="hljs-attr">inlineMath</span>: [[<span class="hljs-string">'$'</span>, <span class="hljs-string">'$'</span>], [<span class="hljs-string">'\\('</span>, <span class="hljs-string">'\\)'</span>]]
+          },
+          <span class="hljs-attr">svg</span>: {
+          <span class="hljs-attr">fontCache</span>: <span class="hljs-string">'global'</span>
+          }
+        };
+        <span class="hljs-keyword">var</span> scriptIE = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">"script"</span>);
+        scriptIE.<span class="hljs-property">src</span>  = <span class="hljs-string">"https://polyfill.io/v3/polyfill.min.js?features=es6"</span>;
+        scriptIE.<span class="hljs-property">async</span> = <span class="hljs-literal">false</span>;
+        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>(<span class="hljs-string">"head"</span>)[<span class="hljs-number">0</span>].<span class="hljs-title function_">appendChild</span>(scriptIE);
+        <span class="hljs-keyword">var</span> script = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">"script"</span>);
+        script.<span class="hljs-property">src</span>  = <span class="hljs-string">"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"</span>;
+        script.<span class="hljs-property">async</span> = <span class="hljs-literal">true</span>;
+        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>(<span class="hljs-string">"head"</span>)[<span class="hljs-number">0</span>].<span class="hljs-title function_">appendChild</span>(script);
+      })();
+});</code></pre>
+<p>このプログラムでは，MutationObserverを使って，<code>targetElement</code>の変更を監視します．inputタグだと<code>onchange</code>イベントが取れますが，divタグなどは取れないので，MutationObserverを使います．<code>{childList: true}</code>を与えないと子要素の変更を検出してくれません．<code>targetElement</code>は<code>document.getElementById</code>や<code>document.querySelector</code>などから取得したものを与えることを想定しています．あらかじめ作ってください．<code>MathJax.texReset()</code>は上書き時にラベルが重複登録されてエラーが出ることへの処理，<code>typesetPromise</code>は与えた要素のレンダリング指示です．</p>
+<p><code>(function () { ... })();</code>は即時実行関数で，なくても動きますが内部の変数を他から隔離する意図があります．</p>
+<p><code>pageReady</code>はMathJaxオブジェクトが生成された時に呼び出されます．<code>script.onload</code>で関数を呼び出すこともできますが，<code>pageReady</code>はオブジェクト生成後に呼び出されるので扱いやすい．<code>MathJax.startup.defaultPageReady()</code>は標準の処理で，<code>typeset()</code>を呼び出します．他の部分に<code>typsetPromise</code>を書く場合はMathjaxオブジェクト自体の存在チェックやメソッドの存在チェックをする必要が出てきます．</p>
+<p><a href="http://docs.mathjax.org/en/latest/options/index.html" class="button is-small">公式ドキュメント</a>に詳しくありますが，便利そうな設定を紹介します．</p>
+<pre class="has-background-inherit"><code class="hljs language-javascript">        <span class="hljs-variable language_">window</span>.<span class="hljs-property">MathJax</span> = {
+          <span class="hljs-attr">startup</span>:&nbsp;{
+            <span class="hljs-attr">elements</span>:&nbsp;<span class="hljs-literal">null</span>,
+            <span class="hljs-attr">typeset</span>:&nbsp;<span class="hljs-literal">true</span>,
+            <span class="hljs-attr">ready</span>: <span class="hljs-title class_">Startup</span>.<span class="hljs-property">defaultReady</span>.<span class="hljs-title function_">bind</span>(<span class="hljs-title class_">Startup</span>),
+            <span class="hljs-attr">pageReady</span>: <span class="hljs-title class_">MathJax</span>.<span class="hljs-property">startup</span>.<span class="hljs-property">defaultPageReady</span>,
+          },
+          <span class="hljs-attr">tex</span>:&nbsp;{
+            <span class="hljs-attr">tags</span>:&nbsp;<span class="hljs-string">'ams'</span>,
+            <span class="hljs-attr">inlineMath</span>:&nbsp;[[<span class="hljs-string">'$'</span>,&nbsp;<span class="hljs-string">'$'</span>],&nbsp;[<span class="hljs-string">'\\('</span>,&nbsp;<span class="hljs-string">'\\)'</span>]],
+            <span class="hljs-attr">macros</span>:&nbsp;{
+              <span class="hljs-attr">RR</span>:&nbsp;<span class="hljs-string">'{\\bf&nbsp;R}'</span>,
+              <span class="hljs-attr">bold</span>:&nbsp;[<span class="hljs-string">'{\\bf&nbsp;#1}'</span>,<span class="hljs-number">1</span>]
+            },
+          },
+          <span class="hljs-attr">svg</span>:&nbsp;{
+            <span class="hljs-attr">fontCache</span>:&nbsp;<span class="hljs-string">'global'</span>,
+          },
+          <span class="hljs-attr">options</span>:&nbsp;{
+            <span class="hljs-attr">skipHtmlTags</span>: [
+              <span class="hljs-string">'script'</span>, <span class="hljs-string">'noscript'</span>, <span class="hljs-string">'style'</span>, <span class="hljs-string">'textarea'</span>, <span class="hljs-string">'pre'</span>,
+              <span class="hljs-string">'code'</span>, <span class="hljs-string">'annotation'</span>, <span class="hljs-string">'annotation-xml'</span>
+            ],
+            <span class="hljs-attr">processHtmlClass</span>: <span class="hljs-string">'tex2jax_process'</span>,
+            <span class="hljs-attr">ignoreHtmlClass</span>:&nbsp;<span class="hljs-string">'tex2jax_ignore'</span>,
+          },
+        };</code></pre>
+<p><code>startup - elements, typeset</code>はロード時のレンダリングを制御できます．<code>elements</code>に要素を指定し，<code>typeset</code>を<code>true</code>にすれば，指定の要素をロード時にレンダリングします．<code>elements</code>を指定したとしても，<code>typesetPromise()</code>と引数をなしで呼び出せば，<code>elements</code>指定以外のものもレンダリングします．<code>typeset</code>を<code>false</code>にすれば，初期のレンダリングを止められます．<code>ready</code>はMathJaxオブジェクト生成前に呼ばれる関数，<code>tex - tag: 'ams'</code>は環境数式に自動番号付，<code>'all'</code>にすれば<code>$$</code>含め全ての数式に番号付けします．式に<code>\label{label_name}</code>としておけば，<code>\ref{label_name}</code>, <code>\eqref{label_name}</code>で式番号を参照できます．<code>macros</code>で自作マクロを定義，<code>skipHtmlTags</code>は無視するタグ，<code>ignoreHtmlClass</code>は無視するクラスを指定できます．<code>processHtmlClass</code>は無視するタグ内で無視しない要素を指定するためでしょうか．未検証．</p>
+</main>
+    
+    <footer class="footer mt-1">
+        <div class="container">
+          <div class="columns is-vcentered is-centered is-mobile">
+            <div class="column is-narrow">
+              <a href="https://www.u-fukui.ac.jp/" target="_blank" rel="noopener">
+                <img src="../../img/transparent_Sy-e2.png" alt="福井大学ロゴ" style="height:48px;">
+              </a>
+            </div>
+            <div class="column is-narrow has-text-left">
+              <p class="mb-1">© 2020-2026 Kazuki Umemoto</p>
+              <p class="mb-0">
+                お問い合わせ: umemoto (アット) g.u-fukui.ac.jp<br>
+                <span class="is-size-7">※(アット)を@に置き換えてください。</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+</body></html>
