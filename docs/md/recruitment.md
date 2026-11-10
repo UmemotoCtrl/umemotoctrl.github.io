@@ -9,3 +9,8 @@
 ## 経済支援について
 
 大学院生の経済的サポートについては，メールでご相談ください．授業料の減免、TA (Teaching Assistant、授業の補助)，RA (Research Assistant、研究の補助)，奨学金などによって支援を受けることができます．
+
+## 研究室ポスター
+
+PDFファイルは[こちら](./etc/umemoto_lab_poster.pdf)
+![ポスター](./img/umemoto_lab_poster.webp)
