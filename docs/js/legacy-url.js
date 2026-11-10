@@ -1,6 +1,6 @@
 "use strict";
 
-const routes = ["","others/MathjaxUsage/","others/latexMath/","others/markdown/","others/mathNotation/","others/usageForParsers/","piinfo/","recruitment/","research/aperiodic/","research/bridge/","research/dob/","research/drone/","researchworks/","sample/","tips/","usage/"];
+const routes = ["","others/MathjaxUsage/","others/latexMath/","others/markdown/","others/mathNotation/","others/usageForParsers/","piinfo/","recruitment/","research/aperiodic/","research/bridge/","research/dob/","research/drone/","researchworks/","sample/","tips/"];
 const match = location.search.match(/^\?id=\/?([\w/-]+)$/);
 if (match) {
     const route = match[1] === "index" ? "" : `${match[1]}/`;
