@@ -251,7 +251,6 @@ async function copyStaticFiles() {
         await cp(path.join(ROOT, directory), path.join(OUTPUT_DIRECTORY, directory), { recursive: true });
     }
     await mkdir(path.join(OUTPUT_DIRECTORY, "js"), { recursive: true });
-    await cp(path.join(ROOT, "md"), path.join(OUTPUT_DIRECTORY, "md"), { recursive: true });
     for (const file of STATIC_FILES) {
         await cp(path.join(ROOT, file), path.join(OUTPUT_DIRECTORY, file));
     }
