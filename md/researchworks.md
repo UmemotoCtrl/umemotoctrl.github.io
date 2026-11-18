@@ -7,7 +7,7 @@
 <a class="button is-success has-text-weight-semibold" href="https://researchmap.jp/kumemoto/">researchmap</a>
 <a class="button is-success has-text-weight-semibold" href="https://www.scopus.com/authid/detail.uri?authorId=24538065500">Scopus</a>
 <a class="button is-success has-text-weight-semibold" href="https://orcid.org/0000-0002-1148-4114">ORCiD</a>
-<a class="button is-success has-text-weight-semibold" href="https://r-info.ad.u-fukui.ac.jp/Profiles/70/0006982/profile.html">福井大学研究者総覧</a>
+<a class="button is-success has-text-weight-semibold" href="https://pure.flib.u-fukui.ac.jp/ja/persons/kazuki-umemoto/">福井大学研究者総覧</a>
 </div>
 
 ## 学術論文 (査読あり) Journal Paper
